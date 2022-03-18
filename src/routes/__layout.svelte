@@ -3,10 +3,8 @@
 </script>
 
 <Navbar />
-<div class=" mx-auto min-h-screen">
-	<main>
-		<slot />
-	</main>
+<div class="relative w-full h-full m-0 flex">
+	<slot />
 </div>
 <Footer />
 

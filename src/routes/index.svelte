@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { typewriter } from '$lib/transitions/typewriter.transition';
-	import MatterComposition from '$lib/components/MatterComposition.svelte';
+	import HexagonNeon from '$lib/components/HexagonNeon.svelte';
 </script>
 
-<main
-	class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center  w-full p-2 relative py-14 px-10"
->
+<main class="relative w-full bg-red-400" style="height: calc( 100vh - 100px);">
+	<HexagonNeon className="absolute top-0 left-0 bottom-0 right-0   pointer-events-none" />
 	<div class="flex flex-col mt-10">
 		<h1
 			in:typewriter={{ speed: 100 }}
@@ -21,8 +20,6 @@
 			<span class="rocket"> 🚀 </span>
 		</h1>
 	</div>
-
-	<MatterComposition className="flex justify-center" />
 </main>
 
 <style lang="scss">
