@@ -53,6 +53,7 @@ const config = {
 					$data: path.resolve('./src/lib/data'),
 					$types: path.resolve('./src/lib/types'),
 					$store: path.resolve('./src/lib/_store'),
+					$actions: path.resolve('./src/lib/actions'),
 					$transitions: path.resolve('./src/lib/transitions'),
 					$layout: path.resolve('./src/lib/layout')
 				}

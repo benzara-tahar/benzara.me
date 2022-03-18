@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Selectable from '$lib/components/Selectable.svelte';
 </script>
 
 <main class="flex flex-col justify-center items-center min-h-screen w-full p-2">
@@ -17,8 +16,4 @@
 	</h1>
 
 	<br />
-	<Selectable
-		text="This is going to be fun, try and select me"
-		selectedText="I told you some magic will happen :)"
-	/>
 </main>

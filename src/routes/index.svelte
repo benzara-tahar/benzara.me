@@ -1,16 +1,28 @@
-<main class="flex justify-center items-center min-h-screen w-full p-2">
-	<h1
-		class="text-gray-700 dark:text-gray-200 font-bold text-4xl md:text-5xl text-center tracking-wide relative"
-	>
-		Go ahead! build something
+<script lang="ts">
+	import { typewriter } from '$lib/transitions/typewriter.transition';
+	import MatterComposition from '$lib/components/MatterComposition.svelte';
+</script>
 
-		<span
-			class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-400 via-green-400"
+<main
+	class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center  w-full p-2 relative py-14 px-10"
+>
+	<div class="flex flex-col mt-10">
+		<h1
+			in:typewriter={{ speed: 100 }}
+			class="text-gray-700 dark:text-gray-200 font-bold text-4xl md:text-5xl text-center tracking-wide relative"
 		>
-			FANCY!
-		</span>
-		<span class="rocket"> 🚀 </span>
-	</h1>
+			Go ahead! build something
+
+			<span
+				class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-400 via-green-400"
+			>
+				FANCY!
+			</span>
+			<span class="rocket"> 🚀 </span>
+		</h1>
+	</div>
+
+	<MatterComposition className="flex justify-center" />
 </main>
 
 <style lang="scss">

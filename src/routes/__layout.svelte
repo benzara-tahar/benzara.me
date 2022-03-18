@@ -3,7 +3,7 @@
 </script>
 
 <Navbar />
-<div class="container mx-auto min-h-screen">
+<div class=" mx-auto min-h-screen">
 	<main>
 		<slot />
 	</main>
@@ -11,5 +11,5 @@
 <Footer />
 
 <style global lang="scss">
-	@use 'src/styles/global';
+	@use 'src/styles/app';
 </style>

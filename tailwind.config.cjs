@@ -7,19 +7,6 @@ module.exports = {
 			// use https://www.tailwindshades.com/ to generate shades
 			colors: {
 				primary: {
-					DEFAULT: '#3B82F6',
-					50: '#EBF2FE',
-					100: '#D7E6FD',
-					200: '#B0CDFB',
-					300: '#89B4FA',
-					400: '#629BF8',
-					500: '#3B82F6',
-					600: '#0B61EE',
-					700: '#084BB8',
-					800: '#063583',
-					900: '#041F4D'
-				},
-				secondary: {
 					DEFAULT: '#65A30D',
 					50: '#BFF474',
 					100: '#B6F261',
@@ -31,6 +18,19 @@ module.exports = {
 					700: '#253B05',
 					800: '#040701',
 					900: '#000000'
+				},
+				secondary: {
+					DEFAULT: '#3B82F6',
+					50: '#EBF2FE',
+					100: '#D7E6FD',
+					200: '#B0CDFB',
+					300: '#89B4FA',
+					400: '#629BF8',
+					500: '#3B82F6',
+					600: '#0B61EE',
+					700: '#084BB8',
+					800: '#063583',
+					900: '#041F4D'
 				},
 				accent: {
 					DEFAULT: '#FACC15',

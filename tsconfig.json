@@ -9,7 +9,9 @@
 			"$static/*": ["static/*"],
 			"$store/*": ["src/lib/_store/*"],
 			"$transitions/*": ["src/lib/transitions/*"],
+			"$actions/*": ["src/lib/actions/*"],
 			"$types/*": ["src/lib/types/*"]
-		}
+		},
+		"types": ["node_modules/@types"]
 	}
 }
