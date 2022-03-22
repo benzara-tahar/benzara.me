@@ -1,4 +1,5 @@
 export function typewriter(node: HTMLElement, { delay = 0, speed = 200 }) {
+	console.log('aze', node);
 	const textNodes = getAllTextNodes(node);
 	if (!textNodes.length) {
 		throw new Error(`This transition only works on elements with text nodes`);
@@ -42,6 +43,7 @@ function getAllTextNodes(node: HTMLElement) {
 		return [node];
 	} else if (node.hasChildNodes()) {
 		const list = [];
+		// @ts-expect-error sdf
 		for (const child of node.childNodes) {
 			getAllTextNodes(child as HTMLElement).forEach((textNode) => list.push(textNode));
 		}

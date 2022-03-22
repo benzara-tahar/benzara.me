@@ -3,25 +3,35 @@
 @tailwind components;
 @tailwind utilities;
 
-// @font-face {
-// 	font-family: 'Inter';
-// 	font-style: normal;
-// 	font-weight: 100 900;
-// 	font-display: swap;
-// 	// src: url('/static/fonts/FredokaOne-Regular.ttf') format('ttf');
-// 	src: url('/static/fonts/Inter-roman.var.woff2') format('woff2');
-
-// 	font-named-instance: 'Regular';
-// }
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400;700&family=Montserrat:wght@300;400;500;700&family=Rubik:wght@300;400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap');
 body {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
+	// font-family: 'Rubik', sans-serif;
+	// font-family: 'Monda', sans-serif;
+	// font-family: 'Montserrat', sans-serif;
 	// font-family: 'Fredoka One', cursive;
 	// font-family: 'Inter', sans-serif;
 }
 
 ::selection {
-	background: red;
+	background: rgb(0, 140, 196);
 	color: white;
+}
+
+// Scrollers
+::-webkit-scrollbar {
+	width: 8px;
+	background-color: rgba(22, 22, 22, 0.274);
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }

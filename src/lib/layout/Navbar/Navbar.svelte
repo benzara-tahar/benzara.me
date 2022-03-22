@@ -14,15 +14,15 @@
 		{
 			text: 'Resume',
 			url: '/resume'
-		},
-		{
-			text: 'Blog',
-			url: '/blog'
-		},
-		{
-			text: 'Tools',
-			url: '/tools'
 		}
+		// {
+		// 	text: 'Blog',
+		// 	url: '/blog'
+		// },
+		// {
+		// 	text: 'Tools',
+		// 	url: '/tools'
+		// }
 	];
 </script>
 
