@@ -29,6 +29,8 @@ https://codepen.io/liabru/pen/ExgOdP
 
 https://www.blueyard.com/galaxy
 
+https://codepen.io/TurkAysenur/pen/ZEpxeYm
+
 neon hexagon-forming particles https://codepen.io/towc/pen/mJzOWJ
 
 # npx benzara https://github.com/Ridermansb/Ridermansb
@@ -51,6 +53,8 @@ Steadily growing into people management and recently into Angular.
 # Home
 
 # About me
+
+"THIS PAGE IS LIVE SINCE 4030 HOURS"
 
 # Skills
 
@@ -83,3 +87,13 @@ The stones are combination of letters
 # on nature sound, draw this https://www.youtube.com/watch?v=0v4_Dw0K8pw
 
 # on rain, take screen shot and add rain effect like this https://www.youtube.com/watch?v=alRBeUMMvDM
+
+## Blog posts
+
+# style="clamp(40px, 8vw, 80px)"
+
+# select and show hidden text
+
+# https://css-tricks.com/almanac/properties/s/scroll-padding/
+
+# https://developer.mozilla.org/en-US/docs/Web/Guide/Houdini

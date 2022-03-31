@@ -5,6 +5,14 @@ module.exports = {
 	theme: {
 		extend: {
 			// use https://www.tailwindshades.com/ to generate shades
+			fontSize: {
+				'clamp-p': 'clamp(0.875rem, 4vw, 1.3rem)',
+				'clamp-h1': 'clamp(1.5rem, 8vw, 3rem)',
+				'clamp-h2': 'clamp(1rem, 6vw, 2rem)'
+			},
+			width: {
+				'clamp-p': 'clamp(40ch, 50%, 77ch)'
+			},
 			colors: {
 				primary: {
 					DEFAULT: '#65A30D',

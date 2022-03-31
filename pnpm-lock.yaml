@@ -13,6 +13,7 @@ specifiers:
   autoprefixer: ^10.4.2
   cookie: ^0.4.1
   cssnano: ^5.0.17
+  dateformat: ^5.0.3
   eslint: ^7.32.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.1
@@ -39,13 +40,14 @@ dependencies:
   '@fontsource/fira-mono': 4.5.3
   '@lukeed/uuid': 2.0.0
   cookie: 0.4.2
+  dateformat: 5.0.3
   matter-attractors: 0.1.6
   matter-js: 0.18.0
 
 devDependencies:
   '@sveltejs/adapter-auto': 1.0.0-next.33
   '@sveltejs/adapter-vercel': 1.0.0-next.46
-  '@sveltejs/kit': 1.0.0-next.298_sass@1.49.9+svelte@3.46.4
+  '@sveltejs/kit': 1.0.0-next.302_sass@1.49.9+svelte@3.46.4
   '@types/cookie': 0.4.1
   '@types/matter-js': 0.17.7
   '@typescript-eslint/eslint-plugin': 5.14.0_e3f5f4efe2bd492e36eb6c1c619dfc98
@@ -209,8 +211,8 @@ packages:
       esbuild: 0.14.25
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.298_sass@1.49.9+svelte@3.46.4:
-    resolution: {integrity: sha512-HUna2KgBc9NdeSCAqZBo6NUuRHab1tRMW6O3OtLvPs7ldSY+cEarDmUJb1ZeHwPrbcS2RTHSnBNNc0l+UyiFIw==}
+  /@sveltejs/kit/1.0.0-next.302_sass@1.49.9+svelte@3.46.4:
+    resolution: {integrity: sha512-+YUSU7uN5n8i0NOVRaBQgxbaCgFqn63YNudm8kqu27iaw8iCw9Ua6YuE0uMeAtYif+uSletFiMy73f55mMfJNQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -799,6 +801,11 @@ packages:
     dependencies:
       css-tree: 1.1.3
     dev: true
+
+  /dateformat/5.0.3:
+    resolution: {integrity: sha512-Kvr6HmPXUMerlLcLF+Pwq3K7apHpYmGDVqrxcDasBg86UcKeTSNWbEzU8bwdXnxnR44FtMhJAxI4Bov6Y/KUfA==}
+    engines: {node: '>=12.20'}
+    dev: false
 
   /debug/4.3.3:
     resolution: {integrity: sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==}

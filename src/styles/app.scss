@@ -35,3 +35,11 @@ body {
 	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
+
+// p {
+// 	width: clamp(45ch, 50%, 75ch);
+
+// 	@media (max-width: 768px) {
+// 		width: clamp(40ch, 50%, 100ch);
+// 	}
+// }
