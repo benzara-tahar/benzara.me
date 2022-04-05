@@ -1,77 +1,47 @@
 <script lang="ts">
-	import { typewriter } from '$lib/transitions/typewriter.transition';
+	import Terminal from '$lib/components/Terminal/Terminal.svelte';
 	import { onDestroy, onMount } from 'svelte';
-	import { dateDiffInDays } from '$lib/utils/date';
-	import Testimonials from './testimonial/index.svelte';
-	import Tooltip from '$lib/components/Tooltip.svelte';
-	let hi = 'Hi';
-	let hiI18n = ['Hi', 'Holla', 'Bonjour', 'Salaam'];
-	let intervals = [];
-	let birthDate = new Date(1992, 1, 8);
-	let diffInDays = dateDiffInDays(birthDate, new Date()) % 30;
-	let diffInMonths = dateDiffInDays(birthDate, new Date()) % 12;
-	let timer = '';
-	onMount(() => {
-		intervals.push(
-			setInterval(() => {
-				hi = hiI18n[(hiI18n.indexOf(hi) + 1) % hiI18n.length];
-			}, 4000)
-		);
-
-		intervals.push(
-			setInterval(() => {
-				timer = new Date().toLocaleTimeString();
-			}, 1000)
-		);
-	});
-
-	onDestroy(() => {
-		intervals.forEach(clearInterval);
-	});
 </script>
 
-<main class="relative w-full container mx-auto  min-h-screen">
-	<div class="flex flex-col mt-10 py-14 md:py-20 px-6 md:px-0 ">
-		<span class="text-lg text-primary-600 dark:text-primary-100 ">
-			{#key hi}
-				<span transition:typewriter={{ delay: 0, speed: 100 }} class="blink">
-					{hi}
-				</span>
-			{/key}
-			<!-- , Welcome to my corner on the internet! I am -->
-		</span>
-		<span class="text-lg text-primary-600 dark:text-primary-100 ">
-			Welcome to my corner on the internet! I am
-		</span>
-		<h1
-			class="text-gray-700 dark:text-gray-200 font-bold text-4xl md:text-5xl tracking-wide relative"
-		>
-			<span
-				class="animated-gradient  text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-blue-400 via-yellow-400 text-clamp-h1"
+<main class="w-full py-8 max-w-7xl mx-auto  ">
+	<div class="flex flex-col md:flex-row  justify-start items-stretch   space-x-4">
+		<div class=" max-w-lg">
+			<h1 class="text-white font-bold tracking-tight" style="font-size: clamp(1.2rem, 5vw, 3rem);">
+				Hi, <span class="animated-gradient text-secondary-500">Lahcene</span> here
+			</h1>
+			<h1
+				class="text-white font-bold tracking-tight leading-tight"
+				style="font-size: clamp(1.2rem, 5vw, 3rem);"
 			>
-				<!-- style="font-size:clamp(2rem, 8vw, 3.5rem)" -->
-				Benzara Tahar
-				<span title="This is my firstname" class="cursor-pointer">Benlahcene</span>
-			</span>
-		</h1>
-		<h2 class="text-gray-600 dark:text-gray-400 font-bold text-clamp-h2 tracking-wide relative">
-			I build things you love.
-		</h2>
+				I am a <span class="animated-gradient text-secondary-500">Full Stack</span> Developer
+			</h1>
 
-		<p
-			class="text-gray-700 w-clamp-p dark:text-gray-200 text-clamp-p max-w-3xl   tracking-wider font-light  text-left md:text-justify  leading-normal mt-8"
-		>
-			I am a <Tooltip title={timer}>
-				<h1>30 years</h1>
-			</Tooltip>
-			old developer, currently working as an idependent freelancer at Upwork, but Currently, I’m focused
-			on building accessible, performant and beautiful web applications.
-		</p>
+			<p class="text-gray-300 text-lg text-justify mt-4">
+				I am 30 years old <span class="keyword">passionate learner</span> having a keen interest in
+				building eye-catching digital solutions that
+				<span class="keyword">solves</span> real-word problems
+			</p>
+			<p class="text-gray-300 text-lg text-justify mt-4">
+				Based in <span class="keyword">Algeria</span> I am currently working with various clients
+				arround the world on
+				<span class="keyword">Upwork</span>
+			</p>
+		</div>
+
+		<div class="self-center bg-gray-800 w-full">
+			<Terminal />
+		</div>
 	</div>
-	<Testimonials />
 </main>
 
 <style lang="scss">
+	.keyword {
+		border-radius: 4px;
+		color: white;
+		padding: 4px 6px;
+		background: rgb(46, 55, 63);
+	}
+
 	.animated-gradient {
 		animation: hue 10s infinite linear;
 		-webkit-animation: hue 10s infinite linear;
@@ -80,26 +50,27 @@
 	@keyframes hue {
 		from {
 			-webkit-filter: hue-rotate(0deg);
+			-webkit-filter: hue-rotate(0deg);
 		}
 		to {
 			-webkit-filter: hue-rotate(-360deg);
 		}
 	}
 
-	.blink {
-		position: relative;
-		&::after {
-			content: '|';
-			position: absolute;
-			color: cyan;
-			font-weight: 700;
-			right: -10px;
-			animation: blinker 1s linear infinite;
-		}
-	}
-	@keyframes blinker {
-		50% {
-			opacity: 0;
-		}
-	}
+	// .blink {
+	// 	position: relative;
+	// 	&::after {
+	// 		content: '|';
+	// 		position: absolute;
+	// 		color: cyan;
+	// 		font-weight: 700;
+	// 		right: -10px;
+	// 		animation: blinker 1s linear infinite;
+	// 	}
+	// }
+	// @keyframes blinker {
+	// 	50% {
+	// 		opacity: 0;
+	// 	}
+	// }
 </style>

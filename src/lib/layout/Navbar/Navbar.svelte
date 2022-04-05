@@ -5,115 +5,186 @@
 	import ThemeSwitcher from '../../components/DarkThemeSwitcher.svelte';
 	import { user as userStore } from '$store/user.store';
 
+	import Logo from './TerminalLogo.svelte';
+
 	let hidden = true;
 	let menu = [
 		{
-			text: 'About',
+			text: 'Home',
 			url: '/'
+		},
+		{
+			text: 'About',
+			url: '/about'
+		},
+		{
+			text: 'Blog',
+			url: '/blog'
+		},
+		{
+			text: 'Now',
+			url: '/now'
 		},
 		{
 			text: 'Resume',
 			url: '/resume'
 		}
-		// {
-		// 	text: 'Blog',
-		// 	url: '/blog'
-		// },
-		// {
-		// 	text: 'Tools',
-		// 	url: '/tools'
-		// }
 	];
 </script>
 
-<nav class=" bg-gray-100 border-gray-200   rounded dark:bg-gray-800">
-	<div class="container mx-auto ">
-		<div class="flex justify-between">
-			<div class="flex space-x-7">
-				<div>
-					<!-- Website Logo -->
-					<a href="/" class="flex items-center py-4 px-2  dark:bg-gray-900 bg-gray-200">
-						<span class="text-clip font-bold text-2xl text-lime-500">{'{'}</span>
-						<span class=" text-gray-800 font- dark:text-gray-200 font-medium text-lg"
-							>benzara.me</span
-						>
-						<span class="text-clip font-bold text-2xl text-lime-500">{'}'}</span>
-					</a>
-				</div>
-			</div>
-			<!-- Primary Navbar items -->
-			<div class="hidden md:flex items-center space-x-1">
-				{#each menu as item}
-					<a
-						href={item.url}
-						class="py-4 px-2  font-normal tracking-wider relative {$page.url.pathname === item.url
-							? 'text-primary-400 border-b-primary-400 border-b-2'
-							: 'text-gray-900 dark:text-gray-100'}"
-						>{item.text}
-					</a>
-				{/each}
-			</div>
-			<!-- Secondary Navbar items -->
-
-			<div class="hidden md:flex items-center space-x-6 ">
-				<ThemeSwitcher />
-				<!-- <button
-					type="button"
-					class="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:ring-[#1da1f2]/50 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 "
+<nav class="bg-gray-900 py-5  px-5 font-mono">
+	<div class="mx-auto max-w-7xl flex justify-between">
+		<!-- logo -->
+		<Logo />
+		<!-- Primary Navbar items -->
+		<div class="hidden md:flex items-center justify-center space-x-3 h-8">
+			{#each menu as item, index}
+				<a
+					href={item.url}
+					class=" px-2  font-normal tracking-wider relative {$page.url.pathname === item.url
+						? 'text-primary-400 border-b-primary-400 border-b-2'
+						: 'text-gray-900 dark:text-gray-100'}"
 				>
-					<svg
-						class="mr-2 -ml-1 w-4 h-4"
-						aria-hidden="true"
-						focusable="false"
-						data-prefix="fab"
-						data-icon="twitter"
-						role="img"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 512 512"
-						><path
-							fill="currentColor"
-							d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z"
-						/></svg
-					>
-					Sign in
-				</button> -->
-			</div>
-			<!-- Mobile menu button -->
-			<div class="md:hidden flex items-center">
-				<button class="outline-none mobile-menu-button" on:click={() => (hidden = !hidden)}>
-					<svg
-						class=" w-6 h-6 text-gray-500 hover:text-primary "
-						x-show="!showMenu"
-						fill="none"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						viewBox="0 0 24 24"
-						stroke="currentColor"
-					>
-						<path d="M4 6h16M4 12h16M4 18h16" />
-					</svg>
-				</button>
-			</div>
+					<!-- <span class="text-primary-400">
+						{index + 1}.
+					</span> -->
+					<span>
+						{item.text.toLowerCase()}
+					</span>
+				</a>
+			{/each}
 		</div>
+		<!-- Mobile menu button -->
+		<button
+			class="outline-none mobile-menu-button md:hidden inline-block"
+			on:click={() => (hidden = !hidden)}
+		>
+			<svg
+				class=" w-8 h-8 text-gray-200 hover:text-primary "
+				x-show="!showMenu"
+				fill="none"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path d="M4 6h16M4 12h16M4 18h16" />
+			</svg>
+		</button>
 	</div>
-	<!-- mobile menu -->
-	{#if !hidden}
-		<div in:fly={{ y: -20 }} class="mobile-menu absolute w-full md:invisible">
-			<ul class="">
+</nav>
+
+<!-- mobile menu -->
+
+{#if !hidden}
+	<nav
+		in:fly={{ y: 10, duration: 300 }}
+		out:fly={{ y: 10, duration: 300 }}
+		class="fixed w-full h-screen top-0 left-0 bg-gray-900 z-50"
+	>
+		<div class="flex flex-col justify-between items-center w-full h-full p-5">
+			<!-- close button -->
+			<button class="outline-none  self-end" on:click={() => (hidden = !hidden)}>
+				<svg
+					class=" w-8 h-8 text-gray-200 hover:text-primary "
+					x-show="!showMenu"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path d="M4 6h16M4 12h16M4 18h16" />
+				</svg>
+			</button>
+
+			<!-- menu -->
+			<ul class="flex flex-col  items-center justify-center">
 				{#each menu as item}
 					<li class:active={$page.url.pathname === item.url} on:click={() => (hidden = true)}>
 						<a
 							href={item.url}
-							class="block text-sm px-2 py-4 text-gray-900 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 font-medium hover:text-secondary"
+							class="block text-4xl font-bold px-2 py-4 text-gray-200   hover:text-secondary"
 							>{item.text}</a
 						>
 					</li>
 				{/each}
 			</ul>
+
+			<!-- social icons -->
+			<div class="flex space-x-6 mt-6 sm:mt-0">
+				<!-- twitter -->
+				<a
+					class="text-gray-900 dark:text-white hover:text-blue-600"
+					target="_blank"
+					href="https://twitter.com/BenzaraTahar"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="18"
+						height="18"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="feather feather-twitter"
+						><path
+							d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+						/></svg
+					>
+				</a>
+				<!-- github -->
+				<a
+					class="text-gray-900 dark:text-white hover:text-blue-600"
+					target="_blank"
+					href="https://github.com/benzara-tahar"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="18"
+						height="18"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="feather feather-github"
+						><path
+							d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+						/></svg
+					>
+				</a>
+				<!-- linkedin -->
+				<a
+					class="text-gray-900 dark:text-white hover:text-blue-600"
+					target="_blank"
+					href="https://www.linkedin.com/in/belahcen-benzara-tahar/"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="18"
+						height="18"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="feather feather-linkedin"
+						><path
+							d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+						/><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg
+					>
+				</a>
+			</div>
 		</div>
-	{/if}
-</nav>
+	</nav>
+{/if}
 
 <style lang="scss">
 	@use './Navbar.scss';

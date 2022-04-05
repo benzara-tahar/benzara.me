@@ -28,14 +28,13 @@
     flex flex-col
     items-center
     justify-center
-    h-screen
     bg-gradient-to-r
   
   "
 >
 	<div class="px-40 py-20   rounded-md">
 		<div class="flex flex-col items-center">
-			<h1 class="font-bold text-primary-600 text-black dark:text-white text-9xl">{status}</h1>
+			<h1 class="font-bold text-primary-600  dark:text-white text-9xl">{status}</h1>
 
 			<h6 class="mb-2 text-2xl font-bold text-center text-gray-800 dark:text-gray-200 md:text-3xl">
 				<span class="text-orange-500">Oops!</span> Page not found

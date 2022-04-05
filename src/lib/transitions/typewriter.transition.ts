@@ -1,5 +1,4 @@
 export function typewriter(node: HTMLElement, { delay = 0, speed = 200 }) {
-	console.log('aze', node);
 	const textNodes = getAllTextNodes(node);
 	if (!textNodes.length) {
 		throw new Error(`This transition only works on elements with text nodes`);
