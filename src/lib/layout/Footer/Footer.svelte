@@ -1,8 +1,8 @@
 <footer
 	class=" text-center lg:text-left bg-gray-100 dark:bg-slate-800 dark:text-gray-300 text-gray-600"
 >
-	<div class="container  mx-auto">
-		<div class="flex flex-col sm:flex-row justify-between items-center py-8 px-5 ">
+	<div class="max-w-7xl  mx-auto">
+		<div class="flex flex-col sm:flex-row justify-between items-center py-8 sm:px-0 px-5 ">
 			<div class="flex flex-col space-1-2">
 				<p class="tracking-wide">Designed and developed by Benzara Tahar Benlahcene.</p>
 				<p class="tracking-wide">

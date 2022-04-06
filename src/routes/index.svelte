@@ -3,17 +3,18 @@
 	import { onDestroy, onMount } from 'svelte';
 </script>
 
-<main class="w-full py-8 max-w-7xl mx-auto  ">
-	<div class="flex flex-col md:flex-row  justify-start items-stretch   space-x-4">
-		<div class=" max-w-lg">
-			<h1 class="text-white font-bold tracking-tight" style="font-size: clamp(1.2rem, 5vw, 3rem);">
-				Hi, <span class="animated-gradient text-secondary-500">Lahcene</span> here
+<main class="w-full py-8 max-w-7xl mx-auto xl:px-0 px-5   ">
+	<div class="flex md:flex-row flex-col items-center justify-start space-x-0 md:space-x-6">
+		<!-- intro -->
+		<div class="w-full md:w-1/2 max-w-lg mb-8">
+			<h1 class="text-white font-bold tracking-tight" style="font-size: clamp(1.2rem, 8vw, 3rem);">
+				Hi, <span class="gradient-text">Lahcene</span> here
 			</h1>
 			<h1
 				class="text-white font-bold tracking-tight leading-tight"
-				style="font-size: clamp(1.2rem, 5vw, 3rem);"
+				style="font-size: clamp(1.2rem, 8vw, 3rem);"
 			>
-				I am a <span class="animated-gradient text-secondary-500">Full Stack</span> Developer
+				I am a <span class="gradient-text">Full Stack</span> Developer
 			</h1>
 
 			<p class="text-gray-300 text-lg text-justify mt-4">
@@ -27,8 +28,8 @@
 				<span class="keyword">Upwork</span>
 			</p>
 		</div>
-
-		<div class="self-center bg-gray-800 w-full">
+		<!-- terminal -->
+		<div class="md:w-1/2 w-full   flex items-center justify-center ">
 			<Terminal />
 		</div>
 	</div>

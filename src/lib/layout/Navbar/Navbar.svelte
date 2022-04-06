@@ -32,7 +32,7 @@
 	];
 </script>
 
-<nav class="bg-gray-900 py-5  px-5 font-mono">
+<nav class="bg-gray-900 py-5  px-5 font-code">
 	<div class="mx-auto max-w-7xl flex justify-between">
 		<!-- logo -->
 		<Logo />
