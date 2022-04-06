@@ -33,9 +33,42 @@
 				/></svg
 			>
 
-			<span class="text-xs ml-2"> github.com/benzara-tahar </span>
+			<a target="_blank" href="https://github.com/benzara-tahar" class="text-xs ml-2">
+				github.com/benzara-tahar
+			</a>
 		</div>
-		<!-- cli -->
-		<div class="flex flex-col bg-black" />
+	</div>
+	<!-- cli -->
+	<div class="flex flex-col  p-2">
+		<div class="entry">
+			<span class="prompt">stranger@benzara.me:</span>
+			<span class="current-dir"> ~/home</span>
+		</div>
+		<div class="entry">
+			<span class="file">tldr.json</span>
+			<span class="dir"> photots</span>
+		</div>
 	</div>
 </div>
+
+<style lang="scss">
+	.entry {
+		// @apply flex;
+	}
+	.prompt {
+		color: #dbdbdb;
+	}
+
+	.file {
+		color: #a3a3a3;
+	}
+	.dir {
+		color: #90f1f8;
+		font-weight: 700;
+		cursor: pointer;
+	}
+	.current-dir {
+		color: #aceb00;
+		margin-left: 0.5rem;
+	}
+</style>

@@ -42,36 +42,4 @@
 		padding: 4px 6px;
 		background: rgb(46, 55, 63);
 	}
-
-	.animated-gradient {
-		animation: hue 10s infinite linear;
-		-webkit-animation: hue 10s infinite linear;
-	}
-
-	@keyframes hue {
-		from {
-			-webkit-filter: hue-rotate(0deg);
-			-webkit-filter: hue-rotate(0deg);
-		}
-		to {
-			-webkit-filter: hue-rotate(-360deg);
-		}
-	}
-
-	// .blink {
-	// 	position: relative;
-	// 	&::after {
-	// 		content: '|';
-	// 		position: absolute;
-	// 		color: cyan;
-	// 		font-weight: 700;
-	// 		right: -10px;
-	// 		animation: blinker 1s linear infinite;
-	// 	}
-	// }
-	// @keyframes blinker {
-	// 	50% {
-	// 		opacity: 0;
-	// 	}
-	// }
 </style>
