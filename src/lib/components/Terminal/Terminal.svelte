@@ -2,7 +2,9 @@
 	let promptPrefix;
 </script>
 
-<div class=" font-code w-full  rounded-md border border-rhino-600 bg-rhino-700 h-96 flex flex-col">
+<div
+	class=" font-code w-full  rounded-md border border-rhino-600 bg-rhino-700/60 h-96 flex flex-col z-10"
+>
 	<!-- top bar -->
 
 	<div class="flex flex-row items-center justify-between bg-slate-800s">
