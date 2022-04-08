@@ -2,12 +2,10 @@
 	import { page } from '$app/stores';
 	import { fly } from 'svelte/transition';
 	import SocialIcons from '$lib/components/SocialIcons.svelte';
-	import logoPng from '$static/logo.png';
-	import ThemeSwitcher from '../../components/DarkThemeSwitcher.svelte';
-	import { user as userStore } from '$store/user.store';
 
 	import Logo from './TerminalLogo.svelte';
-
+	// https://codepen.io/towc/pen/mJzOWJ
+	let canvas: HTMLCanvasElement;
 	let hidden = true;
 	let menu = [
 		{
@@ -31,6 +29,155 @@
 			url: '/resume'
 		}
 	];
+
+	function showMobileMenu() {
+		hidden = false;
+		setTimeout(() => {
+			initCanvasAnimation();
+		}, 0);
+	}
+
+	function initCanvasAnimation() {
+		if (!canvas) return;
+		var w = (canvas.width = window.innerWidth),
+			h = (canvas.height = window.innerHeight),
+			ctx = canvas.getContext('2d'),
+			opts: any = {
+				len: 20,
+				count: 50,
+				baseTime: 10,
+				addedTime: 10,
+				dieChance: 0.05,
+				spawnChance: 1,
+				sparkChance: 0.1,
+				sparkDist: 10,
+				sparkSize: 2,
+
+				color: 'hsl(hue,100%,light%)',
+				baseLight: 50,
+				addedLight: 10, // [50-10,50+10]
+				shadowToTimePropMult: 6,
+				baseLightInputMultiplier: 0.01,
+				addedLightInputMultiplier: 0.02,
+
+				cx: w / 2,
+				cy: h / 2,
+				repaintAlpha: 0.04,
+				hueChange: 0.1
+			},
+			tick = 0,
+			lines = [],
+			dieX = w / 2 / opts.len,
+			dieY = h / 2 / opts.len,
+			baseRad = (Math.PI * 2) / 6;
+
+		ctx.fillStyle = 'black';
+		ctx.fillRect(0, 0, w, h);
+
+		function loop() {
+			if (!canvas) return;
+			window.requestAnimationFrame(loop);
+
+			++tick;
+
+			ctx.globalCompositeOperation = 'source-over';
+			ctx.shadowBlur = 0;
+			ctx.fillStyle = 'rgba(0,0,0,alp)'.replace('alp', opts.repaintAlpha);
+			ctx.fillRect(0, 0, w, h);
+			ctx.globalCompositeOperation = 'lighter';
+
+			if (lines.length < opts.count && Math.random() < opts.spawnChance) lines.push(new Line());
+
+			lines.map(function (line) {
+				line.step();
+			});
+		}
+		function Line() {
+			this.reset();
+		}
+		Line.prototype.reset = function () {
+			this.x = 0;
+			this.y = 0;
+			this.addedX = 0;
+			this.addedY = 0;
+
+			this.rad = 0;
+
+			this.lightInputMultiplier =
+				opts.baseLightInputMultiplier + opts.addedLightInputMultiplier * Math.random();
+
+			this.color = opts.color.replace('hue', tick * opts.hueChange);
+			this.cumulativeTime = 0;
+
+			this.beginPhase();
+		};
+		Line.prototype.beginPhase = function () {
+			this.x += this.addedX;
+			this.y += this.addedY;
+
+			this.time = 0;
+			this.targetTime = (opts.baseTime + opts.addedTime * Math.random()) | 0;
+
+			this.rad += baseRad * (Math.random() < 0.5 ? 1 : -1);
+			this.addedX = Math.cos(this.rad);
+			this.addedY = Math.sin(this.rad);
+
+			if (
+				Math.random() < opts.dieChance ||
+				this.x > dieX ||
+				this.x < -dieX ||
+				this.y > dieY ||
+				this.y < -dieY
+			)
+				this.reset();
+		};
+		Line.prototype.step = function () {
+			++this.time;
+			++this.cumulativeTime;
+
+			if (this.time >= this.targetTime) this.beginPhase();
+
+			var prop = this.time / this.targetTime,
+				wave = Math.sin((prop * Math.PI) / 2),
+				x = this.addedX * wave,
+				y = this.addedY * wave;
+
+			ctx.shadowBlur = prop * opts.shadowToTimePropMult;
+			ctx.fillStyle = ctx.shadowColor = this.color.replace(
+				'light',
+				opts.baseLight + opts.addedLight * Math.sin(this.cumulativeTime * this.lightInputMultiplier)
+			);
+			ctx.fillRect(opts.cx + (this.x + x) * opts.len, opts.cy + (this.y + y) * opts.len, 2, 2);
+
+			if (Math.random() < opts.sparkChance)
+				ctx.fillRect(
+					opts.cx +
+						(this.x + x) * opts.len +
+						Math.random() * opts.sparkDist * (Math.random() < 0.5 ? 1 : -1) -
+						opts.sparkSize / 2,
+					opts.cy +
+						(this.y + y) * opts.len +
+						Math.random() * opts.sparkDist * (Math.random() < 0.5 ? 1 : -1) -
+						opts.sparkSize / 2,
+					opts.sparkSize,
+					opts.sparkSize
+				);
+		};
+		loop();
+
+		window.addEventListener('resize', function () {
+			w = canvas.width = window.innerWidth;
+			h = canvas.height = window.innerHeight;
+			ctx.fillStyle = 'black';
+			ctx.fillRect(0, 0, w, h);
+
+			opts.cx = w / 2;
+			opts.cy = h / 2;
+
+			dieX = w / 2 / opts.len;
+			dieY = h / 2 / opts.len;
+		});
+	}
 </script>
 
 <nav class="py-5 container flex justify-between font-code">
@@ -55,10 +202,7 @@
 		{/each}
 	</div>
 	<!-- Mobile menu button -->
-	<button
-		class="outline-none mobile-menu-button md:hidden inline-block"
-		on:click={() => (hidden = !hidden)}
-	>
+	<button class="outline-none mobile-menu-button md:hidden inline-block" on:click={showMobileMenu}>
 		<svg
 			class=" w-8 h-8 text-gray-200 hover:text-primary "
 			x-show="!showMenu"
@@ -106,8 +250,12 @@
 
 			<!-- menu -->
 			<ul class="flex flex-col  items-center justify-center">
-				{#each menu as item}
-					<li class:active={$page.url.pathname === item.url} on:click={() => (hidden = true)}>
+				{#each menu as item, index}
+					<li
+						in:fly={{ duration: 100, y: -30, delay: index * 50 }}
+						class:active={$page.url.pathname === item.url}
+						on:click={() => (hidden = true)}
+					>
 						<a
 							href={item.url}
 							class="block text-4xl font-bold px-2 py-4 text-gray-200   hover:text-secondary"
@@ -120,6 +268,12 @@
 			<!-- social icons -->
 			<SocialIcons />
 		</div>
+
+		<canvas
+			bind:this={canvas}
+			id="c"
+			class="fixed -z-10 opacity-30 w-full h-screen top-0 left-0  pointer-events-none"
+		/>
 	</nav>
 {/if}
 
