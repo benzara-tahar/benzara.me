@@ -101,3 +101,10 @@ The stones are combination of letters
 https://svelte.dev/repl/36f8fcf6d6434f8bac227cf7bf365cf5?version=3.46.6
 
 👌 https://2020.stateofcss.com/en-US/technologies/
+
+CodePen Home
+Glowing Pulse Form https://codepen.io/jackrugile/pen/nZMBMA
+
+glowing stuff
+https://codepen.io/scifriday/pen/xPXqbZ
+https://codepen.io/leandrosimoes/pen/VqZxaG
