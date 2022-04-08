@@ -24,7 +24,7 @@
 			height: 16px;
 			margin-left: 4px;
 			margin-bottom: -2px;
-			background: #eeeeee;
+			background: #aceb00;
 			display: inline-block;
 			animation: cursor-blink 1.5s steps(2) infinite;
 		}

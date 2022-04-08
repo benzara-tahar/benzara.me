@@ -56,7 +56,7 @@ module.exports = {
 					800: '#002E2D',
 					900: '#000000'
 				},
-				pistachio: {
+				accent: {
 					DEFAULT: '#8EC200',
 					50: '#DCFF7B',
 					100: '#D6FF66',

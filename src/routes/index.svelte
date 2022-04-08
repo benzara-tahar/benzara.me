@@ -34,13 +34,13 @@
 		<!-- terminal -->
 		<div class="lg:w-1/2 w-full   flex items-center justify-center  relative">
 			<Terminal />
-			<div class="absolute top-0 left-0 right-0  ">
+			<div class="absolute top-0 left-0 right-0  pointer-events-none">
 				<div class="absolute top-0 overflow-visible opacity-50 dark:opacity-30 left-16">
-					<div class="mix-blend-multiply absolute w-[450px] h-[400px] rounded-[40rem] circle-obj" />
+					<div class="mix-blend-multiply absolute w-[350px] h-[300px] rounded-[40rem] circle-obj" />
 				</div>
 				<div class="absolute overflow-visible opacity-50 dark:opacity-30 top-28 left-52">
 					<div
-						class="mix-blend-multiply absolute w-[300px] h-[350px] rounded-[40rem] circle-obj2"
+						class="mix-blend-multiply absolute w-[200px] h-[250px] rounded-[40rem] circle-obj2"
 					/>
 				</div>
 			</div>
