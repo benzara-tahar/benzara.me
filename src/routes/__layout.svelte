@@ -1,7 +1,15 @@
+<!-- 1. Using a `load` function, pass the current URL to the layout component as a prop -->
+<script context="module">
+	/** @type {import('@sveltejs/kit').Load} */
+	export const load = async ({ url }) => ({ props: { url } });
+</script>
+
 <script lang="ts">
-	import { Navbar, Footer } from '$layout';
-	import { logCss as css, randomColor } from '$lib/utils/console.log';
+	import { Navbar, Footer, PageTransition } from '$layout';
 	import { onMount } from 'svelte';
+	import { logCss as css, randomColor } from '$lib/utils/console.log';
+
+	export let url;
 
 	onMount(() => {
 		console.log(
@@ -18,9 +26,11 @@
 </script>
 
 <Navbar />
-<div class="relative w-full h-full m-0 flex">
+
+<PageTransition {url}>
 	<slot />
-</div>
+</PageTransition>
+
 <Footer />
 
 <style global lang="scss">

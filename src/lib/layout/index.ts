@@ -6,3 +6,4 @@
 // export { default as CommunitySection } from "./CommunitySection/CommunitySection.svelte";
 export { default as Navbar } from './Navbar/Navbar.svelte';
 export { default as Footer } from './Footer/Footer.svelte';
+export { default as PageTransition } from './PageTransition.svelte';

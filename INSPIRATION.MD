@@ -99,3 +99,5 @@ The stones are combination of letters
 # https://developer.mozilla.org/en-US/docs/Web/Guide/Houdini
 
 https://svelte.dev/repl/36f8fcf6d6434f8bac227cf7bf365cf5?version=3.46.6
+
+👌 https://2020.stateofcss.com/en-US/technologies/
