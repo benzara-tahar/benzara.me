@@ -165,7 +165,9 @@
 		};
 		loop();
 
+		// TODO! remove handler when mobile menu is hidden
 		window.addEventListener('resize', function () {
+			if (!canvas) return;
 			w = canvas.width = window.innerWidth;
 			h = canvas.height = window.innerHeight;
 			ctx.fillStyle = 'black';
