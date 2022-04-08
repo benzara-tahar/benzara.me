@@ -58,7 +58,7 @@
 	</div>
 
 	{#if dev}
-		<div class="rounded-md md:max-w-7xl max-w-2xl  mx-auto text-red-500 p-10 my-4">
+		<div class="rounded-md container text-red-500 p-10 my-4">
 			<div
 				class="p-4 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
 				role="alert"
