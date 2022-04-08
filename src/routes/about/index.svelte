@@ -6,7 +6,7 @@
 		class="text-white font-bold tracking-tight leading-tight  "
 		style="font-size: clamp(1.2rem, 8vw, 3rem);"
 	>
-		I am Benzara Tahar Benlahcene and I am <span class="gradient-text"> progress</span>
+		I am Benzara Tahar Benlahcene and I am <span class="gradient-text"> in progress</span>
 	</h1>
 
 	<ul class="">

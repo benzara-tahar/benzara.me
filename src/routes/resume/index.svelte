@@ -1,9 +1,13 @@
 <script lang="ts">
-	export let skills: string[];
-	export let about;
-	export let experiences;
-	export let education;
-	export let projects;
+	import skills from '$lib/data/skills.json';
+	import about from '$lib/data/about.json';
+	import education from '$lib/data/education.json';
+	import experiences from '$lib/data/experiences.json';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		console.log({ skills, about, education, experiences });
+	});
 </script>
 
 <main class=" hyphens-manual py-8 mx-auto ">
@@ -49,7 +53,7 @@
 					<section class="pb-2 mb-2 border-b-2 break-inside-avoid">
 						<ul class="list-inside pr-7">
 							<li
-								class="mt-1 leading-normal text-black transition duration-100 ease-in text-gray-500 text-md hover:text-gray-700 print:"
+								class="mt-1 leading-normal text-black transition duration-100 ease-in text-md hover:text-gray-700 print:"
 							>
 								<a href={about.website} class="group">
 									<span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
@@ -57,7 +61,7 @@
 									</span>
 									{about.website}
 									<span
-										class="inline-block font-normal text-black transition duration-100 ease-in text-gray-500 print:text-black group-hover:text-gray-700 print:"
+										class="inline-block font-normal text-black transition duration-100 ease-in t print:text-black group-hover:text-gray-700 print:"
 									>
 										↗
 									</span>
@@ -72,7 +76,7 @@
 									</span>
 									{about.githubUsername}
 									<span
-										class="inline-block font-normal text-black transition duration-100 ease-in text-gray-500 print:text-black group-hover:text-gray-700 print:"
+										class="inline-block font-normal text-black transition duration-100 ease-in  print:text-black group-hover:text-gray-700 print:"
 									>
 										↗
 									</span>

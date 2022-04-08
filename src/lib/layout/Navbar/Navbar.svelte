@@ -187,7 +187,8 @@
 	<Logo />
 	<!-- Primary Navbar items -->
 	<div class="hidden md:flex items-center justify-center space-x-3 h-8">
-		{#each menu as item, index}
+		{#each menu as item}
+			<!-- sveltekit:prefetch -->
 			<a
 				href={item.url}
 				class=" px-2  font-normal tracking-wider relative {$page.url.pathname === item.url
@@ -258,6 +259,7 @@
 						class:active={$page.url.pathname === item.url}
 						on:click={() => (hidden = true)}
 					>
+						<!-- sveltekit:prefetch -->
 						<a
 							href={item.url}
 							class="block text-4xl font-bold px-2 py-4 text-gray-200   hover:text-secondary"
