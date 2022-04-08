@@ -1,0 +1,17 @@
+[
+	{
+		"stage": "University",
+		"from": "2010",
+		"to": "2015",
+		"school": "Higher School Of Computer Schience",
+		"location": "Oued Smar, Algiers, Algeria"
+	},
+
+	{
+		"stage": "Secondary Studies",
+		"from": "2007",
+		"to": "2010",
+		"school": "Ahmed Zahana",
+		"location": "Ain Defla, Algeria"
+	}
+]

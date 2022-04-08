@@ -182,7 +182,7 @@
 	}
 </script>
 
-<nav class="py-5 container flex justify-between font-code ">
+<nav class="py-5 container flex justify-between font-code print:hidden ">
 	<!-- logo -->
 	<Logo />
 	<!-- Primary Navbar items -->
@@ -226,7 +226,7 @@
 	<nav
 		in:fly={{ y: 10, duration: 300 }}
 		out:fly={{ y: 10, duration: 300 }}
-		class="fixed w-full h-screen top-0 left-0 bg-gray-900 z-50"
+		class="fixed w-full h-screen top-0 left-0 bg-gray-900 z-50 print:hidden"
 	>
 		<div class="flex flex-col justify-between items-center w-full h-full p-5">
 			<!-- close button -->
