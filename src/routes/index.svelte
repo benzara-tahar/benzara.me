@@ -4,6 +4,7 @@
 </script>
 
 <main class="container py-8 ">
+	<!-- HERO -->
 	<div class="flex lg:flex-row flex-col items-center justify-start space-x-0 lg:space-x-6">
 		<!-- intro -->
 		<div class="w-full lg:w-1/2  mb-8 ">
@@ -45,6 +46,44 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<!-- skills -->
+	<div class="flex flex-col my-8 ">
+		<h1
+			class="text-white font-bold tracking-tight leading-tight  gradient-text"
+			style="font-size: clamp(1.2rem, 8vw, 3rem);"
+		>
+			Skills
+		</h1>
+		<p class="text-gray-200 max-w-md leading-8 tracking-wide">
+			I know a bunch of stuffs, I 'll document that soon, stay tuned
+		</p>
+	</div>
+
+	<!-- experiences -->
+	<div class="flex flex-col my-8 ">
+		<h1
+			class="text-white font-bold tracking-tight leading-tight gradient-text "
+			style="font-size: clamp(1.2rem, 8vw, 3rem);"
+		>
+			Experiences
+		</h1>
+		<p class="text-gray-200 max-w-md leading-8 tracking-wide">stay tuned, it is comming soon...</p>
+	</div>
+
+	<!-- Projects -->
+	<div class="flex flex-col my-8 ">
+		<h1
+			class="text-white font-bold tracking-tight leading-tight  gradient-text"
+			style="font-size: clamp(1.2rem, 8vw, 3rem);"
+		>
+			Projects
+		</h1>
+		<p class="text-gray-200 max-w-md leading-8 tracking-wide">
+			I have a bunch of project that are not on github, trying to polish them before releasing them
+			to the world, stay tuned, it is comming sooner than you would expect...
+		</p>
 	</div>
 </main>
 

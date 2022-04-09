@@ -1,4 +1,3 @@
-<!-- components/PageLoader.svelte -->
 <script>
 	import { onDestroy, onMount } from 'svelte';
 	import { tweened } from 'svelte/motion';
