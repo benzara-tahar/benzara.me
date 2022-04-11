@@ -1,35 +1,37 @@
 <script lang="ts">
+	import SkillsSection from '$lib/components/Skills/SkillSection.svelte';
+
 	import Terminal from '$lib/components/Terminal/Terminal.svelte';
 	import { onDestroy, onMount } from 'svelte';
 </script>
 
 <main class="container py-8 ">
 	<!-- HERO -->
-	<div class="flex lg:flex-row flex-col items-center justify-start space-x-0 lg:space-x-6">
+	<div class="flex flex-col items-center justify-start space-x-0 lg:flex-row lg:space-x-6">
 		<!-- intro -->
-		<div class="w-full lg:w-1/2  mb-8 ">
+		<div class="w-full mb-8 lg:w-1/2 ">
 			<h1
-				class="text-gray-700 dark:text-white font-bold tracking-tight leading-tight  max-w-xl"
+				class="max-w-xl font-bold leading-tight tracking-tight text-gray-700 dark:text-white"
 				style="font-size: clamp(1.2rem, 8vw, 3rem);"
 			>
 				Hi, <span class="gradient-text">Lahcene</span> here
 			</h1>
 			<h1
-				class="text-gray-700 dark:text-white font-bold tracking-tight leading-tight max-w-xl"
+				class="max-w-xl font-bold leading-tight tracking-tight text-gray-700 dark:text-white"
 				style="font-size: clamp(1.2rem, 8vw, 3rem);"
 			>
 				I am a <span class="gradient-text">Full Stack</span> Developer
 			</h1>
 
 			<p
-				class="dark:text-gray-300 text-gray-600 text-lg text-justify mt-4  max-w-xl leading-relaxed "
+				class="max-w-xl mt-4 text-lg leading-relaxed text-justify text-gray-600 dark:text-gray-300 "
 			>
 				I am 30 years old <span class="keyword">passionate learner</span> having a keen interest in
 				building eye-catching digital solutions that
 				<span class="keyword">solves</span> real-word problems
 			</p>
 			<p
-				class="dark:text-gray-300 text-gray-600 text-lg text-justify mt-4 max-w-xl leading-relaxed"
+				class="max-w-xl mt-4 text-lg leading-relaxed text-justify text-gray-600 dark:text-gray-300"
 			>
 				Based in <span class="keyword">Algeria</span> I am currently working with various clients
 				arround the world on
@@ -37,9 +39,9 @@
 			</p>
 		</div>
 		<!-- terminal -->
-		<div class="lg:w-1/2 w-full   flex items-center justify-center  relative">
+		<div class="relative flex items-center justify-center w-full lg:w-1/2">
 			<Terminal />
-			<div class="absolute top-0 left-0 right-0  pointer-events-none">
+			<div class="absolute top-0 left-0 right-0 pointer-events-none">
 				<div class="absolute top-0 overflow-visible opacity-50 dark:opacity-30 left-16">
 					<div class="mix-blend-multiply absolute w-[350px] h-[300px] rounded-[40rem] circle-obj" />
 				</div>
@@ -53,27 +55,17 @@
 	</div>
 
 	<!-- skills -->
-	<div class="flex flex-col my-8 ">
-		<h1
-			class="text-white font-bold tracking-tight leading-tight  gradient-text"
-			style="font-size: clamp(1.2rem, 8vw, 3rem);"
-		>
-			Skills
-		</h1>
-		<p class="text-gray-700 dark:text-gray-200 max-w-md leading-8 tracking-wide">
-			I know a bunch of stuffs, I 'll document that soon, stay tuned
-		</p>
-	</div>
+	<SkillsSection />
 
 	<!-- experiences -->
 	<div class="flex flex-col my-8 ">
 		<h1
-			class="text-white font-bold tracking-tight leading-tight gradient-text "
+			class="font-bold leading-tight tracking-tight text-white gradient-text "
 			style="font-size: clamp(1.2rem, 8vw, 3rem);"
 		>
 			Experiences
 		</h1>
-		<p class="text-gray-700 dark:text-gray-200 max-w-md leading-8 tracking-wide">
+		<p class="max-w-md leading-8 tracking-wide text-gray-700 dark:text-gray-200">
 			stay tuned, it is comming soon...
 		</p>
 	</div>
@@ -81,12 +73,12 @@
 	<!-- Projects -->
 	<div class="flex flex-col my-8 ">
 		<h1
-			class="text-white font-bold tracking-tight leading-tight  gradient-text"
+			class="font-bold leading-tight tracking-tight text-white gradient-text"
 			style="font-size: clamp(1.2rem, 8vw, 3rem);"
 		>
 			Projects
 		</h1>
-		<p class="text-gray-700 dark:text-gray-200 max-w-md leading-8 tracking-wide">
+		<p class="max-w-md leading-8 tracking-wide text-gray-700 dark:text-gray-200">
 			I have a bunch of project that are not on github, trying to polish them before releasing them
 			to the world, stay tuned, it is comming sooner than you would expect...
 		</p>

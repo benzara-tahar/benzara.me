@@ -6,7 +6,7 @@
 	import typingSvg from '$static/svg/sounds/typing.svg';
 	import shhhSvg from '$static/svg/sounds/shhh.svg';
 	import DarkThemeSwitcher from '../DarkThemeSwitcher.svelte';
-
+	import { useInlineSvg } from '$actions/useInlineSvg.action';
 	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
 	import { settingsVisible } from '$lib/_store/app.store';
 	import type { Unsubscriber } from 'svelte/store';
@@ -52,21 +52,31 @@
 		? 'settings opened'
 		: 'settings closed'}"
 >
-	<div class="container  flex items-center justify-center space-x-6 mt-2">
+	<div
+		class="container flex items-center justify-center mt-0 space-x-1 overflow-x-scroll overflow-y-hidden sm:mt-2 sm:space-x-6"
+	>
 		{#each audios as a, index}
 			<audio loop bind:this={audioControls[index]} id={a.name} class="hidden">
 				<source src={a.src} type="audio/mpeg" />
 			</audio>
 			<div
 				on:click={() => toggle(a)}
-				class=" flex flex-col items-center justify-center space-y-1 pt-2   border-b-0  dark:bg-gray-900 bg-gray-100 cursor-pointer dark:hover:bg-rhino-600 transition-all {a.paused
+				class="box-border flex flex-col items-center justify-center space-y-1 pt-2   border-b-0  dark:bg-gray-900 bg-gray-100 cursor-pointer dark:hover:bg-rhino-600 transition-all {a.paused
 					? ''
-					: 'border-primary-400 border'}"
+					: 'border-primary-400'}"
 				style="min-width: 64px;  border-radius: 16px 16px 0 0"
 			>
-				<img src={a.svg} alt="icon" class="w-7 h-7" />
-				<span class="{a.paused ? 'text-gray-400' : 'text-primary-400'} cursor-pointer text-xs"
-					>{a.name}</span
+				<!--TODO! fix inline svg fill is not changed when the sound is selected!  -->
+				<img
+					use:useInlineSvg
+					src={a.svg}
+					alt="icon"
+					class=" w-7 h-7 {a.paused ? 'text-gray-400' : 'text-primary-400'}"
+				/>
+				<span
+					class="{a.paused
+						? 'dark:text-gray-400 text-gray-600'
+						: 'text-primary-500'} cursor-pointer text-xs">{a.name}</span
 				>
 			</div>
 		{/each}
