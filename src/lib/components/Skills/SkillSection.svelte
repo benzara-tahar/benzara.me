@@ -52,7 +52,7 @@
 	<div class="flex flex-col items-center justif-start lg:flex-row">
 		<div class="lg:w-1/2">
 			<p
-				class="max-w-2xl mt-4 text-lg leading-loose tracking-wide text-justify text-gray-700 dark:text-gray-500"
+				class="max-w-lg mt-4 text-lg leading-loose tracking-wide text-justify text-gray-700 md:max-w-2xl dark:text-gray-500"
 			>
 				I specialize in crafting
 				<span class="text-gray-800 trigger-word dark:text-white" data-trigger="scallability">

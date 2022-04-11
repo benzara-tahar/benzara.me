@@ -10,6 +10,7 @@
 	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
 	import { settingsVisible } from '$lib/_store/app.store';
 	import type { Unsubscriber } from 'svelte/store';
+	import AudioButton from './AudioButton.svelte';
 
 	let height: string | number = '0';
 	const dispatch = createEventDispatcher();
@@ -26,6 +27,18 @@
 
 	const toggle = (audio: any) => {
 		let control = audioControls.find((c) => c.id === audio.name);
+		if (audio.name === 'shhh') {
+			audioControls.forEach((audio) => {
+				audio.pause();
+			});
+			control.loop = false;
+			control.play();
+			audios.forEach((audio) => {
+				audio.paused = true;
+			});
+			audios = audios;
+			return;
+		}
 		if (audio.paused) {
 			control.play();
 		} else {
@@ -55,10 +68,11 @@
 	<div
 		class="container flex items-center justify-center mt-0 space-x-1 overflow-x-scroll overflow-y-hidden sm:mt-2 sm:space-x-6"
 	>
-		{#each audios as a, index}
-			<audio loop bind:this={audioControls[index]} id={a.name} class="hidden">
-				<source src={a.src} type="audio/mpeg" />
+		{#each audios as audio, index}
+			<audio loop bind:this={audioControls[index]} id={audio.name} class="hidden">
+				<source src={audio.src} type="audio/mpeg" />
 			</audio>
+			<AudioButton on:toggle={(e) => toggle(e.detail)} {audio} />
 		{/each}
 
 		<div />
