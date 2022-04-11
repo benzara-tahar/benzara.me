@@ -1,5 +1,5 @@
-<!-- 1. Using a `load` function, pass the current URL to the layout component as a prop -->
 <script context="module">
+	// 1. Using a `load` function, pass the current URL to the layout component as a prop
 	/** @type {import('@sveltejs/kit').Load} */
 	export const load = async ({ url }) => ({ props: { url } });
 </script>
@@ -12,21 +12,20 @@
 	import { navigationStatus } from '$store/navigation.store';
 	import { onMount } from 'svelte';
 	import { logCss as css, randomColor } from '$lib/utils/console.log';
-	import Settings from '$lib/components/Settings.svelte';
+	import Settings from '$lib/components/Settings/Settings.svelte';
 	import PageLoader from '$lib/components/PageLoader.svelte';
 
 	export let url;
 
-	beforeNavigate(({ from, to }) => {
+	beforeNavigate(() => {
 		navigationStatus.set('loading');
 	});
 
-	afterNavigate(({ from, to }) => {
+	afterNavigate(() => {
 		navigationStatus.set('loaded');
 	});
 
 	onMount(() => {
-		// prefetchRoutes(['/about', '/blog', '/now', '/resume']);
 		console.log(
 			'%cHi there intruder 🕵️' +
 				'%cif you spot some 🐞 🐝 🐞 🐜, report that in github issues so that we can make this place cleaner ✨✨\nOtherwise, if you enjoy what you see, ⭐ me on 🐙\nhttps://github.com/benzara-tahar/benzara.me',
@@ -47,13 +46,11 @@
 	</div>
 {/if}
 
-<!-- <Settings /> -->
+<Settings />
 <Navbar />
-
 <PageTransition {url}>
 	<slot />
 </PageTransition>
-
 <Footer />
 
 <style global lang="scss">

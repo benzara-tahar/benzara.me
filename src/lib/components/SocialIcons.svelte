@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class="flex space-x-6 mt-6 sm:mt-0 text-gray-300">
+<div class="flex space-x-6 mt-6 sm:mt-0 text-gray-400">
 	<!-- twitter -->
 	<a target="_blank" href="https://twitter.com/BenzaraTahar">
 		<svg

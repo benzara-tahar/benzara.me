@@ -9,24 +9,28 @@
 		<!-- intro -->
 		<div class="w-full lg:w-1/2  mb-8 ">
 			<h1
-				class="text-white font-bold tracking-tight leading-tight  max-w-xl"
+				class="text-gray-700 dark:text-white font-bold tracking-tight leading-tight  max-w-xl"
 				style="font-size: clamp(1.2rem, 8vw, 3rem);"
 			>
 				Hi, <span class="gradient-text">Lahcene</span> here
 			</h1>
 			<h1
-				class="text-white font-bold tracking-tight leading-tight max-w-xl"
+				class="text-gray-700 dark:text-white font-bold tracking-tight leading-tight max-w-xl"
 				style="font-size: clamp(1.2rem, 8vw, 3rem);"
 			>
 				I am a <span class="gradient-text">Full Stack</span> Developer
 			</h1>
 
-			<p class="text-gray-300 text-lg text-justify mt-4  max-w-xl leading-relaxed ">
+			<p
+				class="dark:text-gray-300 text-gray-600 text-lg text-justify mt-4  max-w-xl leading-relaxed "
+			>
 				I am 30 years old <span class="keyword">passionate learner</span> having a keen interest in
 				building eye-catching digital solutions that
 				<span class="keyword">solves</span> real-word problems
 			</p>
-			<p class="text-gray-300 text-lg text-justify mt-4 max-w-xl leading-relaxed">
+			<p
+				class="dark:text-gray-300 text-gray-600 text-lg text-justify mt-4 max-w-xl leading-relaxed"
+			>
 				Based in <span class="keyword">Algeria</span> I am currently working with various clients
 				arround the world on
 				<span class="keyword">Upwork</span>
@@ -56,7 +60,7 @@
 		>
 			Skills
 		</h1>
-		<p class="text-gray-200 max-w-md leading-8 tracking-wide">
+		<p class="text-gray-700 dark:text-gray-200 max-w-md leading-8 tracking-wide">
 			I know a bunch of stuffs, I 'll document that soon, stay tuned
 		</p>
 	</div>
@@ -69,7 +73,9 @@
 		>
 			Experiences
 		</h1>
-		<p class="text-gray-200 max-w-md leading-8 tracking-wide">stay tuned, it is comming soon...</p>
+		<p class="text-gray-700 dark:text-gray-200 max-w-md leading-8 tracking-wide">
+			stay tuned, it is comming soon...
+		</p>
 	</div>
 
 	<!-- Projects -->
@@ -80,7 +86,7 @@
 		>
 			Projects
 		</h1>
-		<p class="text-gray-200 max-w-md leading-8 tracking-wide">
+		<p class="text-gray-700 dark:text-gray-200 max-w-md leading-8 tracking-wide">
 			I have a bunch of project that are not on github, trying to polish them before releasing them
 			to the world, stay tuned, it is comming sooner than you would expect...
 		</p>

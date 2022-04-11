@@ -47,6 +47,11 @@ const config = {
 		adapter: adapter(),
 
 		vite: {
+			server: {
+				fs: {
+					allow: ['static/audio', 'static/fonts', 'static/techs', 'static/svg']
+				}
+			},
 			resolve: {
 				alias: {
 					$static: path.resolve('./static'),

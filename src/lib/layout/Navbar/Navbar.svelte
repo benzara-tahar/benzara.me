@@ -5,6 +5,7 @@
 
 	import Logo from './TerminalLogo.svelte';
 	import { initCanvasAnimation } from './canvasAnimation';
+	import { settingsVisible } from '$lib/_store/app.store';
 	// https://codepen.io/towc/pen/mJzOWJ
 	let canvas: HTMLCanvasElement;
 	let hidden = true;
@@ -38,7 +39,9 @@
 		}, 0);
 	}
 
-	function toggleSettings() {}
+	function toggleSettings() {
+		settingsVisible.update((v) => !v);
+	}
 </script>
 
 <nav class="py-5 container flex justify-between font-code print:hidden ">
@@ -63,7 +66,10 @@
 			</a>
 		{/each}
 
-		<button class="text-gray-300 hover:text-primary-500" on:click={toggleSettings}>
+		<button
+			class="dark:text-gray-300 text-gray-600 hover:text-primary-500"
+			on:click={toggleSettings}
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-8 w-8"
@@ -83,7 +89,7 @@
 	<!-- Mobile menu button -->
 	<button class="outline-none mobile-menu-button md:hidden inline-block" on:click={showMobileMenu}>
 		<svg
-			class=" w-8 h-8 text-gray-200 hover:text-primary "
+			class=" w-8 h-8 dark:text-gray-300 text-gray-600 hover:text-primary "
 			x-show="!showMenu"
 			fill="none"
 			stroke-linecap="round"

@@ -1,14 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
-
-	// onMount(() => {
-	// 	page.subscribe(console.log);
-	// });
 </script>
 
 <div class="flex space-x-1  items-center font-code">
-	<span class="text-base text-gray-100 "> guest@benzara.me </span>
+	<span class="text-base text-gray-700 dark:text-gray-100 "> guest@benzara.me </span>
 
 	<span class="text-base text-primary-300 animate-blink">
 		:/~ {$page.url.pathname === '/' ? 'home' : $page.url.pathname?.substring(1)}

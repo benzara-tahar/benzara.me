@@ -13,7 +13,7 @@
 <main class=" hyphens-manual py-8 mx-auto ">
 	<!-- Page -------------------------------------------------------------------------------------------------------->
 	<div
-		class="max-w-4xl  my-auto bg-gray-200 border-4 border-rhino-500 print:border-0 page print:max-w-letter print:max-h-letter print:mx-0 print:my-o lg:h-letter md:max-w-letter md:h-letter xsm:p-8 sm:p-9 md:p-16 lg:mt-6 rounded-2xl print:bg-white"
+		class="max-w-4xl  my-auto bg-gray-200 border-4 dark:border-rhino-500 border-rhino-100 print:border-0 page print:max-w-letter print:max-h-letter print:mx-0 print:my-o lg:h-letter md:max-w-letter md:h-letter xsm:p-8 sm:p-9 md:p-16 lg:mt-6 rounded-2xl print:bg-white"
 	>
 		<!-- Name ---------------------------------------------------------------------------------------------------->
 		<header

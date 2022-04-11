@@ -10,7 +10,7 @@
 
 <main class="container py-8 min-h-screen">
 	<h1
-		class="text-white font-bold tracking-tight leading-tight  "
+		class="text-gray-700 dark:text-white font-bold tracking-tight leading-tight  "
 		style="font-size: clamp(1.2rem, 8vw, 3rem);"
 	>
 		Here is what I am doing <span class="gradient-text">Now</span>
@@ -18,7 +18,7 @@
 
 	<ul class="list-decimal ml-6 ">
 		{#each items as item}
-			<li class="text-gray-300 text-lg text-justify mt-4  max-w-xl leading-relaxed ">
+			<li class="text-gray-500 text-lg text-justify mt-4  max-w-xl leading-relaxed ">
 				{item}
 			</li>
 		{/each}
