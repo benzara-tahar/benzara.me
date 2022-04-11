@@ -1,85 +1,118 @@
 <script lang="ts">
 	import type { Skill } from '$lib/types/skill';
-	import SkillChip from './SkillChip.svelte';
 	import SkillsGroup from './SkillsGroup.svelte';
+	import csharpSvg from '$static/svg/csharp.svg';
+	import angularSvg from '$static/svg/angular.svg';
+	import githubSvg from '$static/svg/github.svg';
+	import vscodeSvg from '$static/svg/vscode.svg';
+	import nestjsSvg from '$static/svg/nestjs.svg';
+	import netcoreSvg from '$static/svg/netcore.svg';
+	import svelteSvg from '$static/svg/svelte.svg';
+	import sassSvg from '$static/svg/sass.svg';
+	import javascriptSvg from '$static/svg/javascript.svg';
+	import typescriptSvg from '$static/svg/typescript.svg';
 
 	let databases: Skill[] = [
 		{
 			name: 'MySQL',
-			image: '/static/svg/csharp.svg'
+			image: csharpSvg
 		},
 		{
 			name: 'MongoDB',
-			image: '/static/svg/angular.svg'
+			image: angularSvg
 		},
 		{
 			name: 'SQLite',
-			image: '/static/svg/github.svg'
+			image: githubSvg
 		},
 		{
 			name: 'Redis',
-			image: '/static/svg/javascript.svg'
+			image: javascriptSvg
 		},
 		{
 			name: 'MS SQLServer',
-			image: '/static/svg/typescript.svg'
+			image: typescriptSvg
 		},
 		{
 			name: 'Postgres',
-			image: '/static/svg/nestjs.svg'
+			image: nestjsSvg
 		}
 	];
 
 	let languages: Skill[] = [
 		{
 			name: 'C#',
-			image: '/static/svg/csharp.svg'
+			image: csharpSvg
 		},
 		{
 			name: 'Javascript',
-			image: '/static/svg/javascript.svg'
+			image: javascriptSvg
 		},
 		{
 			name: 'Typescript',
-			image: '/static/svg/typescript.svg'
+			image: typescriptSvg
+		},
+		{
+			name: 'C#',
+			image: csharpSvg
+		},
+		{
+			name: 'Java',
+			image: javascriptSvg
+		},
+		{
+			name: 'Kotlin',
+			image: typescriptSvg
+		},
+		{
+			name: 'C#',
+			image: csharpSvg
+		},
+		{
+			name: 'Go',
+			image: javascriptSvg
+		},
+		{
+			name: 'Typescript',
+			image: typescriptSvg
 		}
 	];
 	let tools: Skill[] = [
 		{
 			name: 'Github',
-			image: '/static/svg/github.svg'
+			image: githubSvg
 		},
 
 		{
 			name: 'VS Code',
-			image: '/static/svg/vscode.svg'
+			image: vscodeSvg
 		}
 	];
 
 	let frontend: Skill[] = [
 		{
 			name: 'Angular',
-			image: '/static/svg/angular.svg'
+			image: angularSvg
 		},
 
 		{
 			name: 'Svelte(Kit)',
-			image: '/static/svg/svelte.svg'
+			image: svelteSvg
 		},
 		{
 			name: 'Sass',
-			image: '/static/svg/sass.svg'
+			image: sassSvg
 		}
 	];
 
 	let backend: Skill[] = [
 		{
 			name: '.net core',
-			image: '/static/svg/netcore.svg'
+			image: netcoreSvg
 		},
 		{
 			name: 'NestJs',
-			image: '/static/svg/nestjs.svg'
+			image: nestjsSvg
 		}
 	];
 </script>
@@ -95,8 +128,9 @@
 		Swiss army knife tools to get the job done
 	</p>
 
-	<div class="flex flex-wrap items-center justify-start gap-4 my-4 ">
+	<div class="flex flex-wrap items-start justify-start gap-4 my-4 ">
 		<SkillsGroup title="languages" group={languages} />
+		<SkillsGroup title="databases" group={databases} />
 		<SkillsGroup title="frontend" group={frontend} />
 		<SkillsGroup title="backaned" group={backend} />
 		<SkillsGroup title="tools" group={tools} />
