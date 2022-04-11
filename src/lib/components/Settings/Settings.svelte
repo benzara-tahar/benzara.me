@@ -59,26 +59,6 @@
 			<audio loop bind:this={audioControls[index]} id={a.name} class="hidden">
 				<source src={a.src} type="audio/mpeg" />
 			</audio>
-			<div
-				on:click={() => toggle(a)}
-				class="box-border flex flex-col items-center justify-center space-y-1 pt-2   border-b-0  dark:bg-gray-900 bg-gray-100 cursor-pointer dark:hover:bg-rhino-600 transition-all {a.paused
-					? ''
-					: 'border-primary-400'}"
-				style="min-width: 64px;  border-radius: 16px 16px 0 0"
-			>
-				<!--TODO! fix inline svg fill is not changed when the sound is selected!  -->
-				<img
-					use:useInlineSvg
-					src={a.svg}
-					alt="icon"
-					class=" w-7 h-7 {a.paused ? 'text-gray-400' : 'text-primary-400'}"
-				/>
-				<span
-					class="{a.paused
-						? 'dark:text-gray-400 text-gray-600'
-						: 'text-primary-500'} cursor-pointer text-xs">{a.name}</span
-				>
-			</div>
 		{/each}
 
 		<div />
