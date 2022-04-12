@@ -1,5 +1,7 @@
 <script lang="ts">
-	import SkillsSection from '$lib/components/Skills/SkillSection.svelte';
+	import ExperiencesSection from '$lib/components/Experiences/ExperiencesSection.svelte';
+
+	import SkillsSection from '$lib/components/Skills/SkillsSection.svelte';
 
 	import Terminal from '$lib/components/Terminal/Terminal.svelte';
 	import { onDestroy, onMount } from 'svelte';
@@ -58,17 +60,7 @@
 	<SkillsSection />
 
 	<!-- experiences -->
-	<div class="flex flex-col my-8 ">
-		<h1
-			class="font-bold leading-tight tracking-tight text-white gradient-text "
-			style="font-size: clamp(1.2rem, 8vw, 3rem);"
-		>
-			Experiences
-		</h1>
-		<p class="max-w-md leading-8 tracking-wide text-gray-700 dark:text-gray-200">
-			stay tuned, it is comming soon...
-		</p>
-	</div>
+	<ExperiencesSection />
 
 	<!-- Projects -->
 	<div class="flex flex-col my-8 ">

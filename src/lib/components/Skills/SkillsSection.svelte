@@ -8,12 +8,12 @@
 	let chips: SkillChip[] = [];
 	let currentTrigger = '';
 	const triggerMap = {
-		frontend: 'Frontend',
-		backend: 'Backend',
+		frontend: 'Frontend Stack',
+		backend: 'Backend Stack',
 		scallability: 'Scallability & Architectures',
 		quality: 'Testing & Quality',
 		team: 'Project Management',
-		security: 'Security',
+		security: 'Auth & Security',
 		devops: 'Devops & CI/CD'
 	};
 	onMount(() => {
