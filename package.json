@@ -49,6 +49,8 @@
 		"cookie": "^0.4.2",
 		"dateformat": "^5.0.3",
 		"matter-attractors": "^0.1.6",
-		"matter-js": "^0.18.0"
+		"matter-js": "^0.18.0",
+		"svelte-inview": "^3.0.0",
+		"svelte-seo": "^1.4.0"
 	}
 }
