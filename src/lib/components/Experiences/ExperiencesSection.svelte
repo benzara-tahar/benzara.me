@@ -26,7 +26,7 @@
 
 			<h1 class="my-2 ml-10 text-lg tracking-wide text-white">{e.position} @ {e.company}</h1>
 			{#each e.tasks as description}
-				<p class="max-w-3xl ml-10 leading-relaxed text-justify text-gray-400">- {description}</p>
+				<p class="max-w-3xl ml-10 leading-relaxed text-gray-400">● {description}</p>
 			{/each}
 		{/each}
 	</div>
