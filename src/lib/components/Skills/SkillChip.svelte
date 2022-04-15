@@ -8,7 +8,7 @@
 
 <span
 	title={skill.name}
-	class="flex items-center text-base transition duration-300 border rounded-full cursor-pointer bg-gray-200 hover:bg-gray-400 dark:bg-rhino-600 align-center hover:dark:bg-gray-900 ease w-max dark:border-slate-800 border-slate-200 {className ||
+	class="flex items-center text-base transition duration-300 border rounded-full cursor-pointer bg-gray-200 hover:bg-gray-400 dark:bg-gray-600 align-center hover:dark:bg-gray-900 ease w-max dark:border-slate-800 border-slate-200 {className ||
 		''} group"
 >
 	{#if skill.image}

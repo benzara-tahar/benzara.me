@@ -44,7 +44,7 @@
 
 <section class="flex flex-col my-12 " style="min-height: calc(100vh - 72px);">
 	<h1 class="heading-1 ">
-		My swiss knife <span class="gradient-text">Skills</span>
+		Hands dirty with these <span class="gradient-text">Skills</span>
 	</h1>
 	<div class="flex flex-col items-center justif-start lg:flex-row">
 		<div class="lg:w-1/2 pr-2">
@@ -85,7 +85,7 @@
 
 		<div class="lg:w-1/2">
 			<fieldset
-				class="flex flex-wrap max-w-3xl px-4 pt-2 pb-4 border border-gray-200 rounded-md dark:border-rhino-600"
+				class="flex flex-wrap max-w-3xl px-4 pt-2 pb-4 border border-gray-200 rounded-md dark:border-gray-600"
 			>
 				<legend class="px-3 mx-auto font-mono text-gray-300 dark:text-gray-600"
 					>{triggerMap[currentTrigger] || 'Skills'}</legend

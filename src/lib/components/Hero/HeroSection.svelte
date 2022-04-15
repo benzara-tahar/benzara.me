@@ -5,7 +5,7 @@
 <!-- HERO -->
 <section
 	class="flex flex-col items-center justify-start space-x-0 lg:flex-row lg:space-x-6 "
-	style="height: calc(100vh - 72px);"
+	style="min-height: calc(100vh - 72px);"
 >
 	<!-- intro -->
 	<div class="w-full mb-8 lg:w-1/2 ">
@@ -43,7 +43,7 @@
 
 <style lang="scss" global>
 	.keyword {
-		@apply rounded-md dark:text-white text-rhino-700 px-2 py-1 bg-rhino-50 dark:bg-rhino-600;
+		@apply rounded-md dark:text-white text-gray-700 px-2 py-1 bg-gray-50 dark:bg-gray-600;
 	}
 
 	.circle-obj2 {

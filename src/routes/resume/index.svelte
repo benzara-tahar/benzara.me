@@ -13,7 +13,7 @@
 <main class=" hyphens-manual py-8 mx-auto ">
 	<!-- Page -------------------------------------------------------------------------------------------------------->
 	<div
-		class="max-w-4xl  my-auto bg-gray-200 border-4 dark:border-rhino-500 border-rhino-100 print:border-0 page print:max-w-letter print:max-h-letter print:mx-0 print:my-o lg:h-letter md:max-w-letter md:h-letter xsm:p-8 sm:p-9 md:p-16 lg:mt-6 rounded-2xl print:bg-white"
+		class="max-w-4xl  my-auto bg-gray-200 border-4 dark:border-gray-500 border-gray-100 print:border-0 page print:max-w-letter print:max-h-letter print:mx-0 print:my-o lg:h-letter md:max-w-letter md:h-letter xsm:p-8 sm:p-9 md:p-16 lg:mt-6 rounded-2xl print:bg-white"
 	>
 		<!-- Name ---------------------------------------------------------------------------------------------------->
 		<header
@@ -33,7 +33,7 @@
 			</div>
 			<!--   Initials Block         -->
 			<div
-				class="justify-between px-3 mt-0 mb-5 text-3xl font-bold leading-none text-gray-200 bg-rhino-600 initials-container bg-gray-750 print:bg-black"
+				class="justify-between px-3 mt-0 mb-5 text-3xl font-bold leading-none text-gray-200 bg-gray-600 initials-container bg-gray-750 print:bg-black"
 				style="padding-bottom: 1.5rem; padding-top: 1.5rem;"
 			>
 				<div class="text-center initial">B</div>
@@ -352,7 +352,7 @@
 							<ul class="flex flex-wrap text-sm2 leading-relaxed -mr-1.6 -mb-1">
 								{#each skills as skill}
 									<li
-										class="px-2.5 mr-1.6 mb-1 text-gray-200 leading-relaxed print:bg-white print:border-inset bg-rhino-400 rounded-sm mr-1"
+										class="px-2.5 mr-1.6 mb-1 text-gray-200 leading-relaxed print:bg-white print:border-inset bg-gray-400 rounded-sm mr-1"
 									>
 										{skill}
 									</li>

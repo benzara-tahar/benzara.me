@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 h1.heading-1 {
 	font-size: clamp(1.2rem, 8vw, 3rem);
 	@apply max-w-3xl font-bold leading-tight tracking-tight text-gray-700 dark:text-white;
@@ -8,7 +10,7 @@ h1.heading-1 {
 }
 
 .gradient-text {
-	background: linear-gradient(-70deg, #8ec200, #00d6d3, #8ec200, #00d6d3);
+	background: linear-gradient(-70deg, $accent, $primary-300, $accent, $primary-700);
 	background-size: 400% 400%;
 	-webkit-background-clip: text;
 	background-clip: text;

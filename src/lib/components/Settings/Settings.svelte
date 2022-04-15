@@ -61,7 +61,7 @@
 </script>
 
 <section
-	class="w-full bg-gray-300 dark:bg-rhino-500 overflow-hidden transition-all {$settingsVisible
+	class="w-full bg-gray-300 dark:bg-gray-500 overflow-hidden transition-all {$settingsVisible
 		? 'settings opened'
 		: 'settings closed'}"
 >

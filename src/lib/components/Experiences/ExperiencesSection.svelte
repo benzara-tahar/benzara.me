@@ -1,14 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { experiences } from './experiences';
-
+	export let y: number;
 	onMount(() => {
 		return () => {};
 	});
 </script>
 
+<svelte:window bind:scrollY={y} />
 <section class="flex flex-col my-12 ">
-	<h1 class="heading-1">Experiences</h1>
+	<span class="text-green-600">{y}</span>
+	<h1 class="heading-1">My past <span class="gradient-text">experiences </span></h1>
 	<div
 		class="relative flex flex-col items-start my-10 justif-start before:bg-primary-500 before:w-[2px] before:absolute before:left-0 before:top-9 before:h-full "
 	>

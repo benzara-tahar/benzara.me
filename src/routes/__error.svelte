@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
 	import type { ErrorLoad } from '@sveltejs/kit';
-	import { dev } from '$app/env';
+	// import { dev } from '$app/env';
 
 	export const load: ErrorLoad = ({ error, status }) => {
 		return {
@@ -16,7 +16,7 @@
 	import Metadata from '$lib/components/Metadata.svelte';
 
 	export let status: number;
-	export let error: Error;
+	// export let error: Error;
 </script>
 
 <svelte:head>

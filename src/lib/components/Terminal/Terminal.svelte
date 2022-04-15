@@ -123,7 +123,7 @@
 </script>
 
 <div
-	class=" font-code w-full  rounded-md border border-rhino-600 bg-rhino-700/90 bg-  h-[500px] flex flex-col z-10"
+	class=" font-code w-full  rounded-md border border-gray-600 bg-slate-700/80 bg-  h-[500px] flex flex-col z-10"
 >
 	<!-- top bar -->
 
@@ -135,7 +135,7 @@
 		</div>
 
 		<div
-			class="rounded-xl text-gray-400  bg-rhino-600 bg-opacity-40 px-2 py-1   flex items-center justify-center w-full mx-2 text-center"
+			class="rounded-xl text-gray-400  bg-gray-600 bg-opacity-40 px-2 py-1   flex items-center justify-center w-full mx-2 text-center"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

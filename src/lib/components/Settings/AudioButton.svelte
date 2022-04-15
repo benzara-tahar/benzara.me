@@ -22,7 +22,7 @@
 
 <button
 	on:click={() => dispatch('toggle', audio)}
-	class="box-border flex flex-col items-center justify-center space-y-1 pt-2   border-b-0  dark:bg-gray-900 bg-gray-100 cursor-pointer dark:hover:bg-rhino-600 transition-all 
+	class="box-border flex flex-col items-center justify-center space-y-1 pt-2   border-b-0  dark:bg-gray-900 bg-gray-100 cursor-pointer dark:hover:bg-gray-600 transition-all 
     {audio.paused ? '' : 'border-primary-400'}"
 	style="min-width: 64px;  border-radius: 16px 16px 0 0"
 >
