@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 
-	export let title = 'Files';
+	export let title = 'Benzara.me';
 	export let image = '';
 	$: imageFile = image.startsWith('/') ? image : `/branding/banner-${image}.png`;
 </script>

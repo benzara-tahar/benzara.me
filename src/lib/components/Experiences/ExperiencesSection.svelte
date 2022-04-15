@@ -8,12 +8,7 @@
 </script>
 
 <section class="flex flex-col my-12 ">
-	<h1
-		class="font-bold leading-tight tracking-tight text-white gradient-text"
-		style="font-size: clamp(1.2rem, 8vw, 3rem);"
-	>
-		Experiences
-	</h1>
+	<h1 class="heading-1">Experiences</h1>
 	<div
 		class="relative flex flex-col items-start my-10 justif-start before:bg-primary-500 before:w-[2px] before:absolute before:left-0 before:top-9 before:h-full "
 	>

@@ -42,43 +42,40 @@
 	});
 </script>
 
-<section class="flex flex-col my-12 ">
-	<h1
-		class="font-bold leading-tight tracking-tight text-white gradient-text"
-		style="font-size: clamp(1.2rem, 8vw, 3rem);"
-	>
-		Skills
+<section class="flex flex-col my-12 " style="min-height: calc(100vh - 72px);">
+	<h1 class="heading-1 ">
+		My swiss knife <span class="gradient-text">Skills</span>
 	</h1>
 	<div class="flex flex-col items-center justif-start lg:flex-row">
-		<div class="lg:w-1/2">
+		<div class="lg:w-1/2 pr-2">
 			<p
-				class="max-w-lg mt-4 text-lg leading-loose tracking-wide text-justify text-gray-700 md:max-w-2xl dark:text-gray-500"
+				class="max-w-lg mt-4 text-lg leading-loose tracking-wide text-justify text-gray-700 md:max-w-2xl dark:text-gray-300"
 			>
 				I specialize in crafting
-				<span class="text-gray-800 trigger-word dark:text-white" data-trigger="scallability">
+				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="scallability">
 					scallable</span
 				>,
-				<span class="text-gray-800 trigger-word dark:text-white" data-trigger="quality">
+				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="quality">
 					hight quality
 				</span>
 				,
-				<span class="text-gray-800 trigger-word dark:text-white" data-trigger="security">
+				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="security">
 					secure
 				</span>
 				and performant web applications. starting from
-				<span class="text-gray-800 trigger-word dark:text-white" data-trigger="frontend">
+				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="frontend">
 					frontend
 				</span>
-				development,
-				<span class="text-gray-800 trigger-word dark:text-white" data-trigger="backend">
+				and ,
+				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="backend">
 					backend
 				</span>
-				to
+				development to
 
-				<span class="text-gray-800 trigger-word dark:text-white" data-trigger="devops">
+				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="devops">
 					deployment
 				</span>. Able to effectively self-manage during independent projects, as well as
-				<span class="text-gray-800 trigger-word dark:text-white" data-trigger="team">
+				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="team">
 					collaborate
 				</span>
 

@@ -2,16 +2,17 @@
 	// 1. Using a `load` function, pass the current URL to the layout component as a prop
 	/** @type {import('@sveltejs/kit').Load} */
 	export const load = async ({ url }) => ({ props: { url } });
+	import SvelteSeo from 'svelte-seo';
 </script>
 
 <script lang="ts">
 	import { Navbar, Footer, PageTransition } from '$layout';
 	import { fade } from 'svelte/transition';
 
-	import { beforeNavigate, prefetchRoutes, afterNavigate } from '$app/navigation';
+	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { navigationStatus } from '$store/navigation.store';
 	import { onMount } from 'svelte';
-	import { logCss as css, randomColor } from '$lib/utils/console.log';
+	import { logCss as css } from '$lib/utils/console.log';
 	import Settings from '$lib/components/Settings/Settings.svelte';
 	import PageLoader from '$lib/components/PageLoader.svelte';
 
@@ -39,6 +40,8 @@
 		);
 	});
 </script>
+
+<SvelteSeo title="Benzara.me" description="Benzara Tahar Benlahcene website" />
 
 {#if $navigationStatus === 'loading'}
 	<div out:fade={{ delay: 500, duration: 300 }}>

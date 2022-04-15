@@ -1,0 +1,35 @@
+h1.heading-1 {
+	font-size: clamp(1.2rem, 8vw, 3rem);
+	@apply max-w-3xl font-bold leading-tight tracking-tight text-gray-700 dark:text-white;
+}
+
+.font-code {
+	font-family: 'Fira Code', monospace;
+}
+
+.gradient-text {
+	background: linear-gradient(-70deg, #8ec200, #00d6d3, #8ec200, #00d6d3);
+	background-size: 400% 400%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-animation: gradient 10s ease infinite;
+	animation: gradient 10s ease infinite;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 0 0 #00000000;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	to {
+		background-position: 0 50%;
+	}
+}

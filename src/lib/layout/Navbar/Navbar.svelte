@@ -44,7 +44,7 @@
 	}
 </script>
 
-<nav class="py-5 container flex justify-between font-code print:hidden ">
+<nav class="py-5 container flex justify-between font-code print:hidden h-[72px]">
 	<!-- logo -->
 	<Logo />
 	<!-- Primary Navbar items -->

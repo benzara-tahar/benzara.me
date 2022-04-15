@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import { fly } from 'svelte/transition';
 	let items = [
 		'Taking more risks',
 		'Working on fast-resume.com',
@@ -9,16 +10,16 @@
 </script>
 
 <main class="container py-8 min-h-screen">
-	<h1
-		class="text-gray-700 dark:text-white font-bold tracking-tight leading-tight  "
-		style="font-size: clamp(1.2rem, 8vw, 3rem);"
-	>
+	<h1 class="heading-1">
 		Here is what I am doing <span class="gradient-text">Now</span>
 	</h1>
 
 	<ul class="list-decimal ml-6 ">
-		{#each items as item}
-			<li class="text-gray-500 text-lg text-justify mt-4  max-w-xl leading-relaxed ">
+		{#each items as item, index}
+			<li
+				in:fly={{ y: 10, delay: index * 200 }}
+				class="text-gray-500 text-lg text-justify mt-4  max-w-xl leading-relaxed "
+			>
 				{item}
 			</li>
 		{/each}

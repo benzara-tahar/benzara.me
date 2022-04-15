@@ -2,10 +2,7 @@
 </script>
 
 <main class="container py-8 min-h-screen">
-	<h1
-		class="text-gray-700 dark:text-white font-bold tracking-tight leading-tight  "
-		style="font-size: clamp(1.2rem, 8vw, 3rem);"
-	>
+	<h1 class="heading-1 ">
 		<span class="gradient-text">Share</span>
 		your
 		<span class="gradient-text">knowledge</span>

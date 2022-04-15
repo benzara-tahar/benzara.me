@@ -1,9 +1,129 @@
 <script lang="ts">
-	let promptPrefix;
+	const promptPrefix = 'stranger@benzara.me';
+	let inputText: string = 'help';
+	let currentDir = '/home';
+	let terminal: HTMLElement;
+	let systemFiles = [
+		{
+			name: '/', // root
+			type: 'folder',
+			children: [
+				{
+					name: 'home',
+					type: 'folder',
+					children: [
+						{ name: 'tldr.json', type: 'file' },
+						{ name: 'sikada.txt', type: 'file' },
+						{
+							name: 'photos',
+							type: 'folder',
+							children: [
+								{ name: 'me.jpg', type: 'file' },
+								{ name: 'workspace.jpg', type: 'file' }
+							]
+						}
+					]
+				}
+			]
+		}
+	];
+	// history of user commands
+	let history = [];
+	// log of all commands
+	let log = [];
+
+	const onKeyUp = (event) => {
+		// cancel current command
+		if (event.ctrlKey && event.key.toLowerCase() === 'c') {
+			inputText = '';
+			return;
+		}
+		if (event.key === 'Enter') {
+			runCommand(inputText);
+			return;
+		}
+	};
+
+	function output(out: string) {
+		// output command result
+		terminal.querySelector('.input').insertAdjacentHTML(
+			'beforebegin',
+			`<div class="entry">
+				<span class="output">${out} </span>
+			</div>`
+		);
+		// duplicate user command
+		terminal.querySelector('.input').insertAdjacentHTML(
+			'beforebegin',
+			`<div class="entry prefixedt">
+				<span class="output">${inputText} </span>
+			</div>`
+		);
+		inputText = '';
+	}
+
+	const runCommand = (cmd: string) => {
+		if (!cmd) return;
+		const command = cmd.split(' ')[0].toLowerCase();
+		const args = cmd.split(' ').slice(1);
+
+		switch (command) {
+			case 'cd':
+				cd(systemFiles, currentDir, args);
+				break;
+			case 'help':
+				help(args);
+				break;
+
+			case 'clear':
+				clear();
+				break;
+			case 'whoami':
+				whoami();
+				break;
+
+			case 'cat':
+				cat(systemFiles, currentDir, args);
+				break;
+
+			case 'ls':
+				ls(systemFiles, currentDir, args);
+				break;
+
+			default:
+				commandNotFound(cmd);
+				break;
+		}
+	};
+
+	function cd(systemFiles: any, currentDir: string, args: string[]) {
+		console.log(' cd');
+	}
+	function help(args: string[]) {
+		output('command not found');
+	}
+	function clear() {
+		console.log(' clear');
+	}
+	function whoami() {
+		console.log(' whoami');
+	}
+	function ls(systemFiles: any, currentDir: string, args: string[]) {}
+
+	function cat(systemFiles: any, currentDir: string, args: string[]) {
+		console.log(' cat');
+	}
+
+	function commandNotFound(cmd) {
+		terminal.insertAdjacentHTML(
+			'beforeend',
+			`<span class="text-red-300">command ${cmd} not found </span>`
+		);
+	}
 </script>
 
 <div
-	class=" font-code w-full  rounded-md border border-rhino-600 bg-rhino-700/60 h-96 flex flex-col z-10"
+	class=" font-code w-full  rounded-md border border-rhino-600 bg-rhino-700/90 bg-  h-[500px] flex flex-col z-10"
 >
 	<!-- top bar -->
 
@@ -39,36 +159,70 @@
 		</div>
 	</div>
 	<!-- cli -->
-	<div class="flex flex-col  p-2">
+	<div class="flex flex-col  p-2 terminal" bind:this={terminal}>
 		<div class="entry">
 			<span class="prompt">stranger@benzara.me:</span>
-			<span class="current-dir"> ~/home</span>
+			<span class="current-dir"> ~{currentDir}</span>
 		</div>
-		<div class="entry">
-			<span class="file">tldr.json</span>
-			<span class="dir"> photots</span>
+
+		<div class="input">
+			<input
+				on:keyup={onKeyUp}
+				bind:value={inputText}
+				type="text"
+				class="outline-none bg-transparent text-white"
+			/>
+			<!-- style="background-color: transparent;" -->
 		</div>
+		<!-- <span class="file">tldr.json</span>
+			<span class="dir"> photots</span> -->
 	</div>
 </div>
 
-<style lang="scss">
-	.entry {
-		// @apply flex;
-	}
-	.prompt {
-		color: #dbdbdb;
-	}
+<style lang="scss" global>
+	// @import 'src/styles/variables.scss';
+	.terminal {
+		.output {
+			@apply text-gray-100 pl-1;
+		}
+		.entry {
+			&.prefixed {
+				content: '$:';
+				position: absolute;
+				left: 0.6rem;
+				color: #8ec200;
+				font-family: monospace;
+				font-weight: bold;
+				font-size: 1rem;
+			}
+		}
+		.input {
+			&::after {
+				// todo: refactor duplication
+				content: '$:';
+				position: absolute;
+				left: 0.6rem;
+				color: #8ec200;
+				font-family: monospace;
+				font-weight: bold;
+				font-size: 1rem;
+			}
+		}
+		.prompt {
+			color: #dbdbdb;
+		}
 
-	.file {
-		color: #a3a3a3;
-	}
-	.dir {
-		color: #90f1f8;
-		font-weight: 700;
-		cursor: pointer;
-	}
-	.current-dir {
-		color: #aceb00;
-		margin-left: 0.5rem;
+		.file {
+			color: #a3a3a3;
+		}
+		.dir {
+			color: #90f1f8;
+			font-weight: 700;
+			cursor: pointer;
+		}
+		.current-dir {
+			color: #aceb00;
+			margin-left: 0.5rem;
+		}
 	}
 </style>

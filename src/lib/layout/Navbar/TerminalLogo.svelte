@@ -6,11 +6,16 @@
 	<span class="text-base text-gray-700 dark:text-gray-100 "> guest@benzara.me </span>
 
 	<span class="text-base text-primary-300 animate-blink">
-		:/~ {$page.url.pathname === '/' ? 'home' : $page.url.pathname?.substring(1)}
+		:/~ {$page.status === 404
+			? 'not-found :('
+			: $page.url.pathname === '/'
+			? 'home'
+			: $page.url.pathname?.substring(1)}
 		<!-- :/~ home -->
 	</span>
 </div>
 
+<!-- {@debug $page} -->
 <style lang="scss">
 	.animate-blink {
 		&::after {

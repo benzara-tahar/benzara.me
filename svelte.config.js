@@ -1,14 +1,15 @@
 import path from 'path';
 import adapter from '@sveltejs/adapter-vercel';
 import sveltePreprocess from 'svelte-preprocess';
-import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano';
-import mediaMinMax from 'postcss-media-minmax';
-import { mdsvex } from 'mdsvex';
-import rehypeExternalLinks from 'rehype-external-links';
-import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-const extensions = ['.svelte', '.md'];
+// import autoprefixer from 'autoprefixer';
+// import cssnano from 'cssnano';
+// import mediaMinMax from 'postcss-media-minmax';
+// import { mdsvex } from 'mdsvex';
+// import rehypeExternalLinks from 'rehype-external-links';
+// import rehypeSlug from 'rehype-slug';
+// import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+// import tailwind from 'tailwindcss';
+// const extensions = ['.svelte', '.md'];
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -16,9 +17,10 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [
 		sveltePreprocess({
-			preserve: ['module'],
-			postcss: {
-				plugins: [autoprefixer, cssnano, mediaMinMax]
+			// preserve: ['module']
+			postcss: true,
+			scss: {
+				prependData: '@use "src/styles/variables.scss" as *;'
 			}
 		})
 		// mdsvex({
@@ -47,6 +49,13 @@ const config = {
 		adapter: adapter(),
 
 		vite: {
+			css: {
+				preprocessorOptions: {
+					scss: {
+						additionalData: '@use "src/styles/variables.scss" as *;'
+					}
+				}
+			},
 			server: {
 				fs: {
 					allow: ['static/audio', 'static/fonts', 'static/techs', 'static/svg']
