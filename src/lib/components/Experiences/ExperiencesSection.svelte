@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { experiences } from './experiences';
-	export let y: number;
+	let y: number;
 	onMount(() => {
 		return () => {};
 	});

@@ -1,15 +1,12 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	darkMode: 'class',
-
 	theme: {
 		container: {
 			// you can configure the container to be centered
 			center: true,
-
 			// or have default horizontal padding
 			padding: '1rem',
-
 			// default breakpoints but with 40px removed
 			screens: {
 				sm: '600px',
@@ -30,19 +27,6 @@ module.exports = {
 				'clamp-p': 'clamp(40ch, 50%, 77ch)'
 			},
 			colors: {
-				// gray: {
-				// 	DEFAULT: '#3E5C76',
-				// 	50: '#9FB7CD',
-				// 	100: '#92ADC6',
-				// 	200: '#779AB7',
-				// 	300: '#5C86A9',
-				// 	400: '#4C7191',
-				// 	500: '#3E5C76',
-				// 	600: '#2B3F51',
-				// 	700: '#17232C',
-				// 	800: '#121A21',
-				// 	900: '#000000'
-				// },
 				primary: {
 					DEFAULT: '#00D6D3',
 					50: '#8FFFFD',

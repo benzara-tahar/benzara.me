@@ -45,13 +45,6 @@
 	};
 
 	function output(out: string) {
-		// output command result
-		terminal.querySelector('.input').insertAdjacentHTML(
-			'beforebegin',
-			`<div class="entry">
-				<span class="output">${out} </span>
-			</div>`
-		);
 		// duplicate user command
 		terminal.querySelector('.input').insertAdjacentHTML(
 			'beforebegin',
@@ -59,6 +52,14 @@
 				<span class="output">${inputText} </span>
 			</div>`
 		);
+		// output command result
+		terminal.querySelector('.input').insertAdjacentHTML(
+			'beforebegin',
+			`<div class="entry">
+				<span class="output">${out} </span>
+			</div>`
+		);
+
 		inputText = '';
 	}
 
@@ -166,11 +167,12 @@
 		</div>
 
 		<div class="input">
+			dfs
 			<input
 				on:keyup={onKeyUp}
 				bind:value={inputText}
 				type="text"
-				class="outline-none bg-transparent text-white"
+				class="outline-none bg-transparent text-yellow-400 pl-5"
 			/>
 			<!-- style="background-color: transparent;" -->
 		</div>
@@ -179,7 +181,7 @@
 	</div>
 </div>
 
-<style lang="scss" global>
+<style lang="scss">
 	// @import 'src/styles/variables.scss';
 	.terminal {
 		.output {
