@@ -15,7 +15,7 @@
 		</div>
 
 		<div
-			class="rounded-xl text-gray-400  bg-rhino-600 bg-opacity-40 px-2 py-1   flex items-center justify-center w-full mx-2 text-center"
+			class="rounded-xl text-blue-200  bg-rhino-600 bg-opacity-40 px-2 py-1   flex items-center justify-center w-full mx-2 text-center"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,8 @@
 		cursor: pointer;
 	}
 	.current-dir {
-		color: #aceb00;
-		margin-left: 0.5rem;
+		@apply text-blue-400 ml-2;
+		// color: #aceb00;
+		// margin-left: 0.5rem;
 	}
 </style>
