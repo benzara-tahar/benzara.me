@@ -56,6 +56,6 @@
 </PageTransition>
 <Footer />
 
-<style global lang="scss">
-	@use 'src/styles/app';
+<style global>
+	@import '../app.css';
 </style>

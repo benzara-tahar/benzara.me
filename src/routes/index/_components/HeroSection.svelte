@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Terminal from '../Terminal/Terminal.svelte';
+	import Terminal from './Terminal.svelte';
 </script>
 
 <!-- HERO -->
@@ -42,9 +42,9 @@
 </section>
 
 <style lang="scss" global>
-	.keyword {
-		@apply rounded-md dark:text-white text-gray-700 px-2 py-1 bg-gray-50 dark:bg-gray-600;
-	}
+	// .keyword {
+	// 	@apply rounded-md dark:text-white text-gray-700 px-2 py-1 bg-gray-50 dark:bg-gray-600;
+	// }
 
 	.circle-obj2 {
 		background: radial-gradient(closest-side, #00fffb, rgba(233, 168, 2, 0));

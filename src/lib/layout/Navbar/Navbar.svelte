@@ -19,6 +19,10 @@
 			url: '/about'
 		},
 		{
+			text: 'Projects',
+			url: '/projects'
+		},
+		{
 			text: 'Blog',
 			url: '/blog'
 		},

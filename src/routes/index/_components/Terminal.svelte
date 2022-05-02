@@ -134,7 +134,7 @@
 			<span class="w-3 h-3 rounded-full bg-opacity-70 bg-yellow-500" />
 			<span class="w-3 h-3 rounded-full bg-opacity-70 bg-green-500" />
 		</div>
-
+		<span class="text-yellow-400">text</span>
 		<div
 			class="rounded-xl text-gray-400  bg-gray-600 bg-opacity-40 px-2 py-1   flex items-center justify-center w-full mx-2 text-center"
 		>
@@ -181,9 +181,9 @@
 	</div>
 </div>
 
-<style lang="scss">
+<!-- <style lang="scss">
 	// @import 'src/styles/variables.scss';
-	.terminal {
+	:global(.terminal) {
 		.output {
 			@apply text-gray-100 pl-1;
 		}
@@ -227,4 +227,4 @@
 			margin-left: 0.5rem;
 		}
 	}
-</style>
+</style> -->

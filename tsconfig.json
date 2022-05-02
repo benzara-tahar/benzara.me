@@ -13,5 +13,6 @@
 			"$types/*": ["src/lib/types/*"]
 		}
 		// "types": ["node_modules/@types/node"]
+		// "types": ["node_modules/@types"]
 	}
 }
