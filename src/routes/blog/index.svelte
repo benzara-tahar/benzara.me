@@ -1,4 +1,5 @@
 <script>
+	export let posts;
 </script>
 
 <main class="container py-8 min-h-screen">
@@ -14,8 +15,12 @@
 	</h1>
 
 	<ul class="">
-		<li class="text-gray-500 text-lg text-justify mt-4  max-w-xl leading-relaxed ">
-			Comming soon...
-		</li>
+		{#each posts as post}
+			<li class="text-gray-500 text-lg text-justify mt-4  max-w-xl leading-relaxed ">
+				<a href="/blog/{post.slug}">
+					{post.title}
+				</a>
+			</li>
+		{/each}
 	</ul>
 </main>

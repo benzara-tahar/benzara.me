@@ -20,29 +20,29 @@ const config = {
 			postcss: {
 				plugins: [autoprefixer, cssnano, mediaMinMax]
 			}
+		}),
+		mdsvex({
+			extensions: extensions,
+			rehypePlugins: [
+				rehypeExternalLinks, // Adds 'target' and 'rel' to external links
+				rehypeSlug, // Adds 'id' attributes to Headings (h1,h2,etc)
+				[
+					rehypeAutolinkHeadings,
+					{
+						// Adds hyperlinks to the headings, requires rehypeSlug
+						behavior: 'append',
+						content: {
+							type: 'element',
+							tagName: 'span',
+							properties: { className: ['heading-link'] },
+							children: [{ type: 'text', value: '#' }]
+						}
+					}
+				]
+			]
 		})
-		// mdsvex({
-		// 	extensions: extensions,
-		// 	rehypePlugins: [
-		// 		rehypeExternalLinks, // Adds 'target' and 'rel' to external links
-		// 		rehypeSlug, // Adds 'id' attributes to Headings (h1,h2,etc)
-		// 		[
-		// 			rehypeAutolinkHeadings,
-		// 			{
-		// 				// Adds hyperlinks to the headings, requires rehypeSlug
-		// 				behavior: 'append',
-		// 				content: {
-		// 					type: 'element',
-		// 					tagName: 'span',
-		// 					properties: { className: ['heading-link'] },
-		// 					children: [{ type: 'text', value: '#' }]
-		// 				}
-		// 			}
-		// 		]
-		// 	]
-		// })
 	],
-
+	extensions,
 	kit: {
 		adapter: adapter(),
 

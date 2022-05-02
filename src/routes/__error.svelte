@@ -1,8 +1,9 @@
 <script context="module" lang="ts">
-	import type { ErrorLoad } from '@sveltejs/kit';
+	import type { LoadOutput } from '@sveltejs/kit';
 	import { dev } from '$app/env';
 
-	export const load: ErrorLoad = ({ error, status }) => {
+	/** @type {import('@sveltejs/kit').Load} */
+	export const load = ({ error, status }) => {
 		return {
 			props: {
 				status: status,
