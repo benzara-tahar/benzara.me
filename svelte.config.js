@@ -1,8 +1,8 @@
 import path from 'path';
 import adapter from '@sveltejs/adapter-vercel';
 import sveltePreprocess from 'svelte-preprocess';
-import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano';
+// import autoprefixer from 'autoprefixer';
+// import cssnano from 'cssnano';
 import { mdsvex } from 'mdsvex';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
