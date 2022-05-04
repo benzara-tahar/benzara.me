@@ -6,8 +6,11 @@
 </script>
 
 <script lang="ts">
+	// import '../app.scss';
+
 	import { Navbar, Footer, PageTransition } from '$layout';
 	import { fade } from 'svelte/transition';
+	import { theme } from '$store/app.store';
 
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { navigationStatus } from '$store/navigation.store';
@@ -42,20 +45,28 @@
 </script>
 
 <SvelteSeo title="Benzara.me" description="Benzara Tahar Benlahcene website" />
+<main class="relative">
+	{#if $navigationStatus === 'loading'}
+		<div out:fade={{ delay: 500, duration: 300 }}>
+			<PageLoader />
+		</div>
+	{/if}
 
-{#if $navigationStatus === 'loading'}
-	<div out:fade={{ delay: 500, duration: 300 }}>
-		<PageLoader />
-	</div>
-{/if}
+	<Settings />
+	{#if $theme === 'light'}
+		<div
+			class="absolute top-0  flex items-center justify-center bg-yellow-600 text-white text-sm font-code p-2 tracking-tighter"
+		>
+			Light theme is still WIP
+		</div>
+	{/if}
+	<Navbar />
+	<PageTransition {url} />
 
-<Settings />
-<Navbar />
-<PageTransition {url}>
-	<slot />
-</PageTransition>
-<Footer />
+	<slot><!-- optional fallback --></slot>
+	<Footer />
+</main>
 
 <style global>
-	@import '../app.css';
+	@import '../app.scss';
 </style>

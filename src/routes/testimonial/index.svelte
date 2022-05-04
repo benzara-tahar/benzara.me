@@ -14,7 +14,7 @@
 			position: 'CEO @ RIVERGON',
 			photo: '',
 			text: `Benzara has an in-depth knowledge of Angular and web development techniques. He earned my trust immediately.
-Benzara communicated his plans and progress on a regular basis. He exceeded all milestones. Additionally, Benzara was flexible and accommodating to requirement and schedule changes.
+Benzara communicated his plans and progress on a regular basis. He exceeded all mileslates. Additionally, Benzara was flexible and accommodating to requirement and schedule changes.
 `
 		},
 		{
@@ -32,17 +32,19 @@ I will hire him again in my future jobs.`
 	{#each testimonials as testimonial}
 		<div class="max-w-lg p-4   rounded-md shadow-md dark:shadow-current">
 			<div class="mb-2">
-				<p class="mb-2  text-gray-500 dark:text-gray-400 text-justify">{testimonial.text}</p>
+				<p class="mb-2  text-slate-500 dark:text-slate-400 text-justify">{testimonial.text}</p>
 				<div class="flex flex-col items-center justify-center">
-					<div class="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-gray-100 rounded-full ">
+					<div
+						class="w-12 h-12 overflow-hidden bg-slate-100 border-2 border-slate-100 rounded-full "
+					>
 						<img
 							src={testimonial.photo || placeholderImage}
 							alt="img"
 							class="object-cover object-center w-full h-full"
 						/>
 					</div>
-					<h5 class="font-bold text-gray-500">{testimonial.employer}</h5>
-					<p class="text-sm text-gray-400">{testimonial.position || ''}</p>
+					<h5 class="font-bold text-slate-500">{testimonial.employer}</h5>
+					<p class="text-sm text-slate-400">{testimonial.position || ''}</p>
 				</div>
 			</div>
 		</div>

@@ -18,7 +18,7 @@
 		{#each items as item, index}
 			<li
 				in:fly={{ y: 10, delay: index * 200 }}
-				class="text-gray-500 text-lg text-justify mt-4  max-w-xl leading-relaxed "
+				class="text-slate-500 text-lg text-justify mt-4  max-w-xl leading-relaxed "
 			>
 				{item}
 			</li>

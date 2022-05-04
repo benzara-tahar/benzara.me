@@ -10,7 +10,7 @@
 		>
 			Projects
 		</h1>
-		<p class="max-w-2xl leading-8 tracking-wide text-gray-700 dark:text-gray-200">
+		<p class="max-w-2xl leading-8 tracking-wide text-slate-700 dark:text-slate-200">
 			I have a bunch of project that are not on github, trying to polish them before releasing them
 			to the world, stay tuned, it is comming sooner than you would expect...
 		</p>

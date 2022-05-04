@@ -7,7 +7,7 @@
 	</h1>
 
 	<ul class="">
-		<li class="text-gray-500 text-lg text-justify mt-4  max-w-xl leading-relaxed ">
+		<li class="text-slate-500 text-lg text-justify mt-4  max-w-xl leading-relaxed ">
 			Comming soon...
 		</li>
 	</ul>

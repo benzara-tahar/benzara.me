@@ -23,7 +23,7 @@
 		<!-- moon icon -->
 		<svg
 			in:rotate={{ duration: 500, deg: -360 }}
-			class="w-8 h-8 swap-off dark:fill-white fill-gray-500"
+			class="w-8 h-8 swap-off dark:fill-white fill-slate-500"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
 			><path
@@ -34,7 +34,7 @@
 		<!-- sun icon -->
 		<svg
 			in:rotate={{ duration: 500, deg: 90 }}
-			class="w-8 h-8 rotate-45 swap-on dark:fill-white fill-gray-500"
+			class="w-8 h-8 rotate-45 swap-on dark:fill-white fill-slate-500"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
 			><path

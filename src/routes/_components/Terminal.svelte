@@ -124,7 +124,7 @@
 </script>
 
 <div
-	class=" font-code w-full  rounded-md border border-gray-600 bg-slate-700/80 bg-  h-[500px] flex flex-col z-10"
+	class=" font-code w-full  rounded-md border border-slate-800 bg-black/10 bg-  h-[500px] flex flex-col z-10"
 >
 	<!-- top bar -->
 
@@ -134,9 +134,8 @@
 			<span class="w-3 h-3 rounded-full bg-opacity-70 bg-yellow-500" />
 			<span class="w-3 h-3 rounded-full bg-opacity-70 bg-green-500" />
 		</div>
-		<span class="text-yellow-400">text</span>
 		<div
-			class="rounded-xl text-gray-400  bg-gray-600 bg-opacity-40 px-2 py-1   flex items-center justify-center w-full mx-2 text-center"
+			class="rounded-xl text-slate-400  bg-slate-600 bg-opacity-40 px-2 py-1   flex items-center justify-center w-full mx-2 text-center"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -181,11 +180,11 @@
 	</div>
 </div>
 
-<!-- <style lang="scss">
+<style lang="scss">
 	// @import 'src/styles/variables.scss';
 	:global(.terminal) {
 		.output {
-			@apply text-gray-100 pl-1;
+			@apply text-slate-100 pl-1;
 		}
 		.entry {
 			&.prefixed {
@@ -227,4 +226,4 @@
 			margin-left: 0.5rem;
 		}
 	}
-</style> -->
+</style>

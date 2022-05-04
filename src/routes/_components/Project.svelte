@@ -6,10 +6,10 @@
 	export let project: Project;
 </script>
 
-<div class="flex my-10 first:my-0 dark:text-gray-300 text-gray-700">
+<div class="flex my-10 first:my-0 dark:text-slate-300 text-slate-700">
 	<div class="flex flex-col  w-1/2 p-2 ">
 		<h3 class="text-white text-2xl font-bold">{project.title}</h3>
-		<p class="text-sm text-gray-400">{project.shortDescription}</p>
+		<p class="text-sm text-slate-400">{project.shortDescription}</p>
 		<div class="my-3">
 			<p class="text-justify leading-relaxed">{project.longDescription}</p>
 		</div>
@@ -34,7 +34,7 @@
 						stroke-width="2"
 						stroke-linecap="round"
 						stroke-linejoin="round"
-						class="hover:stroke-gray-100"
+						class="hover:stroke-slate-100"
 						><path
 							class="text-red"
 							d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"

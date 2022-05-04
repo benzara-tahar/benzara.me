@@ -5,8 +5,6 @@
 	import rainSvg from '$static/svg/sounds/rain.svg';
 	import typingSvg from '$static/svg/sounds/typing.svg';
 	import shhhSvg from '$static/svg/sounds/shhh.svg';
-	import DarkThemeSwitcher from '../DarkThemeSwitcher.svelte';
-	import { useInlineSvg } from '$actions/useInlineSvg.action';
 	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
 	import { settingsVisible } from '$lib/_store/app.store';
 	import type { Unsubscriber } from 'svelte/store';
@@ -61,32 +59,48 @@
 </script>
 
 <section
-	class="w-full bg-gray-300 dark:bg-gray-500 overflow-hidden transition-all {$settingsVisible
+	class="w-full bg-slate-300 dark:bg-slate-800 overflow-hidden transition-all duration-500  {$settingsVisible
 		? 'settings opened'
 		: 'settings closed'}"
 >
-	<div
-		class="container flex items-center justify-center mt-0 space-x-1 overflow-x-scroll overflow-y-hidden sm:mt-2 sm:space-x-6"
-	>
-		{#each audios as audio, index}
-			<audio loop bind:this={audioControls[index]} id={audio.name} class="hidden">
-				<source src={audio.src} type="audio/mpeg" />
-			</audio>
-			<AudioButton on:toggle={(e) => toggle(e.detail)} {audio} />
-		{/each}
+	<div class="container  overflow-hidden mx-auto my-3 ">
+		<div class="mx-auto  max-w-md">
+			<p class="text-slate-500 text-sm  py-3 px-4 font-code tracking-tighter">
+				<span class="text-primary-700 dark:text-primary-400/50">
+					// ambient background noise I listen to while coding
+				</span>
+				<br />
+				socket.on('listening',function()
+				{'{'}
+				<br />
+				<span class="gradient-text ml-4">
+					{'startCoding({ zen: true, dnd: true});'}
+				</span>
+				<br />
+				});
+			</p>
+		</div>
+		<div class="flex flex-wrap  mx-auto max-w-md items-center justify-center  gap-3">
+			{#each audios as audio, index}
+				<audio loop bind:this={audioControls[index]} id={audio.name} class="hidden">
+					<source src={audio.src} type="audio/mpeg" />
+				</audio>
+				<AudioButton on:toggle={(e) => toggle(e.detail)} {audio} />
+			{/each}
+		</div>
 
 		<div />
-		<DarkThemeSwitcher />
 	</div>
 </section>
 
 <style lang="scss">
 	.settings {
 		&.closed {
-			height: 0;
+			max-height: 0;
 		}
 		&.opened {
-			height: 64px;
+			height: auto;
+			max-height: 400px;
 		}
 	}
 </style>

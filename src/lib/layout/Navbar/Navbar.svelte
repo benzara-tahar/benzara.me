@@ -3,9 +3,10 @@
 	import { fly } from 'svelte/transition';
 	import SocialIcons from '$lib/components/SocialIcons.svelte';
 
-	import Logo from './TerminalLogo.svelte';
+	import Logo from './Logo.svelte';
 	import { initCanvasAnimation } from './canvasAnimation';
 	import { settingsVisible } from '$lib/_store/app.store';
+	import DarkThemeSwitcher from '$lib/components/DarkThemeSwitcher.svelte';
 	// https://codepen.io/towc/pen/mJzOWJ
 	let canvas: HTMLCanvasElement;
 	let hidden = true;
@@ -59,7 +60,7 @@
 				href={item.url}
 				class=" px-2  font-normal tracking-wider relative {$page.url.pathname === item.url
 					? 'text-primary-400 border-b-primary-400 border-b-2'
-					: 'text-gray-900 dark:text-slate-500 blur-[1px] hover:text-slate-200 hover:blur-0 transition-all duration-300'}"
+					: 'text-slate-900 dark:text-slate-500 blur-[1px] hover:text-slate-200 hover:blur-0 transition-all duration-300'}"
 			>
 				<!-- <span class="text-primary-400">
 						{index + 1}.
@@ -69,12 +70,14 @@
 				</span>
 			</a>
 		{/each}
-
+	</div>
+	<div class="flex space-x-2">
+		<DarkThemeSwitcher />
 		<button
-			class="dark:text-gray-300 text-gray-600 hover:text-primary-500"
+			class="dark:text-slate-300 text-slate-600 hover:text-primary-500"
 			on:click={toggleSettings}
 		>
-			<svg
+			<!-- <svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-8 w-8"
 				fill="none"
@@ -87,24 +90,40 @@
 					stroke-linejoin="round"
 					d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
 				/>
+			</svg> -->
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-8 w-8"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				><path d="M3 18v-6a9 9 0 0 1 18 0v6" /><path
+					d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+				/></svg
+			>
+		</button>
+		<!-- Mobile menu button -->
+		<button
+			class="outline-none mobile-menu-button md:hidden inline-block"
+			on:click={showMobileMenu}
+		>
+			<svg
+				class=" w-8 h-8 dark:text-slate-300 text-slate-600 hover:text-primary "
+				x-show="!showMenu"
+				fill="none"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				viewBox="0 0 24 24"
+				stroke="currentColor"
+			>
+				<path d="M4 6h16M4 12h16M4 18h16" />
 			</svg>
 		</button>
 	</div>
-	<!-- Mobile menu button -->
-	<button class="outline-none mobile-menu-button md:hidden inline-block" on:click={showMobileMenu}>
-		<svg
-			class=" w-8 h-8 dark:text-gray-300 text-gray-600 hover:text-primary "
-			x-show="!showMenu"
-			fill="none"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="2"
-			viewBox="0 0 24 24"
-			stroke="currentColor"
-		>
-			<path d="M4 6h16M4 12h16M4 18h16" />
-		</svg>
-	</button>
 </nav>
 
 <!-- mobile menu -->
@@ -113,7 +132,7 @@
 	<nav
 		in:fly={{ y: 10, duration: 300 }}
 		out:fly={{ y: 10, duration: 300 }}
-		class="fixed w-full h-screen top-0 left-0 bg-gray-900 z-50 print:hidden"
+		class="fixed w-full h-screen top-0 left-0 bg-slate-900 z-50 print:hidden"
 	>
 		<div class="flex flex-col justify-between items-center w-full h-full p-5">
 			<!-- close button -->
@@ -128,7 +147,7 @@
 					viewBox="0 0 371.23 371.23"
 					style="enable-background:new 0 0 371.23 371.23;"
 					xml:space="preserve"
-					class="w-8 h-8 fill-gray-200 hover:fill-primary p-1"
+					class="w-8 h-8 fill-slate-200 hover:fill-primary p-1"
 				>
 					<polygon
 						points="371.23,21.213 350.018,0 185.615,164.402 21.213,0 0,21.213 164.402,185.615 0,350.018 21.213,371.23 
@@ -148,7 +167,7 @@
 						<!-- sveltekit:prefetch -->
 						<a
 							href={item.url}
-							class="block text-4xl font-bold px-2 py-4 text-gray-200   hover:text-secondary"
+							class="block text-4xl font-bold px-2 py-4 text-slate-200   hover:text-secondary"
 							>{item.text}</a
 						>
 					</li>

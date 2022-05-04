@@ -50,7 +50,7 @@
 		<div
 			bind:this={tooltipRef}
 			style="top: {$position.y}px; left: {$position.x}px; min-width: 200px;"
-			class="shadow-lg flex items-center justify-center rounded  text-gray-700 bg-gray-200 dark:text-white dark:bg-slate-800  absolute p-2"
+			class="shadow-lg flex items-center justify-center rounded  text-slate-700 bg-slate-200 dark:text-white dark:bg-slate-800  absolute p-2"
 		>
 			{title}
 		</div>

@@ -3,7 +3,7 @@
 </script>
 
 <footer
-	class=" print:hidden text-center lg:text-left bg-gray-200 dark:bg-gray-700 dark:text-gray-300 text-gray-600"
+	class=" print:hidden text-center lg:text-left bg-slate-200 dark:bg-slate-700 dark:text-slate-300 text-slate-600"
 >
 	<div class="container">
 		<div class="flex flex-col sm:flex-row justify-between items-center py-8 sm:px-0 px-5 ">

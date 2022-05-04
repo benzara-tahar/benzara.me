@@ -16,12 +16,16 @@
 			I am a <span class="gradient-text">Full Stack</span> Developer
 		</h1>
 
-		<p class="max-w-xl mt-4 text-lg leading-relaxed text-justify text-gray-600 dark:text-gray-300 ">
+		<p
+			class="max-w-xl mt-4 text-lg leading-relaxed text-justify text-slate-600 dark:text-slate-300 "
+		>
 			I am 30 years old <span class="keyword">passionate learner</span> having a keen interest in
 			building eye-catching digital solutions that
 			<span class="keyword">solves</span> real-word problems
 		</p>
-		<p class="max-w-xl mt-4 text-lg leading-relaxed text-justify text-gray-600 dark:text-gray-300">
+		<p
+			class="max-w-xl mt-4 text-lg leading-relaxed text-justify text-slate-600 dark:text-slate-300"
+		>
 			Based in <span class="keyword">Algeria</span> I am currently working with various clients
 			arround the world on
 			<span class="keyword">Upwork</span>
@@ -43,7 +47,7 @@
 
 <style lang="scss" global>
 	// .keyword {
-	// 	@apply rounded-md dark:text-white text-gray-700 px-2 py-1 bg-gray-50 dark:bg-gray-600;
+	// 	@apply rounded-md dark:text-white text-slate-700 px-2 py-1 bg-slate-50 dark:bg-slate-600;
 	// }
 
 	.circle-obj2 {

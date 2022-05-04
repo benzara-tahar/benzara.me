@@ -1,13 +1,10 @@
 import path from 'path';
 import adapter from '@sveltejs/adapter-vercel';
 import sveltePreprocess from 'svelte-preprocess';
-// import autoprefixer from 'autoprefixer';
-// import cssnano from 'cssnano';
 import { mdsvex } from 'mdsvex';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import tailwind from 'tailwindcss';
 const extensions = ['.svelte', '.md'];
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -17,13 +14,10 @@ const config = {
 	preprocess: [
 		sveltePreprocess({
 			preserve: ['module'],
-			postcss: true
-			// postcss: {
-			// plugins: [tailwind, autoprefixer, cssnano]
-			// }
-			// scss: {
-			// 	prependData: '@use "src/styles/variables.scss" as *;'
-			// }
+			postcss: true,
+			scss: {
+				prependData: '@use "src/variables.scss" as *;'
+			}
 		}),
 		mdsvex({
 			extensions: extensions,
@@ -51,18 +45,12 @@ const config = {
 		adapter: adapter(),
 
 		vite: {
-			// css: {
-			// 	preprocessorOptions: {
-			// 		scss: {
-			// 			additionalData: '@use "src/styles/variables.scss" as *;'
-			// 		}
-			// 	}
-			// },
 			server: {
 				fs: {
 					allow: ['static/audio', 'static/fonts', 'static/techs', 'static/svg']
 				}
 			},
+
 			resolve: {
 				alias: {
 					$static: path.resolve('./static'),
@@ -72,6 +60,14 @@ const config = {
 					$actions: path.resolve('./src/lib/actions'),
 					$transitions: path.resolve('./src/lib/transitions'),
 					$layout: path.resolve('./src/lib/layout')
+				}
+			},
+
+			css: {
+				preprocessorOptions: {
+					scss: {
+						additionalData: '@use "src/variables.scss" as *;'
+					}
 				}
 			}
 		}

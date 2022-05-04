@@ -49,33 +49,33 @@
 	<div class="flex flex-col items-center justif-start lg:flex-row">
 		<div class="lg:w-1/2 pr-2">
 			<p
-				class="max-w-lg mt-4 text-lg leading-loose tracking-wide text-justify text-gray-700 md:max-w-2xl dark:text-gray-300"
+				class="max-w-lg mt-4 text-lg leading-loose tracking-wide text-justify text-slate-700 md:max-w-2xl dark:text-slate-300"
 			>
 				I specialize in crafting
-				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="scallability">
+				<span class="text-slate-800 trigger-word dark:text-primary-500" data-trigger="scallability">
 					scallable</span
 				>,
-				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="quality">
+				<span class="text-slate-800 trigger-word dark:text-primary-500" data-trigger="quality">
 					hight quality
 				</span>
 				,
-				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="security">
+				<span class="text-slate-800 trigger-word dark:text-primary-500" data-trigger="security">
 					secure
 				</span>
 				and performant web applications. starting from
-				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="frontend">
+				<span class="text-slate-800 trigger-word dark:text-primary-500" data-trigger="frontend">
 					frontend
 				</span>
 				and ,
-				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="backend">
+				<span class="text-slate-800 trigger-word dark:text-primary-500" data-trigger="backend">
 					backend
 				</span>
 				development to
 
-				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="devops">
+				<span class="text-slate-800 trigger-word dark:text-primary-500" data-trigger="devops">
 					deployment
 				</span>. Able to effectively self-manage during independent projects, as well as
-				<span class="text-gray-800 trigger-word dark:text-primary-500" data-trigger="team">
+				<span class="text-slate-800 trigger-word dark:text-primary-500" data-trigger="team">
 					collaborate
 				</span>
 				in a team setting.
@@ -84,9 +84,9 @@
 
 		<div class="lg:w-1/2">
 			<fieldset
-				class="flex flex-wrap max-w-3xl px-4 pt-2 pb-4 border border-gray-200 rounded-md dark:border-gray-600"
+				class="flex flex-wrap max-w-3xl px-4 pt-2 pb-4 border border-slate-200 rounded-md dark:border-slate-600"
 			>
-				<legend class="px-3 mx-auto font-mono text-gray-300 dark:text-gray-600"
+				<legend class="px-3 mx-auto font-mono text-slate-300 dark:text-slate-600"
 					>{triggerMap[currentTrigger] || 'Skills'}</legend
 				>
 				{#each skills as skill, index}
