@@ -17,13 +17,13 @@
 <a
 	on:click={() => swichTheme()}
 	href={null}
-	class="flex items-center justify-center w-8 h-8 cursor-pointer"
+	class="flex items-center justify-center w-7 h-8 cursor-pointer"
 >
 	{#if $theme === 'light'}
 		<!-- moon icon -->
 		<svg
 			in:rotate={{ duration: 500, deg: -360 }}
-			class="w-8 h-8 swap-off dark:fill-white fill-slate-500"
+			class="w-7 h-7 swap-off dark:fill-white fill-slate-600"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
 			><path
@@ -34,7 +34,7 @@
 		<!-- sun icon -->
 		<svg
 			in:rotate={{ duration: 500, deg: 90 }}
-			class="w-8 h-8 rotate-45 swap-on dark:fill-white fill-slate-500"
+			class="w-7 h-7 rotate-45 swap-on dark:fill-white fill-slate-600"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
 			><path

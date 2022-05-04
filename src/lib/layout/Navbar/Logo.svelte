@@ -3,13 +3,15 @@
 </script>
 
 <div class="flex space-x-1  items-center font-code">
-	<span class="text-base text-slate-700 dark:text-slate-100 "> guest@benzara.me </span>
+	<span class="text-xs sm:text-base text-slate-700 dark:text-slate-100 "> guest@benzara.me </span>
 
-	<span class="text-base text-primary-300 animate-blink">
+	<span class="text-xs sm:text-base text-primary-300 animate-blink" title={$page.url.pathname}>
 		:/~ {$page.status === 404
 			? 'not-found :('
 			: $page.url.pathname === '/'
 			? 'home'
+			: $page.url.pathname?.length > 7
+			? $page.url.pathname?.substring(1).slice(0, 7) + '...'
 			: $page.url.pathname?.substring(1)}
 		<!-- :/~ home -->
 	</span>
