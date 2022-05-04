@@ -79,7 +79,7 @@
 		>
 			<!-- <svg
 				xmlns="http://www.w3.org/2000/svg"
-				class="h-8 w-8"
+				class="h-7 w-7"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke="currentColor"
@@ -93,7 +93,7 @@
 			</svg> -->
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				class="h-8 w-8"
+				class="h-7 w-7"
 				viewBox="0 0 24 24"
 				fill="none"
 				stroke="currentColor"
@@ -111,7 +111,7 @@
 			on:click={showMobileMenu}
 		>
 			<svg
-				class=" w-8 h-8 dark:text-slate-300 text-slate-600 hover:text-primary "
+				class=" w-7 h-7 dark:text-slate-300 text-slate-600 hover:text-primary "
 				x-show="!showMenu"
 				fill="none"
 				stroke-linecap="round"

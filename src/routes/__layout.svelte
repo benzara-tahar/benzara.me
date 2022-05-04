@@ -55,7 +55,7 @@
 	<Settings />
 	{#if $theme === 'light'}
 		<div
-			class="absolute top-0  flex items-center justify-center bg-yellow-600 text-white text-sm font-code p-2 tracking-tighter"
+			class="absolute top-0  flex items-center justify-center bg-accent-500  text-white text-xs font-code p-2 tracking-tighter"
 		>
 			Light theme is still WIP
 		</div>
