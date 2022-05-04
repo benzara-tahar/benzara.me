@@ -42,12 +42,24 @@
 	});
 </script>
 
-<section class="flex flex-col my-12 " style="min-height: calc(100vh - 72px);">
-	<h1 class="heading-1 ">
-		Hands dirty with these <span class="gradient-text">Skills</span>
-	</h1>
-	<div class="flex flex-col items-center justif-start lg:flex-row">
-		<div class="lg:w-1/2 pr-2">
+<section class="flex flex-col my-12 " style="min-height: calc(100vh - 72px); ">
+	<div class="flex flex-col items-centers justif-start lg:flex-row">
+		<div class="lg:w-1/2 sm:pr-10 pr-0">
+			<fieldset
+				class="flex flex-wrap max-w-3xl px-4 pt-2 pb-4 border border-slate-200 rounded-md dark:border-slate-800/20"
+			>
+				<legend class="px-3 mx-auto font-mono text-slate-300 dark:text-slate-600"
+					>{triggerMap[currentTrigger] || 'Skills'}</legend
+				>
+				{#each skills as skill, index}
+					<SkillChip bind:this={chips[index]} {skill} className={' mx-1 my-2 '} />
+				{/each}
+			</fieldset>
+		</div>
+		<div class="lg:w-1/2 ">
+			<h1 class="heading-1 my-10 ">
+				Hands dirty with these <span class="gradient-text">Skills</span>
+			</h1>
 			<p
 				class="max-w-lg mt-4 text-lg leading-loose tracking-wide text-justify text-slate-700 md:max-w-2xl dark:text-slate-300"
 			>
@@ -80,19 +92,6 @@
 				</span>
 				in a team setting.
 			</p>
-		</div>
-
-		<div class="lg:w-1/2">
-			<fieldset
-				class="flex flex-wrap max-w-3xl px-4 pt-2 pb-4 border border-slate-200 rounded-md dark:border-slate-600"
-			>
-				<legend class="px-3 mx-auto font-mono text-slate-300 dark:text-slate-600"
-					>{triggerMap[currentTrigger] || 'Skills'}</legend
-				>
-				{#each skills as skill, index}
-					<SkillChip bind:this={chips[index]} {skill} className={' mx-1 my-2 '} />
-				{/each}
-			</fieldset>
 		</div>
 	</div>
 </section>
