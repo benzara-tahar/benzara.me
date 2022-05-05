@@ -47,7 +47,7 @@ const config = {
 		vite: {
 			server: {
 				fs: {
-					allow: ['static/audio', 'static/fonts', 'static/techs', 'static/svg']
+					allow: ['static/audio', 'static/fonts', 'static/techs', 'static/svg', 'static/img']
 				}
 			},
 
