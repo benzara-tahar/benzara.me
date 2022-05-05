@@ -5,7 +5,9 @@ import { mdsvex } from 'mdsvex';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+
 const extensions = ['.svelte', '.md'];
+const allow = ['static/audio', 'static/fonts', 'static/techs', 'static/svg', 'static/img'];
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -18,38 +20,34 @@ const config = {
 			scss: {
 				prependData: '@use "src/variables.scss" as *;'
 			}
+		}),
+		mdsvex({
+			extensions: extensions,
+			rehypePlugins: [
+				rehypeExternalLinks, // Adds 'target' and 'rel' to external links
+				rehypeSlug, // Adds 'id' attributes to Headings (h1,h2,etc)
+				[
+					rehypeAutolinkHeadings,
+					{
+						// Adds hyperlinks to the headings, requires rehypeSlug
+						behavior: 'append',
+						content: {
+							type: 'element',
+							tagName: 'span',
+							properties: { className: ['heading-link'] },
+							children: [{ type: 'text', value: '#' }]
+						}
+					}
+				]
+			]
 		})
-		// mdsvex({
-		// 	extensions: extensions,
-		// 	rehypePlugins: [
-		// 		rehypeExternalLinks, // Adds 'target' and 'rel' to external links
-		// 		rehypeSlug, // Adds 'id' attributes to Headings (h1,h2,etc)
-		// 		[
-		// 			rehypeAutolinkHeadings,
-		// 			{
-		// 				// Adds hyperlinks to the headings, requires rehypeSlug
-		// 				behavior: 'append',
-		// 				content: {
-		// 					type: 'element',
-		// 					tagName: 'span',
-		// 					properties: { className: ['heading-link'] },
-		// 					children: [{ type: 'text', value: '#' }]
-		// 				}
-		// 			}
-		// 		]
-		// 	]
-		// })
 	],
 	extensions,
 	kit: {
 		adapter: adapter(),
 
 		vite: {
-			server: {
-				fs: {
-					allow: ['static/audio', 'static/fonts', 'static/techs', 'static/svg', 'static/img']
-				}
-			},
+			server: { fs: { allow } },
 
 			resolve: {
 				alias: {

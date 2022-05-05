@@ -1,5 +1,5 @@
 <script>
-	const interests = ['Chess', 'Cricket', 'Cycling', 'Reading', 'Traveling'];
+	const interests = ['Chess', 'Learning', 'Reading', 'Traveling', 'Anime'];
 </script>
 
 <section class="flex flex-col">

@@ -9,9 +9,10 @@
 	import { settingsVisible } from '$lib/_store/app.store';
 	import type { Unsubscriber } from 'svelte/store';
 	import AudioButton from './AudioButton.svelte';
+	import { useClickOutside as clickOutside } from '$actions/useClickOutside';
 
-	let height: string | number = '0';
-	const dispatch = createEventDispatcher();
+	// let height: string | number = '0';
+	// const dispatch = createEventDispatcher();
 
 	let audios = [
 		{ name: 'nature', src: '/audio/nature.mp3', svg: natureSvg, paused: true },
@@ -59,6 +60,8 @@
 </script>
 
 <section
+	use:clickOutside
+	on:clickOutside={() => settingsVisible.update(() => false)}
 	class="w-full bg-slate-300 dark:bg-slate-800 overflow-hidden transition-all duration-500  {$settingsVisible
 		? 'settings opened'
 		: 'settings closed'}"
