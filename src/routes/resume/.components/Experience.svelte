@@ -48,13 +48,11 @@
 </script>
 
 <section class="flex flex-col items-start ">
-	<h1 class="pb-2 text-lg font-semibold tracking-wider uppercase text-primary-500">
-		Relevant Experience
-	</h1>
+	<h1 class="pb-2  font-semibold tracking-wider uppercase text-primary-500">Relevant Experience</h1>
 	{#each experiences as e, index}
 		<div class={`flex flex-sol dark:text-slate-400 text-slate-600 ${index === 0 ? '' : 'pt-4'}`}>
-			<div class="flex flex-row items-start space-x-6">
-				<strong class="whitespace-pre">
+			<div class="flex flex-col md:flex-row items-start space-x-6">
+				<strong class="whitespace-pre dark:text-slate-200 text-slate-700">
 					{e.from}-{e.to}
 				</strong>
 				<div class="flex flex-col">

@@ -2,8 +2,8 @@
 </script>
 
 <section class="flex flex-row items-center justify-between pt-4">
-	<div class="flex flex-col items-start w-2/3">
-		<h1 class="text-lg font-semibold tracking-wider uppercase text-primary-500">About Me</h1>
+	<div class="flex flex-col items-start ">
+		<h1 class="font-semibold tracking-wider uppercase text-primary-500">About Me</h1>
 		<p class="text-sm text-justify dark:text-slate-400 text-slate-600">
 			I am 30 years old passionate learner having a keen interest in building eye-catching digital
 			solutions that solves real-word problems.

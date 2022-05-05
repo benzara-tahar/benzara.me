@@ -17,7 +17,7 @@
 </script>
 
 <section class="flex flex-col items-start text-sm">
-	<h1 class="pb-2 text-lg font-semibold tracking-wider uppercase text-primary-500">Education</h1>
+	<h1 class="pb-2 font-semibold tracking-wider uppercase text-primary-500">Education</h1>
 	{#each educations as edu}
 		<div class="flex flex-col dark:text-slate-400 text-slate-600">
 			<div class="flex flex-row items-start space-x-6">
