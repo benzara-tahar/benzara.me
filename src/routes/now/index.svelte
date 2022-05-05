@@ -4,8 +4,8 @@
 		'Taking more risks',
 		'Working on fast-resume.com',
 		'working on my new website benzara.me',
-		'fasting Ramandan, spending more time with my 2 kids',
-		'learning svelte(kit)'
+		'learning svelte(kit) ❤️',
+		'reading more about UI/UX'
 	];
 </script>
 
@@ -24,4 +24,18 @@
 			</li>
 		{/each}
 	</ul>
+	<p
+		class="relative text-slate-500 text-lg mt-10 pl-8"
+		in:fly={{ y: 10, delay: items.length * 200 + 1000 }}
+	>
+		<span class="flex h-4 w-4 absolute top-2 left-2 items-center justify-center">
+			<span
+				class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75 "
+			/>
+			<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-500" />
+		</span>
+		I am available for freelance work.
+		<a href="mailto:benzara.tahar@gmail.com" class="text-primary-500"> Contact me</a>
+		and let's give birth to your ideas 💡
+	</p>
 </main>

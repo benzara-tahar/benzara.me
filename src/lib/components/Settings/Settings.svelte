@@ -61,7 +61,7 @@
 
 <section
 	use:clickOutside
-	on:clickOutside={() => settingsVisible.update(() => false)}
+	on:clickOutside={(n) => settingsVisible.update(() => false)}
 	class="w-full bg-slate-300 dark:bg-slate-800 overflow-hidden transition-all duration-500  {$settingsVisible
 		? 'settings opened'
 		: 'settings closed'}"

@@ -1,6 +1,5 @@
 <script>
 	import SocialIcons from '$lib/components/SocialIcons.svelte';
-	import { each, text } from 'svelte/internal';
 
 	const extraLinks = [
 		{
@@ -26,6 +25,10 @@
 		{
 			text: 'Notes',
 			href: '/notes'
+		},
+		{
+			text: 'Testimonials',
+			href: '/testimonials'
 		}
 	];
 </script>
