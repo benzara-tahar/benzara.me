@@ -24,14 +24,23 @@
 	.shape-outer {
 		display: flex;
 		flex-shrink: 0;
-		height: calc(45vw);
-		width: calc(45vw);
+		height: calc(75vw);
+		width: calc(75vw);
+
+		@screen sm {
+			height: calc(45vw);
+			width: calc(45vw);
+		}
 		background-image: linear-gradient(to bottom right, #00d6d3, #51fffd, #c0ff15);
 	}
 
 	.shape-inner {
-		height: calc(42vw);
-		width: calc(42vw);
+		height: calc(70vw);
+		width: calc(70vw);
+		@screen sm {
+			width: calc(42vw);
+			height: calc(42vw);
+		}
 
 		background-size: cover;
 		margin: auto;
