@@ -59,7 +59,7 @@
 			<a
 				href={item.url}
 				class=" px-2  font-normal tracking-wider relative {$page.url.pathname === item.url
-					? 'text-primary-400 border-b-primary-400 border-b-2'
+					? 'text-primary-600 dark:text-primary-500 border-b-primary-400 border-b-2'
 					: 'text-slate-900 dark:text-slate-500 blur-[1px] hover:text-slate-200 hover:blur-0 transition-all duration-300'}"
 			>
 				<!-- <span class="text-primary-400">

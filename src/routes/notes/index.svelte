@@ -2,8 +2,8 @@
 </script>
 
 <main class="container py-8 min-h-screen">
-	<h1 class="heading-1 max-w-7x">
-		A community wall for you to <span class="gradient-text"> xp</span>ress
+	<h1 class="heading-1">
+		Handy <span class="gradient-text"> notes</span> for every occasion
 	</h1>
 
 	<p

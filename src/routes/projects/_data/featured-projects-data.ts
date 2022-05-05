@@ -42,8 +42,8 @@ export const featuredProjects: Project[] = [
 		tags: ['CSharp', 'WPF', 'MVVM', 'EFCore', 'SQLite', 'DevExpress', 'InnoSetup']
 	}
 	// {
-	// 	title: 'LCS VMS',
-	// 	shortDescription: 'VISITOR Management System',
+	// 	title: '',
+	// 	shortDescription: '',
 	// 	longDescription: ``,
 	// 	thumbnail: '',
 	// 	url: 'https://something.com',
@@ -52,4 +52,4 @@ export const featuredProjects: Project[] = [
 	// }
 ];
 
-export const otherProjects = featuredProjects;
+export default featuredProjects;

@@ -1,7 +1,7 @@
 export interface Project {
 	title: string;
 	shortDescription: string;
-	longDescription: string;
+	longDescription?: string;
 	tags: string[];
 	url?: string;
 	githubUrl?: string;

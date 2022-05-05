@@ -1,27 +1,39 @@
 <script lang="ts">
 	import type { Project } from '$lib/types/project';
-	import githubSvg from '$static/svg/github.svg';
-	import linkSvg from '$static/svg/github.svg';
+	// import githubSvg from '$static/svg/github.svg';
+	// import linkSvg from '$static/svg/github.svg';
 
 	export let project: Project;
 </script>
 
-<div class="flex my-10 first:my-0 dark:text-slate-300 text-slate-700">
-	<div class="flex flex-col  w-1/2 p-2 ">
-		<h3 class="text-white text-2xl font-bold">{project.title}</h3>
-		<p class="text-sm text-slate-400">{project.shortDescription}</p>
-		<div class="my-3">
-			<p class="text-justify leading-relaxed">{project.longDescription}</p>
+<div
+	class="transition-all
+	hover:-translate-y-1 cursor-pointer flex dark:text-slate-300 text-slate-700 w-full  border  border-slate-200 dark:border-slate-800 rounded-md "
+>
+	<div class="flex flex-col">
+		<!-- thumbnail -->
+		<img
+			src={project.thumbnail}
+			alt={project.title}
+			class="bg-cover max-h-64 rounded-t-md dark:bg-black bg-slate-400 p-1 mb-4"
+		/>
+		<!-- title and description  and tags -->
+		<div class="flex flex-col px-6">
+			<h3 class="dark:text-white text-slate-700  text-2xl font-bold">{project.title}</h3>
+			<p class="text-sm dark:text-slate-400 text-slate-500  mt-4">
+				{@html project.shortDescription}
+			</p>
+
+			<!-- tags -->
+			<div class="flex items-start  flex-wrap gap-x-3 py-4 ">
+				{#each project.tags as tag}
+					<span class="font-mono dark:text-primary-500 text-primary-600">#{tag}</span>
+				{/each}
+			</div>
 		</div>
 
-		<!-- tags -->
-		<div class="flex flex-wrap space-x-2 py-2">
-			{#each project.tags as tag}
-				<span class="font-mono text-primary-500">#{tag}</span>
-			{/each}
-		</div>
 		<!-- urls -->
-		<div class="flex space-x-3">
+		<div class="flex gap-4 p-6 mt-auto text-slate-400 ">
 			{#if project.githubUrl}
 				<a target="_blank" href={project.githubUrl}>
 					<svg
@@ -63,6 +75,4 @@
 			{/if}
 		</div>
 	</div>
-
-	<div class="w-1/2" />
 </div>

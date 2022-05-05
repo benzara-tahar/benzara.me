@@ -31,7 +31,7 @@ body {
 
 h1.heading-1 {
 	font-size: clamp(1.2rem, 8vw, 3rem);
-	@apply max-w-3xl font-bold leading-tight tracking-tight text-slate-700 dark:text-white;
+	@apply max-w-7xl font-bold leading-tight tracking-tight text-slate-700 dark:text-white;
 }
 
 .font-code {

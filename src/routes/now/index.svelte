@@ -4,7 +4,8 @@
 		'Taking more risks',
 		'Working on fast-resume.com',
 		'working on my new website benzara.me',
-		'learning svelte(kit) ❤️',
+		'learning svelte(kit) 💙',
+		'Learning supabase ',
 		'reading more about UI/UX'
 	];
 </script>

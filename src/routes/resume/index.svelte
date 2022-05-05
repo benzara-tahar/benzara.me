@@ -1,11 +1,11 @@
 <script lang="ts">
-	import About from './.components/About.svelte';
-	import Education from './.components/Education.svelte';
-	import Experience from './.components/Experience.svelte';
-	import Interests from './.components/Interests.svelte';
-	import Languages from './.components/Languages.svelte';
-	import Skills from './.components/Skills.svelte';
-	import Socials from './.components/Socials.svelte';
+	import About from './_components/About.svelte';
+	import Education from './_components/Education.svelte';
+	import Experience from './_components/Experience.svelte';
+	import Interests from './_components/Interests.svelte';
+	import Languages from './_components/Languages.svelte';
+	import Skills from './_components/Skills.svelte';
+	import Socials from './_components/Socials.svelte';
 </script>
 
 <main
