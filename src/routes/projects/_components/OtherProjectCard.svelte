@@ -7,7 +7,7 @@
 </script>
 
 <div
-	class="flex flex-col  bg-white rounded-lg border shadow-md  md:max-w-xl hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800"
+	class="flex flex-col  bg-white rounded-lg border shadow-md  md:max-w-xl hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800 transition-colors cursor-pointer"
 >
 	<!-- thumbnail -->
 
@@ -54,19 +54,19 @@
 			<a target="_blank" href={project.url}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="22"
-					height="22"
-					fill="none"
+					width="24"
+					height="24"
 					viewBox="0 0 24 24"
+					fill="none"
 					stroke="currentColor"
 					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="hover:stroke-primary-500"
+					><path
+						d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"
+					/><line x1="8" y1="12" x2="16" y2="12" /></svg
 				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-					/>
-				</svg>
 			</a>
 		{/if}
 	</div>

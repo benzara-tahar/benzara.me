@@ -73,7 +73,7 @@ export const otherProjects: Project[] = [
 	{
 		title: 'Elbaraka Association website',
 		shortDescription: `A wordpress website to present Albaraka association and their activities.
-			<strong>EDIT:</strong> the website might not be accessible via the link since the client didn't renew the hosting (expired in 18 spet 2018). see the attached images bellow for more details.`,
+			<strong>EDIT:</strong> the website might not be accessible via the link since the client didn't renew the hosting (expired in 18 spet 2018).`,
 
 		thumbnail: '/img/projects/elbarakadz.png',
 		url: 'https://elbarakahdz.com/',
