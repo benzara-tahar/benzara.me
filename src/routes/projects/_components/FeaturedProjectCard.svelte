@@ -4,8 +4,8 @@
 	export let project: Project;
 </script>
 
-<div class="flex my-10 first:my-0 dark:text-slate-300 text-slate-700">
-	<div class="flex flex-col   max-w-3xl p-2 ">
+<div class="flex mt-8 first:mt-0 dark:text-slate-300 text-slate-700 group flex-col md:flex-row">
+	<div class="flex flex-col   max-w-3xl p-2 md:w-1/2 w-full">
 		<h3 class="dark:text-white text-slate-700 text-2xl font-bold">{project.title}</h3>
 		<p class="text-sm text-slate-400">{project.shortDescription}</p>
 		<div class="my-3">
@@ -60,5 +60,13 @@
 				</a>
 			{/if}
 		</div>
+	</div>
+
+	<div class="flex flex-col   max-w-3xl  md:p-8 p-5 md:w-1/2 w-full">
+		<img
+			class="rounded-lg grayscale group-hover:grayscale-0 transition-all "
+			src={project.thumbnail}
+			alt={project.title}
+		/>
 	</div>
 </div>
