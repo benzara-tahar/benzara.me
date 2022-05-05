@@ -29,6 +29,10 @@
 		{
 			text: 'Testimonials',
 			href: '/testimonials'
+		},
+		{
+			text: 'Credit',
+			href: '/credit'
 		}
 	];
 </script>

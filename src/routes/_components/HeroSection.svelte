@@ -4,7 +4,7 @@
 
 <!-- HERO -->
 <section
-	class="flex flex-col items-center justify-start space-x-0 lg:flex-row lg:space-x-6 "
+	class="flex flex-col items-center justify-start space-x-0 lg:flex-row lg:space-x-6 snap-always snap-center "
 	style="min-height: calc(100vh - 72px);"
 >
 	<!-- intro -->

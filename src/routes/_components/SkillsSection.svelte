@@ -42,7 +42,10 @@
 	});
 </script>
 
-<section class="flex flex-col my-12 " style="min-height: calc(100vh - 72px); ">
+<section
+	class="flex flex-col my-12 snap-always snap-center  "
+	style="min-height: calc(100vh - 72px); "
+>
 	<div class="flex flex-col items-centers justif-start lg:flex-row">
 		<div class="lg:w-1/2 sm:pr-10 pr-0">
 			<fieldset

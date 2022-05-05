@@ -4,7 +4,7 @@
 	import SkillsSection from './_components/SkillsSection.svelte';
 </script>
 
-<main class="container">
+<main class="container snap-x scroll-smooth">
 	<!-- hero -->
 	<HeroSection />
 	<!-- skills -->
