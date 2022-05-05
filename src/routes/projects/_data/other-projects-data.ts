@@ -77,16 +77,7 @@ export const otherProjects: Project[] = [
 
 		thumbnail: '/img/projects/elbarakadz.png',
 		url: 'https://elbarakahdz.com/',
-		tags: [
-			'C#',
-			'XAML',
-			'SQLite',
-			'EntityFramework',
-			'InnoSetup',
-			'WPF',
-			'VS_Studio',
-			'Blend_for_Visual_Studio'
-		]
+		tags: ['wordpress', 'javascipt', 'html', 'css']
 	}
 ];
 
