@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { skills as AllSkills } from './skills';
+	import { skills as AllSkills } from './_data/skills-data';
 	import { onMount } from 'svelte';
 	import { shuffleArray } from '$lib/utils/arrays';
 	import SkillChip from './SkillChip.svelte';

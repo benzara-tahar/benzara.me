@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { experiences } from './experiences';
+	import { experiences } from './_data/experiences-data';
 	let y: number;
 	onMount(() => {
 		return () => {};
