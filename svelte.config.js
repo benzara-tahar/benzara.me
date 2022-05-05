@@ -7,7 +7,15 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 const extensions = ['.svelte', '.md'];
-const allow = ['static/audio', 'static/fonts', 'static/techs', 'static/svg', 'static/img'];
+// so ugly, find a good way to fix this once for good (make all the static directory serviable)
+const allow = [
+	'static/audio',
+	'static/fonts',
+	'static/techs',
+	'static/svg',
+	'static/img',
+	'static/img/projects'
+];
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
