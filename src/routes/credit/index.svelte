@@ -11,7 +11,31 @@
 		class="relative dark:text-slate-400 text-slate-500 text-lg mt-10 "
 		in:fly={{ y: 10, delay: 500 }}
 	>
-		<p>This website would have not possible without :</p>
+		<p>Credit for inspiration:</p>
+		<br />
+		<ul class=" mx-auto">
+			<li>
+				<a target="_blank" href="https://twitter.com/Rich_Harris">Rich_Harris</a> for inventing svelte
+			</li>
+
+			<li>
+				<a target="_blank" href="https://twitter.com/code_laboratory">Frank's Laboratory</a> for his
+				awesome canvas tutorials
+			</li>
+
+			<li>
+				Matei Copot for this great <a target="_blank" href="https://codepen.io/towc/pen/mJzOWJ"
+					>pen</a
+				>
+			</li>
+			<li>
+				All developers @<a target="_blank" href="https://awesome-portfolios.vercel.app/"
+					>awesome-portfolios</a
+				> for the inspiration
+			</li>
+		</ul>
+		<br />
+		<p>Special thanks to:</p>
 		<br />
 		<ul class=" text-justify tracking-wider mx-auto">
 			<li>🙏 My parents for giving me best things they could give</li>
@@ -38,10 +62,13 @@
 </main>
 
 <style>
+	a {
+		@apply hover:text-primary-500 border-b border-dashed border-slate-500 text-slate-600;
+	}
 	ul {
 		@apply flex flex-wrap gap-4 items-stretch;
 	}
 	li {
-		@apply flex items-center w-96 p-4 rounded-md border border-slate-600;
+		@apply flex items-center justify-center flex-col max-w-sm p-4 rounded-md  border  border-slate-500/30;
 	}
 </style>
