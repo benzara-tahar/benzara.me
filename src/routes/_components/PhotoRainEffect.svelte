@@ -8,22 +8,35 @@
 	let gradient: CanvasGradient;
 	const width = 400;
 	const height = 400;
-
 	let hovered = false;
-
 	const numberOfParticles = 4000;
 
+	// mouse move
+	let rotateX: number = 0;
+	let rotateY: number = 0;
+
 	onMount(() => {
+		window.addEventListener('mousemove', onMouseMove);
+		console.time('loading image');
+
 		image = new Image();
 		image.src = '/img/benzara.jpg';
 		image.addEventListener('load', initCanvas);
-
-		// const unsubscribe = theme.subscribe((t) => {
-		// 	image.src = `/img/me-${t}.jpg`;
-		// });
-		return () => image.removeEventListener('load', initCanvas);
+		return () => {
+			image.removeEventListener('load', initCanvas);
+			window.removeEventListener('mousemove', onMouseMove);
+		};
 	});
 
+	function onMouseMove({ clientX, clientY }: MouseEvent) {
+		let screenWidth = window.screen.width / 2;
+		let screenHeight = window.screen.height / 2;
+
+		const centroX = clientX - screenWidth;
+		const centroY = screenHeight - (clientY + 400);
+		rotateX = centroY * 0.04;
+		rotateY = centroX * 0.02;
+	}
 	function initCanvas() {
 		ctx = canvas.getContext('2d');
 		canvas.width = width;
@@ -33,8 +46,11 @@
 		gradient.addColorStop(0.1, '#002E2D');
 		gradient.addColorStop(0.5, '#00D6D3');
 		gradient.addColorStop(0.9, '#ACEB00');
+		console.timeLog('loading image');
 
 		ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+		console.timeLog('loading image');
+
 		const pixels = ctx.getImageData(0, 0, width, height);
 		ctx.clearRect(0, 0, width, height);
 		let practicesArray = [];
@@ -85,14 +101,17 @@
 
 				let movement = 2.5 - this.speed + this.velocity;
 
-				// particles falling like rain
-				// add this.x+= movement; to make it fall from top left to bottom right
-				this.y += movement;
+				if (hovered) {
+					// angular movement
+					this.y += movement + Math.sin(this.angle) * 3;
+					this.x += movement + Math.cos(this.angle) * 3;
+					this.angle += this.speed / 20;
+				} else {
+					// particles falling like rain
+					// add this.x+= movement; to make it fall from top left to bottom right
 
-				// angular movement
-				// this.y += movement + Math.sin(this.angle) * 3;
-				// this.x += movement + Math.cos(this.angle) * 3;
-				// this.angle += this.speed / 20;
+					this.y += movement;
+				}
 
 				if (hovered) {
 					// slow down on hover
@@ -158,14 +177,16 @@
 	}
 </script>
 
-<div>
+<div
+	class="relative"
+	style="transform: perspective(400px) rotateY({rotateY}deg) rotateX({rotateX}deg) ;"
+>
 	<canvas
 		bind:this={canvas}
 		class=" h-[{height}px] w-[{width}px]  rounded-full border-8 border-slate-300 dark:border-slate-900"
 		on:mouseenter={() => (hovered = true)}
 		on:mouseleave={() => (hovered = false)}
 	/>
-	<h1>{hovered}</h1>
 </div>
 
 <style lang="scss">

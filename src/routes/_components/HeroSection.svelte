@@ -64,9 +64,9 @@
 </section>
 
 <style lang="scss" global>
-	// .keyword {
-	// 	@apply rounded-md dark:text-white text-slate-700 px-2 py-1 bg-slate-50 dark:bg-slate-600;
-	// }
+	.keyword {
+		@apply rounded-md dark:text-white text-slate-700 px-2 py-1 bg-slate-300 dark:bg-slate-600;
+	}
 
 	.circle-obj2 {
 		background: radial-gradient(closest-side, #00fffb, rgba(233, 168, 2, 0));

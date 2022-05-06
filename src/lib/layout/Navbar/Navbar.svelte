@@ -71,7 +71,7 @@
 			</a>
 		{/each}
 	</div>
-	<div class="flex space-x-2">
+	<div class="flex space-x-4">
 		<DarkThemeSwitcher />
 		<button
 			class="dark:text-slate-300 text-slate-600 hover:text-primary-500"

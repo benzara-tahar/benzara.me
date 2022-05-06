@@ -114,3 +114,8 @@ https://codepen.io/leandrosimoes/pen/VqZxaG
 https://codepen.io/gabrielcarol/pen/rGeEbY
 https://www.freecodecamp.org/news/javascript-piano-keyboard/
 https://www.codespeedy.com/build-a-piano-using-html-css-and-javascript/
+
+# IDEAS
+
+Fran Lab simulator
+permission based store in svelte
