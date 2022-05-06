@@ -11,7 +11,7 @@
 
 	let hovered = false;
 
-	const numberOfParticles = 5000;
+	const numberOfParticles = 4000;
 
 	onMount(() => {
 		image = new Image();
@@ -21,7 +21,7 @@
 		// const unsubscribe = theme.subscribe((t) => {
 		// 	image.src = `/img/me-${t}.jpg`;
 		// });
-		return () => image.removeEventListener('load');
+		return () => image.removeEventListener('load', initCanvas);
 	});
 
 	function initCanvas() {
@@ -161,7 +161,7 @@
 <div>
 	<canvas
 		bind:this={canvas}
-		class=" h-[{height}px] w-[{width}px]  rounded-full"
+		class=" h-[{height}px] w-[{width}px]  rounded-full border-8 border-slate-300 dark:border-slate-900"
 		on:mouseenter={() => (hovered = true)}
 		on:mouseleave={() => (hovered = false)}
 	/>

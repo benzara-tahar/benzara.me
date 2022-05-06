@@ -48,7 +48,9 @@
 
 	<!-- me -->
 
-	<div class="relative flex items-center justify-center w-full lg:w-1/2 ">
+	<div
+		class="relative flex items-center md:justify-start justify-center ml-0 md:pl-10 w-full lg:w-1/2 "
+	>
 		<Photo />
 		<div class="absolute top-0 left-0 right-0 pointer-events-none">
 			<div class="absolute top-0 overflow-visible opacity-50 dark:opacity-30 left-16">
