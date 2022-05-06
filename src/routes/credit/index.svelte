@@ -69,6 +69,6 @@
 		@apply flex flex-wrap gap-4 items-stretch;
 	}
 	li {
-		@apply flex items-center justify-center flex-col max-w-sm p-4 rounded-md  border  border-slate-500/30;
+		@apply flex items-center justify-center flex-col max-w-sm p-4 rounded-md  border  border-slate-500/30 w-full;
 	}
 </style>
