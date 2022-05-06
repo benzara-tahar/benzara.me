@@ -53,6 +53,11 @@
 				🙏 My friend and previous coworker AbdelMalek Benzamem for openning my eyes about the modern
 				web tooling at a time when I was still coding for desktop
 			</li>
+
+			<li>
+				🙏 My friend and previous teacher Mohammed Amine Mostefai for all the pieces of advice and
+				for sharing his vast knowledge in many occasions
+			</li>
 			<li>
 				🙏 My friend and previous coworker Rémi Vion for a whole new shift during a short span of
 				time in productivity, www ecosystem, gaming and a lot more...

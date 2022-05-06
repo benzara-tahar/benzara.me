@@ -1,12 +1,15 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	darkMode: 'class',
+
 	theme: {
 		container: {
 			// you can configure the container to be centered
 			center: true,
+
 			// or have default horizontal padding
 			padding: '1rem',
+
 			// default breakpoints but with 40px removed
 			screens: {
 				sm: '600px',
@@ -27,6 +30,19 @@ module.exports = {
 				'clamp-p': 'clamp(40ch, 50%, 77ch)'
 			},
 			colors: {
+				rhino: {
+					DEFAULT: '#324467',
+					50: '#8A9FC6',
+					100: '#7D93C0',
+					200: '#617DB2',
+					300: '#4D689E',
+					400: '#3F5682',
+					500: '#324467',
+					600: '#202B41',
+					700: '#0D121B',
+					800: '#000000',
+					900: '#000000'
+				},
 				primary: {
 					DEFAULT: '#00D6D3',
 					50: '#8FFFFD',
@@ -38,7 +54,7 @@ module.exports = {
 					600: '#009E9C',
 					700: '#006664',
 					800: '#002E2D',
-					900: '#001f1f'
+					900: '#000000'
 				},
 				accent: {
 					DEFAULT: '#8EC200',
@@ -50,8 +66,8 @@ module.exports = {
 					500: '#8EC200',
 					600: '#658A00',
 					700: '#3C5200',
-					800: '#1d2700',
-					900: '#131A00'
+					800: '#131A00',
+					900: '#000000'
 				}
 			}
 		}
