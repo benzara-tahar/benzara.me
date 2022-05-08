@@ -2,6 +2,16 @@
 	import { page } from '$app/stores';
 </script>
 
+<div class="flex space-x-1  items-center font-code font-mono">
+	<span class="font-bold text-lg text-accent-500"> {'{'} </span>
+	<span class="text-base text-slate-700 dark:text-slate-300 "> {'benzara.me'} </span>
+	<span class="font-bold text-lg text-accent-500  "> {'}'} </span>
+</div>
+<!-- 
+<script lang="ts">
+	import { page } from '$app/stores';
+</script>
+
 <div class="flex space-x-1  items-center font-code">
 	<span class="text-xs sm:text-base text-slate-700 dark:text-slate-100 "> guest@benzara.me </span>
 
@@ -13,27 +23,28 @@
 			: $page.url.pathname?.length > 7
 			? $page.url.pathname?.substring(1).slice(0, 7) + '...'
 			: $page.url.pathname?.substring(1)}
-		<!-- :/~ home -->
 	</span>
 </div>
 
-<!-- {@debug $page} -->
 <style lang="scss">
 	.animate-blink {
 		&::after {
 			content: '';
-			width: 4px;
+			width: 2px;
 			height: 16px;
 			margin-left: 4px;
-			margin-bottom: -2px;
-			background: #aceb00;
+			margin-bottom: -4px;
+			background: rgb(230, 230, 230);
 			display: inline-block;
-			animation: cursor-blink 1.5s steps(2) infinite;
+			animation: cursor-blink 1.5s infinite reverse;
 		}
 	}
 	@keyframes cursor-blink {
 		0% {
-			opacity: 0;
+			height: 0;
+		}
+		100% {
+			height: 16px;
 		}
 	}
-</style>
+</style> -->

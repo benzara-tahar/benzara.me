@@ -8,6 +8,8 @@
 <script lang="ts">
 	// import '../app.scss';
 
+	// import mixpanel from 'mixpanel-browser';
+
 	import { Navbar, Footer, PageTransition } from '$layout';
 	import { fade } from 'svelte/transition';
 	import { theme } from '$store/app.store';
@@ -18,6 +20,7 @@
 	import { logCss as css } from '$lib/utils/console.log';
 	import Settings from '$lib/components/Settings/Settings.svelte';
 	import PageLoader from '$lib/components/PageLoader.svelte';
+	import Auth from './_components/Auth.svelte';
 
 	export let url;
 
@@ -30,6 +33,10 @@
 	});
 
 	onMount(() => {
+		// // Enabling the debug mode flag is useful during implementation,
+		// // but it's recommended you remove it for production
+		// mixpanel.init('05b43e9190c1bcffb8b95b5c0ad38f93', { debug: true });
+		// mixpanel.track('Sign up');
 		console.log(
 			'%cHi there intruder 🕵️' +
 				'%cif you spot some 🐞 🐝 🐞 🐜, report that in github issues so that we can make this place cleaner ✨✨\nOtherwise, if you enjoy what you see, ⭐ me on 🐙\nhttps://github.com/benzara-tahar/benzara.me',
@@ -61,6 +68,7 @@
 		</div>
 	{/if}
 	<Navbar />
+	<!-- <Auth /> -->
 	<PageTransition {url} />
 
 	<slot><!-- optional fallback --></slot>

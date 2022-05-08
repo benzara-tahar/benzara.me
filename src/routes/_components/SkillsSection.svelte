@@ -81,12 +81,11 @@
 				<span class="text-slate-800 trigger-word dark:text-primary-500" data-trigger="frontend">
 					frontend
 				</span>
-				and ,
+				and
 				<span class="text-slate-800 trigger-word dark:text-primary-500" data-trigger="backend">
 					backend
 				</span>
 				development to
-
 				<span class="text-slate-800 trigger-word dark:text-primary-500" data-trigger="devops">
 					deployment
 				</span>. Able to effectively self-manage during independent projects, as well as

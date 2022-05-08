@@ -62,7 +62,8 @@
 				const blue = pixels.data[(y * width + x) * 4 + 1];
 				const green = pixels.data[(y * width + x) * 4 + 2];
 				const brightness = calculateRelativeBrightness(red, green, blue);
-				const cellColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')'; // store the original image color for later use
+				// store the original image color for later use
+				const cellColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
 				const cell = [brightness, cellColor];
 
 				row.push(cell);
@@ -74,24 +75,16 @@
 			return Math.sqrt(red * green * 0.299 + red * blue * 0.587 + green * blue * 0.114) / 100;
 		}
 		class Particle {
-			private x: number;
-			private y: number;
-			private speed: number;
-			private velocity: number;
-			private size: number;
-			private position1: number;
-			private position2: number;
-			private angle: number;
-			constructor() {
-				this.x = Math.random() * width;
-				this.y = 0;
-				this.speed = 0;
-				this.velocity = Math.random() * 1.5;
-				this.size = Math.random() * 0.5 + 1;
-				this.position1 = Math.floor(this.y);
-				this.position2 = Math.floor(this.x);
-				this.angle = 0;
-			}
+			constructor(
+				private x = Math.random() * width,
+				private y = 0,
+				private speed = 0,
+				private velocity = Math.random() * 1.5,
+				private size = Math.random() * 0.5 + 1,
+				private position1 = Math.floor(y),
+				private position2 = Math.floor(x),
+				private angle = 0
+			) {}
 			update() {
 				this.position1 = Math.floor(this.y);
 				this.position2 = Math.floor(this.x);

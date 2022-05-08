@@ -119,3 +119,5 @@ https://www.codespeedy.com/build-a-piano-using-html-css-and-javascript/
 
 Fran Lab simulator
 permission based store in svelte
+
+https://mixpanel.com/

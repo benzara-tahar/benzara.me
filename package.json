@@ -48,13 +48,15 @@
 		"@fontsource/fira-mono": "^4.5.7",
 		"@fontsource/rubik": "^4.5.6",
 		"@lukeed/uuid": "^2.0.0",
+		"@supabase/supabase-js": "^1.35.2",
 		"cookie": "^0.4.2",
 		"dateformat": "^5.0.3",
 		"matter-attractors": "^0.1.6",
 		"matter-js": "^0.18.0",
-		"svelte-inview": "^3.0.0",
-		"svelte-seo": "^1.4.0",
+		"mixpanel-browser": "^2.45.0",
 		"prism-svelte": "^0.5.0",
-		"prismjs": "^1.28.0"
+		"prismjs": "^1.28.0",
+		"svelte-inview": "^3.0.0",
+		"svelte-seo": "^1.4.0"
 	}
 }

@@ -1,9 +1,30 @@
-import cookie from 'cookie';
+// import cookie from 'cookie';
+// import { v4 as uuid } from '@lukeed/uuid';
+// import type { Handle } from '@sveltejs/kit';
+
+// export const handle: Handle = async ({ event, resolve }) => {
+// 	const cookies = cookie.parse(event.request.headers.get('cookie') || '');
+// 	event.locals.userid = cookies.userid || uuid();
+
+// 	const response = await resolve(event);
+
+// 	if (!cookies.userid) {
+// 		const session = await getSessionFromApi(cookies.session_id);
+// 		if (session) {
+// 			request.locals.user = { email: session.email };
+// 			return resolve(request);
+// 		}
+// 	}
+
+// 	return response;
+// };
+
+import { serialize, parse } from 'cookie';
 import { v4 as uuid } from '@lukeed/uuid';
 import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
-	const cookies = cookie.parse(event.request.headers.get('cookie') || '');
+	const cookies = parse(event.request.headers.get('cookie') || '');
 	event.locals.userid = cookies.userid || uuid();
 
 	const response = await resolve(event);
@@ -13,7 +34,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		// set a cookie so that we recognise them when they return
 		response.headers.set(
 			'set-cookie',
-			cookie.serialize('userid', event.locals.userid, {
+			serialize('userid', event.locals.userid, {
 				path: '/',
 				httpOnly: true
 			})
