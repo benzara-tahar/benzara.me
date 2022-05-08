@@ -18,6 +18,7 @@
 				provider: 'github'
 			},
 			{
+				// TODO: better prod and dev url handling
 				redirectTo: dev
 					? 'http://localhost:3000/community-wall'
 					: 'https://benzara.me/community-wall'

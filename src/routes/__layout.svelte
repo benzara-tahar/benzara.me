@@ -67,9 +67,11 @@
 		</div>
 	{/if}
 	<Navbar />
-	<PageTransition {url} />
+	<!-- <Auth /> -->
+	<PageTransition {url}>
+		<slot><!-- optional fallback --></slot>
+	</PageTransition>
 
-	<slot><!-- optional fallback --></slot>
 	<Footer />
 </main>
 

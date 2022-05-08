@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fly } from 'svelte/transition';
+
 	import About from './_components/About.svelte';
 	import Education from './_components/Education.svelte';
 	import Experience from './_components/Experience.svelte';
@@ -9,6 +11,8 @@
 </script>
 
 <main
+	in:fly={{ duration: 500, x: 10 }}
+	out:fly={{ duration: 500, y: 30 }}
 	class="relative flex flex-col w-full max-w-4xl min-h-screen p-10 my-10 mx-auto overflow-hidden text-slate-800 dark:text-slate-100 dark:bg-slate-800/30  
 	 border-1 rounded shadow-md border-primary-500 print:border-none   bg-repeat"
 >
