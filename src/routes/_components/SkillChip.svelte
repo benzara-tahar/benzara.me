@@ -3,13 +3,15 @@
 <script lang="ts">
 	import type { Skill } from '$lib/types/skill';
 	export let skill: Skill;
-	export let className: string;
+	export let isBlured: boolean = false;
 </script>
 
 <span
 	title={skill.name}
-	class="flex items-center text-base transition duration-300 border rounded-full cursor-pointer bg-slate-200 hover:bg-slate-400 dark:bg-slate-600 align-center hover:dark:bg-slate-900 ease w-max dark:border-slate-800 border-slate-200 {className ||
-		''} group"
+	class="
+	{isBlured ? 'blur-[1px] grayscale' : ''}
+	flex items-center text-base transition duration-300 border rounded-full cursor-pointer bg-slate-200 hover:bg-slate-400 dark:bg-slate-700 align-center hover:dark:bg-slate-900 ease w-max dark:border-slate-800 border-slate-200
+	 group"
 >
 	{#if skill.image}
 		<img

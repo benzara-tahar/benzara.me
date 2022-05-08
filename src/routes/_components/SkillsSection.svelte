@@ -29,12 +29,10 @@
 			// blur corresponding skill chips
 			chips
 				.filter((chip) => chip.skill.tags.indexOf(currentTrigger) === -1)
-				.forEach((chip) =>
-					chip.className.indexOf('blur') === -1 ? (chip.className += ' blur') : ''
-				);
+				.forEach((chip) => (chip.isBlured = true));
 			chips
 				.filter((chip) => chip.skill.tags.indexOf(currentTrigger) !== -1)
-				.forEach((chip) => (chip.className = chip.className.replace(' blur', '')));
+				.forEach((chip) => (chip.isBlured = false));
 
 			index = (index + 1) % spans.length;
 		}, 3500);
@@ -49,13 +47,13 @@
 	<div class="flex flex-col items-centers justif-start lg:flex-row">
 		<div class="lg:w-1/2 sm:pr-10 pr-0">
 			<fieldset
-				class="flex flex-wrap max-w-3xl px-4 pt-2 pb-4 border border-slate-200 rounded-md dark:border-slate-800/20"
+				class="flex flex-wrap max-w-3xl p-4  gap-2 border border-slate-200 rounded-md dark:border-slate-900"
 			>
 				<legend class="px-3 mx-auto font-mono text-slate-300 dark:text-slate-600"
 					>{triggerMap[currentTrigger] || 'Skills'}</legend
 				>
 				{#each skills as skill, index}
-					<SkillChip bind:this={chips[index]} {skill} className={' mx-1 my-2 '} />
+					<SkillChip bind:this={chips[index]} {skill} />
 				{/each}
 			</fieldset>
 		</div>
