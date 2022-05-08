@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { dev } from '$app/env';
+
 	import { supabase } from '$lib/supabase';
 	import { currentUser, isLoggedIn } from '$lib/_store/auth.store';
 	import type { PostgrestError } from '@supabase/supabase-js';
@@ -15,7 +17,11 @@
 			{
 				provider: 'github'
 			},
-			{ redirectTo: 'http://localhost:3000/community-wall' }
+			{
+				redirectTo: dev
+					? 'http://localhost:3000/community-wall'
+					: 'https://benzara.me/community-wall'
+			}
 		);
 		console.log({ user, session, error });
 		if (error) {
