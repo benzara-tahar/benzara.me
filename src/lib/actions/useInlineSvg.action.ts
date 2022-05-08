@@ -16,7 +16,6 @@ export const useInlineSvg = (node: HTMLElement) => {
 
 			image.parentNode.replaceChild(svg, image);
 		})
-		.then(console.log)
 		.catch((error) => console.error(error));
 
 	return {
