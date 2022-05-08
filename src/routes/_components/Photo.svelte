@@ -1,31 +1,59 @@
 <script lang="ts">
 	import { theme } from '$lib/_store/app.store';
 	import { onMount } from 'svelte';
+	import { Particle } from './Particle';
+
 	let canvas: HTMLCanvasElement;
 	let ctx: CanvasRenderingContext2D;
 	let image: any;
 	let mappedImage = [];
-	const width = 450;
-	const height = 500;
-	const numberOfParticles = 3000;
+	const width = 400;
+	const height = 400;
+	const numberOfParticles = 4000;
+
+	// mouse move
+	let rotateX: number = 0;
+	let rotateY: number = 0;
 
 	onMount(() => {
-		image = new Image();
-		image.src = '/img/me-dark.jpg';
-		image.addEventListener('load', initCanvas);
+		window.addEventListener('mousemove', onMouseMove);
+		console.time('loading image');
 
-		// const unsubscribe = theme.subscribe((t) => {
-		// 	image.src = `/img/me-${t}.jpg`;
-		// });
-		// return () => unsubscribe();
+		image = new Image();
+		image.src = '/img/original.jpg';
+		image.addEventListener('load', initCanvas);
+		return () => {
+			image.removeEventListener('load', initCanvas);
+			window.removeEventListener('mousemove', onMouseMove);
+		};
 	});
 
-	function initCanvas() {
+	const onMouseMove = ({ clientX, clientY }: MouseEvent) => {
+		let screenWidth = window.screen.width / 2;
+		let screenHeight = window.screen.height / 2;
+		const centroX = clientX - screenWidth;
+		const centroY = screenHeight - (clientY + 400);
+		rotateX = centroY * 0.04;
+		rotateY = centroX * 0.02;
+	};
+
+	const calculateRelativeBrightness = (red, green, blue) => {
+		return Math.sqrt(red * green * 0.299 + red * blue * 0.587 + green * blue * 0.114) / 100;
+	};
+
+	/**
+	 * init canvas with the and extract immage pixels data
+	 */
+	const initCanvas = () => {
 		ctx = canvas.getContext('2d');
 		canvas.width = width;
 		canvas.height = height;
 
+		console.timeLog('loading image');
+
 		ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+		console.timeLog('loading image');
+
 		const pixels = ctx.getImageData(0, 0, width, height);
 		ctx.clearRect(0, 0, width, height);
 		let practicesArray = [];
@@ -37,84 +65,75 @@
 				const blue = pixels.data[(y * width + x) * 4 + 1];
 				const green = pixels.data[(y * width + x) * 4 + 2];
 				const brightness = calculateRelativeBrightness(red, green, blue);
-				const cell = [brightness];
+				// store the original image color for later use
+				const cellColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+				const cell = [brightness, cellColor];
+
 				row.push(cell);
 			}
 			mappedImage.push(row);
 		}
 
-		function calculateRelativeBrightness(red, green, blue) {
-			return Math.sqrt(red * green * 0.299 + red * blue * 0.587 + green * blue * 0.114) / 100;
-		}
-		class Particle {
-			private x: number;
-			private y: number;
-			private speed: number;
-			private velocity: number;
-			private size: number;
-			private position1: number;
-			private position2: number;
-			constructor() {
-				this.x = Math.random() * width;
-				this.y = 0;
-				this.speed = 0;
-				this.velocity = Math.random() * 2.5;
-				this.size = Math.random() * 0.5 + 1;
-				this.position1 = Math.floor(this.y);
-				this.position2 = Math.floor(this.x);
-			}
-			update() {
-				this.position1 = Math.floor(this.y);
-				this.position2 = Math.floor(this.x);
-				this.speed = mappedImage[this.position1][this.position2][0];
-				let movement = 2.5 - this.speed + this.velocity;
+		/**
+		 * init the canvas particles
+		 */
+		const init = () => {
+			// fill static memebers (TODO! design can be simplified)
+			Particle.ctx = ctx;
+			Particle.width = width;
+			Particle.height = height;
+			Particle.mappedImage = mappedImage;
+			Particle.gradient = createGradient(ctx);
 
-				this.y += movement;
-				if (this.y > height) {
-					this.y = 0;
-					this.x = Math.random() * width;
-				}
-			}
-
-			draw() {
-				ctx.beginPath();
-				ctx.fillStyle = $theme === 'dark' ? 'white' : '#000106';
-				ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-				ctx.fill();
-			}
-		}
-
-		init();
-		animate();
-
-		function init() {
 			for (let i = 0; i < numberOfParticles; i++) {
 				practicesArray.push(new Particle());
 			}
-		}
+		};
 
-		function animate() {
-			ctx.globalAlpha = 0.07;
-			ctx.fillStyle = $theme === 'dark' ? '#000106' : '#f8fafc';
+		/**
+		 * animate loop function
+		 */
+		const animate = () => {
+			ctx.globalAlpha = 0.05;
+			ctx.fillStyle = $theme === 'dark' ? '#000106' : '#000106';
+			// ctx.fillStyle = $theme === 'dark' ? '#000106' : '#000106';
 			ctx.fillRect(0, 0, width, height);
-			ctx.globalAlpha = 0.8;
+			ctx.globalAlpha = 0.02;
 
 			for (let i = 0; i < practicesArray.length; i++) {
 				practicesArray[i].update();
-				ctx.globalAlpha = practicesArray[i].speed * 0.5;
+				// ctx.globalAlpha = 1; // set full opacity
+				ctx.globalAlpha = practicesArray[i].speed * 0.3; // set opacity based on particle speed
 				practicesArray[i].draw();
 			}
 			requestAnimationFrame(animate);
-		}
+		};
+
+		// start
+		init();
+		animate();
+	};
+
+	function createGradient(ctx: CanvasRenderingContext2D): CanvasGradient {
+		const gradient = ctx.createLinearGradient(0, 0, Particle.width / 2, Particle.height);
+		gradient.addColorStop(0.1, '#002E2D');
+		gradient.addColorStop(0.5, '#00D6D3');
+		gradient.addColorStop(0.9, '#ACEB00');
+		return gradient;
 	}
 </script>
 
-<div>
-	<canvas bind:this={canvas} class=" h-[{height}px] w-[{width}px]  rounded-full" />
+<div
+	class="relative"
+	style="transform: perspective(400px) rotateY({rotateY}deg) rotateX({rotateX}deg) ;"
+>
+	<canvas
+		on:click={() => {
+			window.open(image.src, '_blank').focus();
+		}}
+		bind:this={canvas}
+		class=" h-[{height}px] w-[{width}px]  rounded-full border-8 border-slate-300 dark:border-slate-900 cursor-pointer"
+		on:mouseenter={() => (Particle.hovered = true)}
+		on:mouseleave={() => (Particle.hovered = false)}
+	/>
 </div>
-
-<style lang="scss">
-	// canvas {
-	// 	bod
-	// }
-</style>

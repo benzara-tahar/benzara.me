@@ -20,7 +20,6 @@
 	import { logCss as css } from '$lib/utils/console.log';
 	import Settings from '$lib/components/Settings/Settings.svelte';
 	import PageLoader from '$lib/components/PageLoader.svelte';
-	import Auth from './_components/Auth.svelte';
 
 	export let url;
 
@@ -68,7 +67,6 @@
 		</div>
 	{/if}
 	<Navbar />
-	<!-- <Auth /> -->
 	<PageTransition {url} />
 
 	<slot><!-- optional fallback --></slot>
