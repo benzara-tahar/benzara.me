@@ -41,11 +41,11 @@
 </script>
 
 <section
-	class="flex flex-col my-12 snap-always snap-center  "
+	class="flex flex-col my-12 snap-always snap-center"
 	style="min-height: calc(100vh - 72px); "
 >
-	<div class="flex flex-col items-centers justif-start lg:flex-row">
-		<div class="lg:w-1/2 sm:pr-10 pr-0">
+	<div class="flex flex-col items-centers justif-start lg:flex-row  lg:gap-10">
+		<div class="mx-auto lg:order-1 ">
 			<fieldset
 				class="flex flex-wrap max-w-3xl p-4  gap-2 border border-slate-200 rounded-md dark:border-slate-900"
 			>
@@ -57,7 +57,7 @@
 				{/each}
 			</fieldset>
 		</div>
-		<div class="lg:w-1/2 ">
+		<div class="mx-auto">
 			<h1 class="heading-1 my-10 ">
 				Hands dirty with these <span class="gradient-text">Skills</span>
 			</h1>

@@ -1,205 +1,171 @@
 import type { Skill } from '$lib/types/skill';
 
-// todo! better way to handle assets imports using plugins
-import microservicesSvg from '$static/techs/microservices.png';
-import rabbitmqSvg from '$static/techs/rabbitmq.png';
-import cqrsSvg from '$static/techs/cqrs.png';
-import cleanArchitectureSvg from '$static/techs/clean-architecture.png';
-
-import cypressSvg from '$static/techs/cypress.png';
-import jestSvg from '$static/techs/jest.png';
-import moqSvg from '$static/techs/moq.png';
-import auth0Svg from '$static/techs/auth0.png';
-import identityServerSvg from '$static/techs/is4.png';
-import passportJsSvg from '$static/techs/passportjs.png';
-import angularSvg from '$static/techs/angular.png';
-import svelteSvg from '$static/techs/svelte.png';
-import sassSvg from '$static/techs/sass.png';
-import javascriptSvg from '$static/techs/javascript.png';
-import typescriptSvg from '$static/techs/typescript.png';
-import tailwindSvg from '$static/techs/tailwind.png';
-import aspnetcoreSvg from '$static/techs/asp.png';
-import nestjsSvg from '$static/techs/nestjs.png';
-import csharpSvg from '$static/techs/csharp.png';
-import gitlabSvg from '$static/techs/gitlab.png';
-import dockerSvg from '$static/techs/docker.png';
-import githubSvg from '$static/techs/github.png';
-import azureSvg from '$static/techs/azure.png';
-import jiraSvg from '$static/techs/jira.png';
-import clickupSvg from '$static/techs/clickup.png';
-import agileSvg from '$static/techs/agile.png';
-
-import sqliteSvg from '$static/techs/sqlite.png';
-import firebaseSvg from '$static/techs/firebase.png';
-import mysqlSvg from '$static/techs/mysql.png';
-import mongodbSvg from '$static/techs/mongodb.png';
-import restapiSvg from '$static/techs/rest.png';
-
 export const skills: Skill[] = [
 	{
 		name: 'Microservices',
-		image: microservicesSvg,
+		image: '/techs/microservices.png',
 		tags: 'scallability'
 	},
 	{
 		name: 'Rabbitmq',
-		image: rabbitmqSvg,
+		image: '/techs/rabbitmq.png',
 		tags: 'scallability'
 	},
 	{
 		name: 'CQRS',
-		image: cqrsSvg,
+		image: '/techs/cqrs.png',
 		tags: 'scallability'
 	},
 	{
 		name: 'CleanArchitecture',
-		image: cleanArchitectureSvg,
+		image: '/techs/clean-architecture.png',
 		tags: 'scallability'
 	},
 	// let qualitySkills:
 	{
 		name: 'Xunit',
+		image: '/techs/xunit.png',
 		tags: 'quality'
 	},
 	{
 		name: 'Cypress',
-		image: cypressSvg,
+		image: '/techs/cypress.png',
 		tags: 'quality'
 	},
 	{
 		name: 'Jest',
-		image: jestSvg,
+		image: '/techs/jest.png',
 		tags: 'quality'
 	},
 	{
 		name: 'Moq',
-		image: moqSvg,
+		image: '/techs/moq.png',
 		tags: 'quality'
 	},
 	// let secureSkills: Auth0 identity server passportJs
 
 	{
 		name: 'Auth0',
-		image: auth0Svg,
+		image: '/techs/auth0.png',
 		tags: 'security'
 	},
 	{
 		name: 'IdentityServer',
-		image: identityServerSvg,
+		image: '/techs/is4.png',
 		tags: 'security'
 	},
 	{
 		name: 'PassportJs',
-		image: passportJsSvg,
+		image: '/techs/passportJs.png',
 		tags: 'security'
 	},
 
 	{
 		name: 'Angular',
-		image: angularSvg,
+		image: '/techs/angular.png',
 		tags: 'frontend'
 	},
 	{
 		name: 'Svelte(kit)',
-		image: svelteSvg,
+		image: '/techs/svelte.png',
 		tags: 'frontend'
 	},
 	{
 		name: 'SASS',
-		image: sassSvg,
+		image: '/techs/sass.png',
 		tags: 'frontend'
 	},
 	{
 		name: 'Javascript',
-		image: javascriptSvg,
+		image: '/techs/javascript.png',
 		tags: 'frontend,backend'
 	},
 
 	{
 		name: 'Typescript',
-		image: typescriptSvg,
+		image: '/techs/typescript.png',
 		tags: 'frontend,backend'
 	},
 	{
 		name: 'Tailwind',
-		image: tailwindSvg,
+		image: '/techs/tailwind.png',
 		tags: 'frontend'
 	},
 
 	{
 		name: 'Asp.net Core',
-		image: aspnetcoreSvg,
+		image: '/techs/asp.png',
 		tags: 'backend'
 	},
 	{
 		name: 'Nestjs',
-		image: nestjsSvg,
+		image: '/techs/nestjs.png',
 		tags: 'backend'
 	},
 	{
 		name: 'C#',
-		image: csharpSvg,
+		image: '/techs/csharp.png',
 		tags: 'backend'
 	},
 	{
 		name: 'Gitlab',
-		image: gitlabSvg,
+		image: '/techs/gitlab.png',
 		tags: 'devops'
 	},
 	{
 		name: 'Docker',
-		image: dockerSvg,
+		image: '/techs/docker.png',
 		tags: 'devops,scallable'
 	},
 	{
 		name: 'Github',
-		image: githubSvg,
+		image: '/techs/github.png',
 		tags: 'devops'
 	},
 	{
 		name: 'Azure',
-		image: azureSvg,
+		image: '/techs/azure.png',
 		tags: 'devops'
 	},
 	{
 		name: 'Jira',
-		image: jiraSvg,
+		image: '/techs/jira.png',
 		tags: 'team'
 	},
 	{
 		name: 'Clickup',
-		image: clickupSvg,
+		image: '/techs/clickup.png',
 		tags: 'team'
 	},
 	{
 		name: 'Agile',
-		image: agileSvg,
+		image: '/techs/agile.png',
 		tags: 'team'
 	},
 
 	{
 		name: 'SQLite',
-		image: sqliteSvg,
+		image: '/techs/sqlite.png',
 		tags: 'backend'
 	},
 	{
 		name: 'Firebase',
-		image: firebaseSvg,
+		image: '/techs/firebase.png',
 		tags: 'backend'
 	},
 	{
 		name: 'MySQL',
-		image: mysqlSvg,
+		image: '/techs/mysql.png',
 		tags: 'backend'
 	},
 	{
 		name: 'MongoDB',
-		image: mongodbSvg,
+		image: '/techs/mongodb.png',
 		tags: 'backend'
 	},
 	{
 		name: 'RestApi',
-		image: restapiSvg,
+		image: '/techs/rest.png',
 		tags: 'backend'
 	}
 ];

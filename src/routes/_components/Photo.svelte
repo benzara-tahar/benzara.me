@@ -9,7 +9,7 @@
 	let mappedImage = [];
 	const width = 400;
 	const height = 400;
-	const numberOfParticles = 4000;
+	const numberOfParticles = 3000;
 
 	// mouse move
 	let rotateX: number = 0;
