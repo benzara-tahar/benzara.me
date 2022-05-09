@@ -16,6 +16,7 @@
 	import { logCss as css } from '$lib/utils/console.log';
 	import Settings from '$lib/components/Settings/Settings.svelte';
 	import PageLoader from '$lib/components/PageLoader.svelte';
+	import Cursor from './_components/Cursor.svelte';
 
 	export let url;
 
@@ -43,7 +44,10 @@
 </script>
 
 <SvelteSeo title="Benzara.me" description="Benzara Tahar Benlahcene website" />
-<main class="relative">
+<main class="relative cursor-none">
+	<!-- cursor -->
+	<Cursor />
+
 	{#if $navigationStatus === 'loading'}
 		<div out:fade={{ delay: 500, duration: 300 }}>
 			<PageLoader />
@@ -59,11 +63,9 @@
 		</div>
 	{/if}
 	<Navbar />
-	<!-- <Auth /> -->
 	<PageTransition {url}>
 		<slot><!-- optional fallback --></slot>
 	</PageTransition>
-
 	<Footer />
 </main>
 
