@@ -40,11 +40,8 @@
 	});
 </script>
 
-<section
-	class="flex flex-col my-12 snap-always snap-center"
-	style="min-height: calc(100vh - 72px); "
->
-	<div class="flex flex-col items-centers justif-start lg:flex-row  lg:gap-10">
+<section class="flex flex-col  min-h-screen bg-salte-900 items-center justify-center">
+	<div class="flex flex-col items-centers justif-cen lg:flex-row  lg:gap-10">
 		<div class="mx-auto lg:order-1 ">
 			<fieldset
 				class="flex flex-wrap max-w-3xl p-4  gap-2 border border-slate-200 rounded-md dark:border-slate-900"

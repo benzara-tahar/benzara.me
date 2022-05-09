@@ -43,7 +43,7 @@
 	});
 </script>
 
-<SvelteSeo title="Benzara.me" description="Benzara Tahar Benlahcene website" />
+<SvelteSeo title={'✨{ Benzara.me }✨  '} description="Benzara Tahar Benlahcene website" />
 <main class="relative cursor-none">
 	<!-- cursor -->
 	<Cursor />

@@ -121,3 +121,9 @@ Fran Lab simulator
 permission based store in svelte
 
 https://mixpanel.com/
+
+https://www.halo-lab.com/
+
+https://lusion.co/contact
+
+Let's cross paths

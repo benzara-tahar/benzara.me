@@ -7,7 +7,7 @@
 
 {#key url}
 	<div
-		class="relative w-full h-full m-0 flex"
+		class="relative w-full h-full m-0 flex flex-col"
 		in:fly={{ y: -40, duration: pageTransitionDuration, delay: pageTransitionDuration }}
 		out:fly={{ y: 20, duration: pageTransitionDuration }}
 	>

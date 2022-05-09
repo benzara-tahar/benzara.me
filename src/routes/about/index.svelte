@@ -12,6 +12,5 @@
 		Comming soon..
 	</p>
 
-	<h1 class="heading-1">Hardware and environnement</h1>
 	<h1 class="heading-1">...</h1>
 </main>
