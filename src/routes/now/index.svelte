@@ -36,7 +36,7 @@
 			<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-500" />
 		</span>
 		I am available for freelance work.
-		<a href="mailto:benzara.tahar@gmail.com" class="text-primary-500"> Contact me</a>
-		and let's give birth to your ideas 💡
+		<a href="mailto:benzara.tahar@gmail.com" class="text-primary-500"> Let's cross path</a>
+		and build great 💡 things for the web together
 	</p>
 </main>
