@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Photo from './Photo.svelte';
+	import { onMount } from 'svelte';
+	import SlidingText from './SlidingText.svelte';
 </script>
 
 <!-- HERO -->
@@ -10,11 +11,11 @@
 	>
 		<!-- intro -->
 		<div class="w-full mb-8 lg:w-1/2 ">
-			<h1 class="heading-1">
+			<h1 class="heading-1 ">
 				Hi, <span class="gradient-text">Lahcene</span> here
 			</h1>
-			<h1 class="heading-1">
-				I am a <span class="gradient-text">Full Stack</span> Developer
+			<h1 class="heading-1  overflow-hidden ">
+				I am a <SlidingText /> Developer
 			</h1>
 
 			<p

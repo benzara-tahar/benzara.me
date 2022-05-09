@@ -30,26 +30,11 @@ body {
 }
 
 h1.heading-1 {
-	font-size: clamp(1.2rem, 8vw, 3rem);
-	@apply max-w-7xl font-bold leading-tight tracking-tight text-slate-700 dark:text-white;
+	@apply max-w-7xl font-bold leading-tight tracking-tight text-slate-700 dark:text-white md:text-4xl text-3xl lg:text-5xl;
 }
 
 .font-code {
 	font-family: 'Fira Code', monospace;
-}
-
-.gradient-text {
-	/* background: linear-gradient(-70deg, $accent, $primary-300, $accent, $primary-700);*/
-	background: linear-gradient(-70deg, #8ec200, #00d6d3, #8ec200, #00d6d3);
-	background-size: 400% 400%;
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-animation: gradient 10s ease infinite;
-	animation: gradient 10s ease infinite;
-	-webkit-text-fill-color: transparent;
-	text-shadow: 0 0 #00000000;
-	box-decoration-break: clone;
-	-webkit-box-decoration-break: clone;
 }
 
 @keyframes gradient {
@@ -64,4 +49,14 @@ h1.heading-1 {
 	to {
 		background-position: 0 50%;
 	}
+}
+
+.gradient-text {
+	background: linear-gradient(-70deg, #8ec200, #00d6d3, #8ec200, #00d6d3);
+	background-size: 400% 400%;
+	background-clip: text;
+	animation: gradient 10s ease infinite;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 0 0 #00000000;
+	box-decoration-break: clone;
 }
