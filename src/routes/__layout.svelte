@@ -8,7 +8,6 @@
 <script lang="ts">
 	import { Navbar, Footer, PageTransition } from '$layout';
 	import { fade } from 'svelte/transition';
-	import { theme } from '$store/app.store';
 
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { navigationStatus } from '$store/navigation.store';
@@ -55,13 +54,7 @@
 	{/if}
 
 	<Settings />
-	{#if $theme === 'light'}
-		<div
-			class="absolute top-0  flex items-center justify-center bg-accent-500  text-white text-xs font-code p-2 tracking-tighter"
-		>
-			Light theme is still WIP
-		</div>
-	{/if}
+
 	<Navbar />
 	<PageTransition {url}>
 		<slot><!-- optional fallback --></slot>

@@ -50,26 +50,28 @@
 </script>
 
 <nav class="py-5 container flex justify-between font-code print:hidden h-[72px] cursor-none">
-	<!-- logo -->
-	<Logo />
-	<!-- Primary Navbar items -->
-	<div class="hidden md:flex items-center justify-center space-x-3 h-8">
-		{#each menu as item}
-			<!-- sveltekit:prefetch -->
-			<a
-				href={item.url}
-				class=" px-2  font-normal tracking-wider relative {$page.url.pathname === item.url
-					? 'text-primary-600 dark:text-primary-500 border-b-primary-400 border-b-2'
-					: 'text-slate-900 dark:text-slate-400 blur-[1px] hover:text-slate-200 hover:blur-0 transition-all duration-300'}"
-			>
-				<!-- <span class="text-primary-400">
-						{index + 1}.
-					</span> -->
-				<span>
-					{item.text.toLowerCase()}
-				</span>
-			</a>
-		{/each}
+	<div class="flex items-center justify-center space-x-10">
+		<!-- logo -->
+		<Logo />
+		<!-- Primary Navbar items -->
+		<div class="hidden md:flex items-center justify-center space-x-3 h-8">
+			{#each menu as item}
+				<!-- sveltekit:prefetch -->
+				<a
+					href={item.url}
+					class=" px-2  font-normal tracking-wider relative {$page.url.pathname === item.url
+						? 'text-primary-600 dark:text-primary-500 border-b-primary-400 border-b-2'
+						: 'text-slate-900 dark:text-slate-400 blur-[1px] hover:text-slate-200 hover:blur-0 transition-all duration-300'}"
+				>
+					<!-- <span class="text-primary-400">
+				{index + 1}.
+			</span> -->
+					<span>
+						{item.text.toLowerCase()}
+					</span>
+				</a>
+			{/each}
+		</div>
 	</div>
 	<div class="flex space-x-4">
 		<DarkThemeSwitcher />

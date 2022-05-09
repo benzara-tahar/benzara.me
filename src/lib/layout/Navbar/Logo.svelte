@@ -1,50 +1,83 @@
-<script lang="ts">
-	import { page } from '$app/stores';
-</script>
+<a href="/" class=" flex items-center gap-2 text-sms">
+	<svg
+		version="1.0"
+		xmlns="http://www.w3.org/2000/svg"
+		class="w-8 h-8"
+		width="512pt"
+		height="512pt"
+		viewBox="0 0 512.000000 512.000000"
+		preserveAspectRatio="xMidYMid meet"
+	>
+		<g
+			transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+			fill="#00D6D3"
+			stroke="none"
+		>
+			<path
+				d="M987 5019 c-225 -55 -424 -219 -521 -429 -64 -140 -68 -167 -73 -472
+	l-5 -278 601 0 601 0 0 600 0 600 -262 -1 c-224 0 -275 -3 -341 -20z"
+			/>
+			<path
+				d="M2230 4440 l0 -599 528 -3 527 -3 53 -28 c70 -37 128 -97 161 -166
+	22 -47 26 -70 26 -141 0 -72 -4 -93 -28 -141 -32 -67 -109 -142 -175 -172
+	l-47 -22 -1442 -3 -1443 -2 0 -600 0 -600 1438 -2 1437 -3 57 -27 c76 -35 138
+	-95 173 -165 25 -50 29 -70 30 -143 0 -77 -3 -92 -33 -152 -36 -73 -87 -124
+	-161 -160 -46 -23 -49 -23 -573 -26 l-528 -3 0 -599 0 -600 554 0 c616 0 677
+	5 876 70 533 174 922 612 1041 1170 33 153 33 439 0 590 -45 210 -119 388
+	-230 557 l-61 92 65 100 c393 599 323 1384 -169 1898 -251 264 -575 430 -921
+	472 -55 7 -297 11 -622 11 l-533 0 0 -600z"
+			/>
+			<path
+				d="M393 1003 c5 -310 9 -337 77 -479 103 -214 294 -369 522 -424 72 -17
+	118 -20 341 -20 l257 0 0 600 0 600 -601 0 -601 0 5 -277z"
+			/>
+		</g>
+	</svg>
 
-<div class="flex space-x-1  items-center font-code font-mono">
-	<span class="font-bold text-lg text-accent-500"> {'{'} </span>
-	<span class="text-base text-slate-700 dark:text-slate-300 "> {'benzara.me'} </span>
-	<span class="font-bold text-lg text-accent-500  "> {'}'} </span>
-</div>
-<!-- 
-<script lang="ts">
-	import { page } from '$app/stores';
-</script>
-
-<div class="flex space-x-1  items-center font-code">
-	<span class="text-xs sm:text-base text-slate-700 dark:text-slate-100 "> guest@benzara.me </span>
-
-	<span class="text-xs sm:text-base text-primary-300 animate-blink" title={$page.url.pathname}>
-		:/~ {$page.status === 404
-			? 'not-found :('
-			: $page.url.pathname === '/'
-			? 'home'
-			: $page.url.pathname?.length > 7
-			? $page.url.pathname?.substring(1).slice(0, 7) + '...'
-			: $page.url.pathname?.substring(1)}
-	</span>
-</div>
-
-<style lang="scss">
-	.animate-blink {
-		&::after {
-			content: '';
-			width: 2px;
-			height: 16px;
-			margin-left: 4px;
-			margin-bottom: -4px;
-			background: rgb(230, 230, 230);
-			display: inline-block;
-			animation: cursor-blink 1.5s infinite reverse;
-		}
-	}
-	@keyframes cursor-blink {
-		0% {
-			height: 0;
-		}
-		100% {
-			height: 16px;
-		}
-	}
-</style> -->
+	<!-- <span class="dark:text-white text-slate-800  font-code"> {'{benzara.me}'} </span> -->
+</a>
+<!--
+	<svg class="w-10 h-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path
+			d="M48.3695 50H1.63047C0.730371 50 0 49.2702 0 48.3695V1.63047C0 0.729785 0.730371 0 1.63047 0H48.3696C49.2696 0 50 0.729785 50 1.63047V48.3696C50 49.2702 49.2696 50 48.3695 50Z"
+			fill="#111827"
+		/>
+		<path
+			d="M48.3695 0H25V50H48.3695C49.2696 50 50 49.2702 50 48.3695V1.63047C50 0.729785 49.2696 0 48.3695 0Z"
+			fill="#111827"
+		/>
+		<path
+			d="M17.9348 43.4782H11.4131C10.513 43.4782 9.78262 42.7485 9.78262 41.8478V8.15215C9.78262 7.25147 10.513 6.52168 11.4131 6.52168H17.9349C18.835 6.52168 19.5653 7.25147 19.5653 8.15215C19.5653 9.05284 18.835 9.78262 17.9349 9.78262H13.0436V40.2174H17.9349C18.835 40.2174 19.5653 40.9472 19.5653 41.8479C19.5653 42.7485 18.8349 43.4782 17.9348 43.4782Z"
+			fill="url(#paint0_linear_108_6)"
+		/>
+		<path
+			d="M38.5869 43.4782H32.0651C31.165 43.4782 30.4347 42.7485 30.4347 41.8478C30.4347 40.9471 31.165 40.2173 32.0651 40.2173H36.9564V9.78262H32.0651C31.165 9.78262 30.4347 9.05284 30.4347 8.15215C30.4347 7.25147 31.165 6.52168 32.0651 6.52168H38.5869C39.487 6.52168 40.2174 7.25147 40.2174 8.15215V41.8478C40.2174 42.7485 39.4871 43.4782 38.5869 43.4782Z"
+			fill="url(#paint1_linear_108_6)"
+		/>
+		<defs>
+			<linearGradient
+				id="paint0_linear_108_6"
+				x1="14.674"
+				y1="6.52168"
+				x2="14.674"
+				y2="43.4782"
+				gradientUnits="userSpaceOnUse"
+			>
+				<stop stop-color="#8EC200" />
+				<stop offset="1" stop-color="white" />
+			</linearGradient>
+			<linearGradient
+				id="paint1_linear_108_6"
+				x1="35.326"
+				y1="6.52168"
+				x2="35.326"
+				y2="43.4782"
+				gradientUnits="userSpaceOnUse"
+			>
+				<stop stop-color="white" />
+				<stop offset="1" stop-color="#00D6D3" />
+			</linearGradient>
+		</defs>
+	</svg>
+</a> -->
+<!-- <span class="dark:text-white text-slate-800  font-code"> {'{benzara.me}'} </span> -->
