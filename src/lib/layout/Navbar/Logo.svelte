@@ -2,9 +2,9 @@
 	<svg
 		version="1.0"
 		xmlns="http://www.w3.org/2000/svg"
-		class="w-8 h-8"
-		width="512pt"
-		height="512pt"
+		width="24px"
+		height="24px"
+		class="-mt-1"
 		viewBox="0 0 512.000000 512.000000"
 		preserveAspectRatio="xMidYMid meet"
 	>
@@ -34,50 +34,7 @@
 		</g>
 	</svg>
 
-	<!-- <span class="dark:text-white text-slate-800  font-code"> {'{benzara.me}'} </span> -->
+	<span class=" text-primary-500  font-code font-bold"> {'{'} </span>
+	<span class="dark:text-slate-200 text-slate-800  font-code font-sbold"> {'benzara.me'} </span>
+	<span class=" text-primary-500  font-code font-bold"> {'}'} </span>
 </a>
-<!--
-	<svg class="w-10 h-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path
-			d="M48.3695 50H1.63047C0.730371 50 0 49.2702 0 48.3695V1.63047C0 0.729785 0.730371 0 1.63047 0H48.3696C49.2696 0 50 0.729785 50 1.63047V48.3696C50 49.2702 49.2696 50 48.3695 50Z"
-			fill="#111827"
-		/>
-		<path
-			d="M48.3695 0H25V50H48.3695C49.2696 50 50 49.2702 50 48.3695V1.63047C50 0.729785 49.2696 0 48.3695 0Z"
-			fill="#111827"
-		/>
-		<path
-			d="M17.9348 43.4782H11.4131C10.513 43.4782 9.78262 42.7485 9.78262 41.8478V8.15215C9.78262 7.25147 10.513 6.52168 11.4131 6.52168H17.9349C18.835 6.52168 19.5653 7.25147 19.5653 8.15215C19.5653 9.05284 18.835 9.78262 17.9349 9.78262H13.0436V40.2174H17.9349C18.835 40.2174 19.5653 40.9472 19.5653 41.8479C19.5653 42.7485 18.8349 43.4782 17.9348 43.4782Z"
-			fill="url(#paint0_linear_108_6)"
-		/>
-		<path
-			d="M38.5869 43.4782H32.0651C31.165 43.4782 30.4347 42.7485 30.4347 41.8478C30.4347 40.9471 31.165 40.2173 32.0651 40.2173H36.9564V9.78262H32.0651C31.165 9.78262 30.4347 9.05284 30.4347 8.15215C30.4347 7.25147 31.165 6.52168 32.0651 6.52168H38.5869C39.487 6.52168 40.2174 7.25147 40.2174 8.15215V41.8478C40.2174 42.7485 39.4871 43.4782 38.5869 43.4782Z"
-			fill="url(#paint1_linear_108_6)"
-		/>
-		<defs>
-			<linearGradient
-				id="paint0_linear_108_6"
-				x1="14.674"
-				y1="6.52168"
-				x2="14.674"
-				y2="43.4782"
-				gradientUnits="userSpaceOnUse"
-			>
-				<stop stop-color="#8EC200" />
-				<stop offset="1" stop-color="white" />
-			</linearGradient>
-			<linearGradient
-				id="paint1_linear_108_6"
-				x1="35.326"
-				y1="6.52168"
-				x2="35.326"
-				y2="43.4782"
-				gradientUnits="userSpaceOnUse"
-			>
-				<stop stop-color="white" />
-				<stop offset="1" stop-color="#00D6D3" />
-			</linearGradient>
-		</defs>
-	</svg>
-</a> -->
-<!-- <span class="dark:text-white text-slate-800  font-code"> {'{benzara.me}'} </span> -->
