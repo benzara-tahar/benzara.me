@@ -4,7 +4,7 @@
 </script>
 
 <!-- HERO -->
-<section class="">
+<section class="relative z-10">
 	<div
 		class="container flex flex-col items-center justify-start space-x-0 lg:flex-row lg:space-x-6  mx-auto"
 		style="min-height: calc(100vh - 72px);"

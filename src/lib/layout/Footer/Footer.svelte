@@ -3,14 +3,18 @@
 
 	const extraLinks = [
 		{
+			text: 'Resources',
+			href: '/resources'
+		},
+		{
+			text: 'Notes',
+			href: '/notes'
+		},
+
+		{
 			text: 'Change Log',
 			href: '/change-log'
 		},
-		{
-			text: 'Resume',
-			href: '/resume'
-		},
-
 		{
 			text: 'Newsletter',
 			href: 'https://www.getrevue.co/profile/benzara'
@@ -22,10 +26,7 @@
 			text: 'Community Wall',
 			href: '/community-wall'
 		},
-		{
-			text: 'Notes',
-			href: '/notes'
-		},
+
 		{
 			text: 'Testimonials',
 			href: '/testimonials'

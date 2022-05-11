@@ -2,7 +2,6 @@
 	// 1. Using a `load` function, pass the current URL to the layout component as a prop
 	/** @type {import('@sveltejs/kit').Load} */
 	export const load = async ({ url }) => ({ props: { url } });
-	import SvelteSeo from 'svelte-seo';
 </script>
 
 <script lang="ts">
@@ -42,10 +41,9 @@
 	});
 </script>
 
-<SvelteSeo title={'✨{ Benzara.me }✨  '} description="Benzara Tahar Benlahcene website" />
-<main class="relative cursor-none">
+<main class="relative">
 	<!-- cursor -->
-	<Cursor />
+	<!-- <Cursor /> -->
 
 	{#if $navigationStatus === 'loading'}
 		<div out:fade={{ delay: 500, duration: 300 }}>
