@@ -11,7 +11,7 @@
 		<span class="gradient-text">immortality</span>
 	</h1>
 
-	<ul class="">
+	<!-- <ul class="">
 		{#each posts as post}
 			<li class="text-slate-500 text-lg text-justify mt-4  max-w-xl leading-relaxed ">
 				<a href="/blog/{post.slug}">
@@ -19,5 +19,6 @@
 				</a>
 			</li>
 		{/each}
-	</ul>
+	</ul> -->
+	<p class="text-slate-500 text-lg text-justify mt-4  max-w-xl leading-relaxed ">comming soon...</p>
 </main>

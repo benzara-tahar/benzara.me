@@ -56,7 +56,7 @@ export const skills: Skill[] = [
 	},
 	{
 		name: 'PassportJs',
-		image: '/techs/passportJs.png',
+		image: '/techs/passportjs.png',
 		tags: 'security'
 	},
 
