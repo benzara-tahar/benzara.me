@@ -19,9 +19,13 @@
 					<span class="text-sm"> {e.from} - {e.to}</span>
 				</div>
 
-				<h1 class="my-2 ml-10 text-lg tracking-wide text-white">{e.position} @ {e.company}</h1>
+				<h1 class="my-2 ml-10 text-lg tracking-wide dark:text-white text-zinc-800">
+					{e.position} @ {e.company}
+				</h1>
 				{#each e.tasks as description}
-					<p class="max-w-3xl ml-10 leading-relaxed text-slate-400">● {description}</p>
+					<p class="max-w-3xl ml-10 leading-relaxed dark:text-slate-400 text-zinc-500">
+						● {description}
+					</p>
 				{/each}
 			{/each}
 		</div>
