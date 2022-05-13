@@ -4,9 +4,8 @@
 	export let title = '{benzara.me} Peotry in <code/>';
 	export let description = 'A place where I share my ideas';
 	export let keywords = 'web, html, css, javascript, angular, svelte, sveltekit';
-	export let image = '';
+	// export let image = '';
 	$: imageFile = `https://${$page.url.host}/img/me-light.jpg`;
-	// $: imageFile = image.startsWith('/') ? image : `/branding/banner-${image}.png`;
 </script>
 
 <title>{title}</title>
@@ -33,8 +32,8 @@
 <meta property="og:image" content="/img/me-light.jpg" />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:card" content={imageFile} />
 <meta property="twitter:url" content="https://www.benzara.me/" />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content="/img/me-light.jpg" />
+<meta property="twitter:image" content={imageFile} />
