@@ -3,6 +3,9 @@
 	import { onMount } from 'svelte';
 	import { shuffleArray } from '$lib/utils/arrays';
 	import SkillChip from './SkillChip.svelte';
+
+	import { typewriter } from '$lib/transitions/typewriter.transition';
+
 	let screenY: number = 0;
 	let scrollY: number = 0;
 	let container: HTMLElement;
@@ -51,16 +54,15 @@
 <!-- class="w-full dark:bg-zinc-900 bg-zinc-200 relative" -->
 
 <section
-	class="w-full dark:bg-gradient-to-b dark:from-gray-900 dark:via-slate-800 dark:to-primary-900
- from-zinc-200 to-primary-500 relative "
+	class="  dark:bg-gray-900 snap-start z-10
+ bg-zinc-200 relative "
 	bind:this={container}
-	style="transform: translateY({-scrollProgress * 20 + 20}vh)"
+	style="transform: translateY({-scrollProgress * 50 + 25}vh)"
 >
 	<!-- svg separator -->
 	<svg
-		class="absolute top-0 left-0 right-0 w-full dark:fill-gray-900 fill-zinc-200 z-[-1]"
+		class="absolute top-0 left-0 right-0 w-full dark:fill-gray-900 fill-zinc-200 "
 		style="transform: translateY(-99%);"
-		id="wave"
 		viewBox="0 0 1440 420"
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
@@ -87,6 +89,7 @@
 				<h1 class="heading-1 my-10 ">
 					Hands dirty with these <span class="gradient-text">Skills </span>
 				</h1>
+				<!-- in:typewriter={{ speed: 20, delay: 100 }} -->
 				<p
 					class="max-w-lg mt-4 text-lg leading-loose tracking-wide text-justify text-slate-700 md:max-w-2xl dark:text-slate-300"
 				>

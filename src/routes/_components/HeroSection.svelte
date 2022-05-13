@@ -1,52 +1,63 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import SlidingText from './SlidingText.svelte';
+	import { fly } from 'svelte/transition';
+	import AnimatedCounter from '../../lib/components/AnimatedCounter.svelte';
+	import SlidingText from '../../lib/components/AnimatedCounter.svelte';
+	import Terminal from './Terminal.svelte';
 </script>
 
 <!-- HERO -->
-<section class="relative z-10">
+<section class="relative z-10 snap-start">
 	<div
 		class="container flex flex-col items-center justify-start space-x-0 lg:flex-row lg:space-x-6  mx-auto"
 		style="min-height: calc(100vh - 72px);"
 	>
 		<!-- intro -->
-		<div class="w-full mb-8 lg:w-1/2 ">
+		<div in:fly={{ x: -50, delay: 500, duration: 500 }} class="w-full mb-8 lg:w-1/2 ">
 			<h1 class="heading-1 ">
 				Hi, <span class="gradient-text">Lahcene</span> here
 			</h1>
-			<h1 class="heading-1  overflow-hidden ">
-				I am a <SlidingText /> Developer
+			<h1 class="heading-1  flex items-center justify-start flex-wrap">
+				I am a &nbsp; <span class="flex">
+					[<AnimatedCounter
+						values={[' Creative ', ' Frontend ', ' Backend ', ' FullStack ']}
+						interval={2000}
+						direction="up"
+						class=" text-primary"
+					/>] &nbsp;
+				</span>
+				Developer
 			</h1>
 
 			<p
-				class="max-w-xl mt-4 text-lg leading-relaxed text-justify text-slate-600 dark:text-slate-300 "
+				class="max-w-xl mt-4 text-lg leading-loose text-justify text-slate-600 dark:text-slate-300 "
 			>
 				I am 30 years old <span class="keyword">passionate learner</span> having a keen interest in
 				building eye-catching digital solutions that
 				<span class="keyword">solves</span> real-word problems
 			</p>
 			<p
-				class="max-w-xl mt-4 text-lg leading-relaxed text-justify text-slate-600 dark:text-slate-300"
+				class="max-w-xl mt-4 text-lg leading-loose text-justify text-slate-600 dark:text-slate-300"
 			>
-				Based in <span class="keyword">Algeria</span> I am currently working with various clients
-				arround the world on
-				<span class="keyword">Upwork</span>
+				Currently helping
+				<a class="keyword" href="https://www.rehabguru.com/" target="_blank">RehabGurru</a>
+				to take their Home Exercise Prescribing Platform to the
+				<span class="keyword">next level.</span>
 			</p>
 		</div>
 
 		<!-- me -->
 
-		<div
-			class="relative flex items-center md:justify-start justify-center ml-0 md:pl-10 w-full lg:w-1/2 "
-		>
+		<div class="relative flex items-center md:justify-start justify-center  w-full lg:w-1/2 ">
+			<Terminal />
 			<!-- <Photo /> -->
 			<div class="absolute top-0 left-0 right-0 pointer-events-none">
 				<div class="absolute top-0 overflow-visible opacity-50 dark:opacity-30 left-16">
-					<div class="mix-blend-multiply absolute w-[350px] h-[300px] rounded-[40rem] circle-obj" />
+					<div class="mix-blend-multiply absolute w-[500px] h-[500px] rounded-[40rem] circle-obj" />
 				</div>
 				<div class="absolute overflow-visible opacity-50 dark:opacity-30 top-28 left-52">
 					<div
-						class="mix-blend-multiply absolute w-[200px] h-[250px] rounded-[40rem] circle-obj2"
+						class="mix-blend-multiply absolute w-[400px] h-[550px] rounded-[40rem] circle-obj2"
 					/>
 				</div>
 			</div>

@@ -134,7 +134,7 @@
 	<nav
 		in:fly={{ y: 10, duration: 300 }}
 		out:fly={{ y: 10, duration: 300 }}
-		class="fixed w-full h-screen top-0 left-0 bg-slate-900 z-50 print:hidden"
+		class="fixed w-full h-screen top-0 left-0 bg-slate-900 z-50 print:hidden "
 	>
 		<div class="flex flex-col justify-between items-center w-full h-full p-5">
 			<!-- close button -->
@@ -169,10 +169,13 @@
 						<!-- sveltekit:prefetch -->
 						<a
 							href={item.url}
-							class="block text-4xl font-bold px-2 py-4 text-slate-200   hover:text-secondary"
-							>{item.text}</a
+							class="block text-4xl font-bold px-2 py-4 text-slate-200   hover:text-primary-500 {item.url ===
+							$page.url.pathname
+								? 'line-through pointer-events-none'
+								: ''}">{item.text}</a
 						>
 					</li>
+					<li class="text-white" />
 				{/each}
 			</ul>
 

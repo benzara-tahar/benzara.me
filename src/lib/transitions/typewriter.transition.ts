@@ -1,9 +1,17 @@
-export function typewriter(node: HTMLElement, { delay = 0, speed = 200 }) {
+export type TypewriterOptions = {
+	delay: number;
+	speed?: number;
+	duration?: number;
+};
+export function typewriter(node: HTMLElement, { delay = 0, speed, duration }: TypewriterOptions) {
 	const textNodes = getAllTextNodes(node);
 	if (!textNodes.length) {
 		throw new Error(`This transition only works on elements with text nodes`);
 	}
 
+	if (speed && duration) {
+		throw new Error(`Specify either speed or duration, not both`);
+	}
 	let totalLength = 0;
 	const ranges = textNodes.map((textNode) => {
 		const range = [totalLength, totalLength + textNode.textContent.length];
@@ -22,7 +30,11 @@ export function typewriter(node: HTMLElement, { delay = 0, speed = 200 }) {
 		}
 		return ranges[currentRangeIndex];
 	}
-	const duration = totalLength * speed;
+	if (speed) {
+		// if speed is specified, calculate the duration
+		duration = totalLength * speed;
+	}
+	// otherwise use the provided duration
 
 	return {
 		delay,
