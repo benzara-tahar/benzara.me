@@ -15,6 +15,7 @@
 	import Settings from '$lib/components/Settings/Settings.svelte';
 	import PageLoader from '$lib/components/PageLoader.svelte';
 	import Cursor from './_components/Cursor.svelte';
+	import Metadata from '$lib/components/Metadata.svelte';
 
 	export let url;
 
@@ -35,12 +36,14 @@
 				12,
 				'black',
 				`background:#009E9C ; background: linear-gradient(90deg, #8EC200 0%, #29FFFC 49%, #CBFF3D 100%);`
-				// `background:${randomColor()} ; background: linear-gradient(90deg, ${randomColor()} 0%, ${randomColor()} 49%, ${randomColor()} 100%);`
 			)
 		);
 	});
 </script>
 
+<svelte:head>
+	<Metadata />
+</svelte:head>
 <main class="relative">
 	<!-- cursor -->
 	<!-- <Cursor /> -->

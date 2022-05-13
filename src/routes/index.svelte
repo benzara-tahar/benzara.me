@@ -1,15 +1,12 @@
 <script lang="ts">
+	import Metadata from '$lib/components/Metadata.svelte';
 	import HeroSection from './_components/HeroSection.svelte';
 	import SkillsSection from './_components/SkillsSection.svelte';
 	import TimeLine from './_components/TimeLineSection.svelte';
 </script>
 
 <svelte:head>
-	<title>{'{benzara.me} | Welcome to my garden'}</title>
-
-	<meta name="description" content="A place where you find me" />
-	<meta name="keywords" content="web, html, css, javascript, angular, svelte, sveltekit" />
-	<meta name="author" content="Benzara Tahar Benlahcene" />
+	<Metadata />
 </svelte:head>
 
 <!-- todo: enable scroll snapping and fix scroll parallax issues
