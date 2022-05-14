@@ -129,7 +129,7 @@
 	</section>
 </section>
 
-<style lang="scss">
+<style lang="postcss">
 	.trigger-word {
 		border-bottom: 1px dashed #9c9c9c;
 		font-weight: 500;

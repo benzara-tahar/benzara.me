@@ -54,6 +54,6 @@
 	</div>
 </div>
 
-<!-- <style lang="scss">
+<!-- <style lang="postcss">
 	@use 'src/styles/pages/error';
 </style> -->

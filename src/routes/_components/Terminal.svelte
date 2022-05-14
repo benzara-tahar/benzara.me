@@ -316,7 +316,7 @@
 	{/if}
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	:global(.terminal) {
 		.current-dir {
 			@apply left-3 text-primary-500;

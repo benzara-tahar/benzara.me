@@ -27,7 +27,7 @@
 
 <span bind:this={cursor} class=" cursor z-10" />
 
-<style lang="scss">
+<style lang="postcss">
 	.cursor {
 		width: 40px;
 		height: 40px;
@@ -80,7 +80,6 @@
 	}
 
 	:global(.expand) {
-		// animation: expandAnimation 0.5s forwards;
 		background-color: cyan;
 		transition: all 0.3s ease;
 	}

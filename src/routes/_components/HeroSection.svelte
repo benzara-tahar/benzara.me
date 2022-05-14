@@ -65,7 +65,7 @@
 	</div>
 </section>
 
-<style lang="scss" global>
+<style lang="postcss" global>
 	.keyword {
 		@apply rounded-md dark:text-white text-slate-700 px-2 py-1 bg-slate-300 dark:bg-slate-600;
 	}

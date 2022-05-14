@@ -67,5 +67,5 @@
 </main>
 
 <style global>
-	@import '../app.scss';
+	@import '../app.css';
 </style>

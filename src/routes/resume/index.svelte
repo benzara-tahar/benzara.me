@@ -37,7 +37,7 @@
 	</div>
 </main>
 
-<style lang="scss">
+<style lang="postcss">
 	@page {
 		size: auto; /* auto is the initial value */
 		margin: 0; /* this affects the margin in the printer settings */

@@ -31,11 +31,11 @@
 	</div>
 </div>
 
-<style lang="scss">
-	$glow-width: 200px;
-	$glow-radius: 10px;
-
+<style lang="postcss">
 	.progress-bar {
+		--glow-width: 200px;
+		--glow-radius: 10px;
+
 		height: 2px;
 		width: 100%;
 		z-index: 999;
@@ -55,7 +55,7 @@
 			border-radius: 0px 2px 2px 0px;
 		}
 		.glow {
-			width: $glow-width;
+			width: var(--glow-width);
 			max-width: 100%;
 			height: 100%;
 			float: right;
@@ -70,15 +70,15 @@
 		.glow::before {
 			background: transparent;
 			height: 100%;
-			box-shadow: 0px 0px $glow-radius #aceb00, 0px 0px $glow-radius #aceb00;
+			box-shadow: 0px 0px var(--glow-radius) #aceb00, 0px 0px var(--glow-radius) #aceb00;
 			z-index: -5;
 		}
 		.glow::after {
 			background: linear-gradient(to right, #24242400 0%, transparent 100%);
-			height: calc(100% + #{$glow-radius} + #{$glow-radius});
-			width: calc(100% + #{$glow-radius});
-			top: (-$glow-radius);
-			left: (-$glow-radius);
+			height: calc(100% + var(--glow-radius) + var(--glow-radius));
+			width: calc(100% + var(--glow-radius));
+			top: var(--glow-radius);
+			left: var(--glow-radius);
 			z-index: -3;
 		}
 	}

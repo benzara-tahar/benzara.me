@@ -121,7 +121,7 @@
 	</div>
 </footer>
 
-<style lang="scss">
+<style lang="postcss">
 	.header {
 		@apply uppercase text-lg mb-2 font-semibold;
 	}

@@ -97,7 +97,7 @@
 	</div>
 </section>
 
-<style lang="scss">
+<style lang="postcss">
 	.settings {
 		&.closed {
 			max-height: 0;

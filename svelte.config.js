@@ -24,10 +24,7 @@ const config = {
 	preprocess: [
 		sveltePreprocess({
 			preserve: ['module'],
-			postcss: true,
-			scss: {
-				prependData: '@use "src/variables.scss" as *;'
-			}
+			postcss: true
 		}),
 		mdsvex({
 			extensions: extensions,
@@ -66,14 +63,6 @@ const config = {
 					$actions: path.resolve('./src/lib/actions'),
 					$transitions: path.resolve('./src/lib/transitions'),
 					$layout: path.resolve('./src/lib/layout')
-				}
-			},
-
-			css: {
-				preprocessorOptions: {
-					scss: {
-						additionalData: '@use "src/variables.scss" as *;'
-					}
 				}
 			}
 		}

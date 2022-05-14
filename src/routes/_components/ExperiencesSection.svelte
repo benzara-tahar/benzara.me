@@ -32,7 +32,7 @@
 	</section>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.time::before {
 		content: '';
 		width: 5rem;
