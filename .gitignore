@@ -1,0 +1,13 @@
+.DS_Store
+INSPIRATION.MD
+node_modules
+/build
+/.svelte-kit
+/.vercel_build_output
+
+/package
+.env
+.env.*
+!.env.example
+.vercel
+.output

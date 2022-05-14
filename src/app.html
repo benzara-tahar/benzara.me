@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="twitty">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="apple-touch-icon" sizes="180x180" href="%svelte.assets%/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="%svelte.assets%/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="%svelte.assets%/favicon-16x16.png" />
+		<link rel="manifest" href="%svelte.assets%/site.webmanifest" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#202B41" />
+		%svelte.head%
+
+		<style>
+			.fade-up {
+				animation: fade-up 0.3s ease-in forwards;
+				animation-delay: 300ms;
+				opacity: 0;
+			}
+			@keyframes fade-up {
+				from {
+					opacity: 0;
+					transform: translateY(5px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		</style>
+	</head>
+	<body class="scroller dark">
+		<main
+			class="bg-[#ecf4ff] fade-up dark:bg-[#000106] w-full flex flex-col min-h-screen transition-colors duration-500"
+		>
+			%svelte.body%
+		</main>
+	</body>
+</html>

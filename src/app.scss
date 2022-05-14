@@ -1,0 +1,62 @@
+/* Fonts */
+@import '@fontsource/rubik/400.css';
+@import '@fontsource/rubik/500.css';
+@import '@fontsource/rubik/600.css';
+@import '@fontsource/rubik/700.css';
+@import '@fontsource/fira-code/400.css';
+@import '@fontsource/fira-code/500.css';
+@import '@fontsource/fira-code/700.css';
+
+/* @import './styles/variables.scss'; */
+@import './styles/scrollbar.scss';
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	overflow-x: hidden;
+}
+body {
+	overflow-x: hidden;
+	background-color: #111827;
+	font-family: 'Rubik', Arial, Helvetica, sans-serif;
+}
+
+::selection {
+	background: #00c9bf;
+	color: white;
+}
+
+h1.heading-1 {
+	@apply max-w-7xl font-bold leading-tight tracking-tight text-slate-700 dark:text-white md:text-4xl text-3xl lg:text-5xl;
+}
+
+.font-code {
+	font-family: 'Fira Code', monospace;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	to {
+		background-position: 0 50%;
+	}
+}
+
+.gradient-text {
+	background: linear-gradient(-70deg, #8ec200, #00d6d3, #8ec200, #00d6d3);
+	background-size: 400% 400%;
+	background-clip: text;
+	animation: gradient 10s ease infinite;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 0 0 #00000000;
+	box-decoration-break: clone;
+}
