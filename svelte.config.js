@@ -53,10 +53,10 @@ const config = {
 	extensions,
 	kit: {
 		adapter: adapter(),
-
+		files: { serviceWorker: 'src/sw' },
+		serviceWorker: { register: true },
 		vite: {
 			server: { fs: { allow } },
-
 			resolve: {
 				alias: {
 					$static: path.resolve('./static'),
