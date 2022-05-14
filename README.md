@@ -1,4 +1,4 @@
-# 🏠 2021 🚧
+# 🏠 Benzara.me 2022 (WIP🚧)
 
 [![GitHub deployments](https://img.shields.io/github/deployments/benzara-tahar/benzara.me/Production?label=vercel&logo=vercel&style=flat-square)](https://benzara.me)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/benzara-tahar/benzara.me?style=flat-square)
@@ -6,7 +6,7 @@
 
 My Portfolio website for 2022 made with sveletekit ❤
 
-![benzara_home](./demo.gif)
+![benzara_home](./preview.jpg)
 
 ## 🚀 Getting Started
 
