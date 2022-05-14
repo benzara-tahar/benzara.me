@@ -128,3 +128,5 @@ https://lusion.co/contact
 
 Let's cross paths
 https://getstream.io/
+
+https://icones.js.org/

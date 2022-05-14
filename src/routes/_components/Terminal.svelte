@@ -88,18 +88,18 @@
 			</div>
 			<!-- whoami -->
 			<div in:typewriter={{ delay: 500, duration: 500 }} class="entry">
-				<span class="text-primary-500 font-bold">$: </span>
+				<span class="text-primary-500 ">$: </span>
 				whoami
 			</div>
 			<div
 				in:typewriter={{ delay: 1200, duration: 3000 }}
-				class=" leading-relaxed dark:text-slate-200 text-zinc-700"
+				class=" leading-relaxed dark:text-slate-200 text-zinc-500"
 			>
-				<p>[x] fork('aymen'); fork('riad'}</p>
-				<p>[x] chess player</p>
 				<p>[x] curiosity driven human</p>
 				<p>[x] challenging myself at a daily basis</p>
-				<p>[ ] in progress...</p>
+				<p>[x] Also a chess player ♟</p>
+				<p>[x] and fork('aymen.exe'); fork('riad.so')</p>
+				<p>[ ] still in progress...</p>
 			</div>
 			<div class="entry" in:fade={{ delay: 4400, duration: 1 }}>
 				<span class="prompt">{promptPrefix}</span>
@@ -108,12 +108,12 @@
 
 			<!-- curl ifconfig.me -->
 			<div in:typewriter={{ delay: 5000, duration: 600 }} class="entry">
-				<span class="text-primary-500 font-bold">$: </span>
+				<span class="text-primary-500 ">$: </span>
 				<a href="https://ifconfig.me" target="_blank"> curl ifconfig.me </a>
 			</div>
 			<div
 				in:typewriter={{ delay: 6000, duration: 3000 }}
-				class=" leading-relaxed dark:text-slate-200 text-zinc-700"
+				class=" leading-relaxed dark:text-slate-200 text-zinc-500"
 			>
 				<p>ip &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 127.0.0.1</p>
 				<p>location &nbsp;&nbsp;: Algiers, Algeria</p>

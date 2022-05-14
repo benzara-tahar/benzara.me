@@ -44,7 +44,10 @@
 <svelte:head>
 	<Metadata />
 </svelte:head>
-<main class="relative">
+<main
+	class="relative"
+	style="opacity:0.9;background-image:radial-gradient(#33333390 0.75px, rgba(0,0,0,0) 0.95px);background-size:19px 19px;background-repeat:repeat;mask-image:linear-gradient(rgba(0, 0, 0, 1.0), transparent)"
+>
 	<!-- cursor -->
 	<!-- <Cursor /> -->
 
