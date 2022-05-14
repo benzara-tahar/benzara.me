@@ -4,7 +4,7 @@
 
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { typewriter } from '$lib/transitions/typewriter.transition';
+	import { typewriter } from '$transitions/typewriter.transition';
 	import { browser } from '$app/env';
 	import { onMount } from 'svelte';
 

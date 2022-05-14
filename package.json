@@ -38,13 +38,7 @@
 		"@supabase/supabase-js": "^1.35.2",
 		"cookie": "^0.4.2",
 		"dateformat": "^5.0.3",
-		"matter-attractors": "^0.1.6",
-		"matter-js": "^0.18.0",
-		"mixpanel-browser": "^2.45.0",
-		"prism-svelte": "^0.5.0",
-		"prismjs": "^1.28.0",
-		"svelte-inview": "^3.0.0",
-		"svelte-seo": "^1.4.0"
+		"svelte-inview": "^3.0.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
@@ -56,6 +50,7 @@
 		"@typescript-eslint/parser": "^5.19.0",
 		"autoprefixer": "^10.4.4",
 		"cssnano": "^5.1.7",
+		"dotenv": "^16.0.0",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^3.4.1",

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { fly } from 'svelte/transition';
-	import SocialIcons from '$lib/components/SocialIcons.svelte';
+	import SocialIcons from '$components/SocialIcons.svelte';
 
 	import Logo from './Logo.svelte';
 	import { initCanvasAnimation } from './canvasAnimation';
-	import { settingsVisible } from '$lib/_store/app.store';
-	import DarkThemeSwitcher from '$lib/components/DarkThemeSwitcher.svelte';
+	import { settingsVisible } from '$store/app.store';
+	import DarkThemeSwitcher from '$components/DarkThemeSwitcher.svelte';
 	// https://codepen.io/towc/pen/mJzOWJ
 	let canvas: HTMLCanvasElement;
 	let hidden = true;

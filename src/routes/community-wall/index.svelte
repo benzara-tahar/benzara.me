@@ -2,7 +2,7 @@
 	import { dev } from '$app/env';
 
 	import { supabase } from '$lib/supabase';
-	import { currentUser, isLoggedIn } from '$lib/_store/auth.store';
+	import { currentUser, isLoggedIn } from '$store/auth.store';
 	import type { PostgrestError } from '@supabase/supabase-js';
 	import { fly } from 'svelte/transition';
 

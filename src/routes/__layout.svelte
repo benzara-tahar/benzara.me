@@ -5,17 +5,17 @@
 </script>
 
 <script lang="ts">
-	import { Navbar, Footer, PageTransition } from '$layout';
+	import { Navbar, Footer, PageTransition } from '$layouts';
 	import { fade } from 'svelte/transition';
 
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { navigationStatus } from '$store/navigation.store';
 	import { onMount } from 'svelte';
-	import { logCss as css } from '$lib/utils/console.log';
-	import Settings from '$lib/components/Settings/Settings.svelte';
-	import PageLoader from '$lib/components/PageLoader.svelte';
-	import Cursor from './_components/Cursor.svelte';
-	import Metadata from '$lib/components/Metadata.svelte';
+	import { logCss as css } from '$utils/console.log';
+	import Settings from '$components/Settings/Settings.svelte';
+	import PageLoader from '$components/PageLoader.svelte';
+	// import Cursor from './_components/Cursor.svelte';
+	import Metadata from '$components/Metadata.svelte';
 
 	export let url;
 
@@ -46,7 +46,7 @@
 </svelte:head>
 <main
 	class="relative"
-	style="opacity:0.9;background-image:radial-gradient(#33333390 0.75px, rgba(0,0,0,0) 0.95px);background-size:19px 19px;background-repeat:repeat;mask-image:linear-gradient(rgba(0, 0, 0, 1.0), transparent)"
+	style="background-image:radial-gradient(#33333390 .8px, rgba(0,0,0,0) 1px);background-size:19px 19px;background-repeat:repeat;mask-image:linear-gradient(rgba(0, 0, 0, 1.0), transparent)"
 >
 	<!-- cursor -->
 	<!-- <Cursor /> -->

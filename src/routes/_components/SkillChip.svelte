@@ -1,7 +1,8 @@
 <svelte:options accessors={true} />
 
 <script lang="ts">
-	import type { Skill } from '$lib/types/skill';
+	import type { Skill } from '$lib/models/interfaces/skill';
+
 	export let skill: Skill;
 	export let isBlured: boolean = false;
 </script>
@@ -10,7 +11,7 @@
 	title={skill.name}
 	class="
 	{isBlured ? 'blur-[1px] grayscale' : ''}
-	flex items-center text-base transition duration-300 border rounded-full cursor-pointer bg-slate-200 hover:bg-slate-400 dark:bg-slate-700 align-center hover:dark:bg-slate-900 ease w-max dark:border-slate-800 border-slate-200
+	flex items-center text-base transition duration-300 border rounded-full cursor-pointer bg-zinc-300 hover:bg-zinc-100 dark:bg-slate-700 align-center hover:dark:bg-slate-900 ease w-max dark:border-slate-800 border-slate-200
 	 group"
 >
 	{#if skill.image}

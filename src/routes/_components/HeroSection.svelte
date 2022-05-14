@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import AnimatedCounter from '../../lib/components/AnimatedCounter.svelte';
-	import SlidingText from '../../lib/components/AnimatedCounter.svelte';
+	import AnimatedCounter from '$components/AnimatedCounter.svelte';
 	import Terminal from './Terminal.svelte';
 </script>
 

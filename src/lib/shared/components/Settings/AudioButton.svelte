@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { useInlineSvg } from '$actions/useInlineSvg.action';
 	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
-	import { settingsVisible } from '$lib/_store/app.store';
+	import { settingsVisible } from '$store/app.store';
 	import type { Unsubscriber } from 'svelte/store';
 
 	export let audio;

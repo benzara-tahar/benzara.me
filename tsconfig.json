@@ -1,18 +1,43 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
+		"strictNullChecks": false,
+		"noImplicitAny": false,
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"lib": ["es2020", "DOM"],
+		"moduleResolution": "node",
+		"module": "es2020",
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "es2020",
+
 		"paths": {
 			"$lib": ["src/lib"],
 			"$lib/*": ["src/lib/*"],
-			"$layout": ["src/lib/layout/*", "src/lib/layout/index"],
+			"$components": ["src/lib/shared/components/index.ts"],
+			"$components/*": ["src/lib/shared/components/*"],
+			"$actions": ["src/lib/shared/actions/index.ts"],
+			"$actions/*": ["src/lib/shared/actions/*"],
+			"$transitions": ["src/lib/shared/transitions/index.ts"],
+			"$transitions/*": ["src/lib/shared/transitions/*"],
+			"$core": ["src/lib/core"],
+			"$core/*": ["src/lib/core/*"],
+			"$store": ["src/lib/store"],
+			"$store/*": ["src/lib/store/*"],
+			"$layouts": ["src/lib/shared/layouts/index.ts"],
+			"$layouts/*": ["src/lib/shared/layouts/*"],
+			"$data": ["src/lib/data/index.ts"],
 			"$data/*": ["src/lib/data/*"],
-			"$static/*": ["static/*"],
-			"$store/*": ["src/lib/_store/*"],
-			"$transitions/*": ["src/lib/transitions/*"],
-			"$actions/*": ["src/lib/actions/*"],
-			"$types/*": ["src/lib/types/*"]
+			"$models": ["src/lib/models/index.ts"],
+			"$models/*": ["src/lib/models/*"],
+			"$utils": ["src/lib/utils/index.ts"],
+			"$utils/*": ["src/lib/utils/*"],
+			"$environment": ["src/environment/index.ts"]
 		}
-		// "types": ["node_modules/@types/node"]
-		// "types": ["node_modules/@types"]
 	}
 }

@@ -4,8 +4,6 @@
 	import { shuffleArray } from '$lib/utils/arrays';
 	import SkillChip from './SkillChip.svelte';
 
-	import { typewriter } from '$lib/transitions/typewriter.transition';
-
 	let screenY: number = 0;
 	let scrollY: number = 0;
 	let container: HTMLElement;
@@ -71,27 +69,16 @@
 			d="M0,168L30,147C60,126,120,84,180,112C240,140,300,238,360,273C420,308,480,280,540,280C600,280,660,308,720,329C780,350,840,364,900,371C960,378,1020,378,1080,322C1140,266,1200,154,1260,91C1320,28,1380,14,1440,21C1500,28,1560,56,1620,70C1680,84,1740,84,1800,126C1860,168,1920,252,1980,238C2040,224,2100,112,2160,105C2220,98,2280,196,2340,217C2400,238,2460,182,2520,168C2580,154,2640,182,2700,189C2760,196,2820,182,2880,203C2940,224,3000,280,3060,280C3120,280,3180,224,3240,224C3300,224,3360,280,3420,266C3480,252,3540,168,3600,168C3660,168,3720,252,3780,280C3840,308,3900,280,3960,231C4020,182,4080,112,4140,133C4200,154,4260,266,4290,322L4320,378L4320,420L4290,420C4260,420,4200,420,4140,420C4080,420,4020,420,3960,420C3900,420,3840,420,3780,420C3720,420,3660,420,3600,420C3540,420,3480,420,3420,420C3360,420,3300,420,3240,420C3180,420,3120,420,3060,420C3000,420,2940,420,2880,420C2820,420,2760,420,2700,420C2640,420,2580,420,2520,420C2460,420,2400,420,2340,420C2280,420,2220,420,2160,420C2100,420,2040,420,1980,420C1920,420,1860,420,1800,420C1740,420,1680,420,1620,420C1560,420,1500,420,1440,420C1380,420,1320,420,1260,420C1200,420,1140,420,1080,420C1020,420,960,420,900,420C840,420,780,420,720,420C660,420,600,420,540,420C480,420,420,420,360,420C300,420,240,420,180,420C120,420,60,420,30,420L0,420Z"
 		/></svg
 	>
-	<section class="container flex flex-col  min-h-screen  items-center justify-center">
-		<div class="flex flex-col items-centers  lg:flex-row  lg:gap-10">
-			<div class="mx-auto lg:order-1 ">
-				<fieldset
-					class="flex flex-wrap max-w-3xl p-4  gap-2 border border-slate-200 rounded-md dark:border-slate-900"
-				>
-					<legend class="px-3 mx-auto font-mono text-slate-300 dark:text-slate-600"
-						>{triggerMap[currentTrigger] || 'Skills'}</legend
-					>
-					{#each skills as skill, index}
-						<SkillChip bind:this={chips[index]} {skill} />
-					{/each}
-				</fieldset>
-			</div>
-			<div class="mx-autos">
-				<h1 class="heading-1 my-10 ">
-					Hands dirty with these <span class="gradient-text">Skills </span>
+
+	<div class="container flex flex-col  min-h-screen  items-center justify-center">
+		<div class="flex flex-col items-centers   gap-4 lg:gap-10">
+			<div class="mx-auto relative">
+				<h1 class="heading-1 my-4 md:my-8 text-center ">
+					My <span class="gradient-text">Skills </span>
 				</h1>
 				<!-- in:typewriter={{ speed: 20, delay: 100 }} -->
 				<p
-					class="max-w-lg mt-4 text-lg leading-loose tracking-wide text-justify text-slate-700 md:max-w-2xl dark:text-slate-300"
+					class="max-w-lg mt-4 text-base  md:text-xl text-center leading-loose md:leading-9 tracking-wide  text-slate-700 md:max-w-2xl dark:text-slate-300 "
 				>
 					I specialize in crafting
 					<span
@@ -124,9 +111,30 @@
 					</span>
 					in a team setting.
 				</p>
+				<svg
+					viewBox="0 0 200 200"
+					xmlns="http://www.w3.org/2000/svg"
+					class="absolute dark:fill-slate-800 fill-zinc-300 top-0 left-[50%] transform -translate-x-[50%] -translate-y-[24%]  -z-[1] w-[76%]"
+				>
+					<path
+						d="M27.9,-49.3C38.1,-42.5,49.5,-38.9,59.2,-31.2C68.9,-23.5,76.8,-11.7,76.1,-0.4C75.5,10.9,66.1,21.9,58.9,33.8C51.7,45.8,46.6,58.8,37.1,67.5C27.6,76.2,13.8,80.6,-0.8,81.9C-15.3,83.2,-30.7,81.5,-37.9,71.4C-45,61.4,-44.1,43.1,-47.5,29.9C-50.9,16.6,-58.8,8.3,-62.2,-1.9C-65.5,-12.2,-64.4,-24.4,-57.2,-31.1C-50,-37.9,-36.7,-39.3,-26.2,-45.8C-15.6,-52.3,-7.8,-64.1,0.5,-65C8.9,-65.9,17.8,-56.1,27.9,-49.3Z"
+						transform="translate(100 100)"
+					/>
+				</svg>
 			</div>
+
+			<fieldset
+				class="flex items-center justify-center flex-wrap max-w-3xl   gap-4  rounded-md z-10"
+			>
+				<!-- <legend class="py-8 mx-auto font-mono text-slate-300 dark:text-slate-600"
+						>{triggerMap[currentTrigger] || 'Skills'}</legend
+					> -->
+				{#each skills as skill, index}
+					<SkillChip bind:this={chips[index]} {skill} />
+				{/each}
+			</fieldset>
 		</div>
-	</section>
+	</div>
 </section>
 
 <style lang="postcss">

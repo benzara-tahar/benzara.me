@@ -1,5 +1,5 @@
 <script>
-	import SocialIcons from '$lib/components/SocialIcons.svelte';
+	import SocialIcons from '$components/SocialIcons.svelte';
 
 	const extraLinks = [
 		{

@@ -6,7 +6,7 @@
 	import typingSvg from '$static/svg/sounds/typing.svg';
 	import shhhSvg from '$static/svg/sounds/shhh.svg';
 	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
-	import { settingsVisible } from '$lib/_store/app.store';
+	import { settingsVisible } from '$store/app.store';
 	import type { Unsubscriber } from 'svelte/store';
 	import AudioButton from './AudioButton.svelte';
 	import { useClickOutside as clickOutside } from '$actions/useClickOutside';

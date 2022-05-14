@@ -1,4 +1,4 @@
-import path from 'path';
+import path, { resolve } from 'path';
 import adapter from '@sveltejs/adapter-vercel';
 import sveltePreprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
@@ -19,8 +19,7 @@ const allow = [
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
+	//  https://github.com/sveltejs/svelte-preprocess
 	preprocess: [
 		sveltePreprocess({
 			preserve: ['module'],
@@ -56,13 +55,17 @@ const config = {
 			server: { fs: { allow } },
 			resolve: {
 				alias: {
-					$static: path.resolve('./static'),
-					$data: path.resolve('./src/lib/data'),
-					$types: path.resolve('./src/lib/types'),
-					$store: path.resolve('./src/lib/_store'),
-					$actions: path.resolve('./src/lib/actions'),
-					$transitions: path.resolve('./src/lib/transitions'),
-					$layout: path.resolve('./src/lib/layout')
+					$static: resolve('.', './static'),
+					$components: resolve('.', './src/lib/shared/components'),
+					$actions: resolve('.', './src/lib/shared/actions'),
+					$transitions: resolve('.', './src/lib/shared/transitions'),
+					$layouts: resolve('.', './src/lib/shared/layouts'),
+					$store: resolve('.', './src/lib/store'),
+					$models: resolve('.', './src/lib/models'),
+					$data: resolve('.', './src/lib/data'),
+					$core: resolve('.', './src/lib/core'),
+					$utils: resolve('.', './src/lib/utils'),
+					$environment: resolve('.', './src/environment')
 				}
 			}
 		}

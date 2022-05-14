@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { theme } from '$lib/_store/app.store';
+	import { theme } from '$store/app.store';
 	import { onMount } from 'svelte';
 	import { Particle } from './Particle';
 

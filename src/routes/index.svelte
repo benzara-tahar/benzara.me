@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Metadata from '$lib/components/Metadata.svelte';
+	import Metadata from '$components/Metadata.svelte';
 	import ExperiencesSection from './_components/ExperiencesSection.svelte';
 	import HeroSection from './_components/HeroSection.svelte';
 	import SkillsSection from './_components/SkillsSection.svelte';
@@ -18,6 +18,6 @@ snap-y snap-mandatory overflow-y-scroll h-screen -->
 	<!-- skills -->
 	<SkillsSection />
 	<!-- timeline -->
-	<!-- <TimeLine /> -->
-	<ExperiencesSection />
+	<TimeLine />
+	<!-- <ExperiencesSection /> -->
 </main>

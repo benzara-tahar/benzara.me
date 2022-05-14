@@ -1,4 +1,4 @@
-import posts from '$lib/posts';
+import posts from '$lib/blog/posts';
 
 export function get({ params }) {
 	console.log('___________________________________', params, '🍗🥩🍠');

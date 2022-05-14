@@ -13,7 +13,7 @@
 </script>
 
 <script lang="ts">
-	import Metadata from '$lib/components/Metadata.svelte';
+	import Metadata from '$components/Metadata.svelte';
 
 	export let status: number;
 	// export let error: Error;
