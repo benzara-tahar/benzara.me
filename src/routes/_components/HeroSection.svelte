@@ -21,7 +21,7 @@
 		style="min-height: calc(100vh - 72px);"
 	>
 		<!-- intro -->
-		<div in:fly={{ x: -50, delay: 500, duration: 500 }} class="w-full mb-8 lg:w-1/2 ">
+		<div in:fly={{ x: -50, delay: 500, duration: 500 }} class="w-full mb-8 lg:w-1/2 lg:mt-0 mt-10">
 			<h1 class="heading-1 ">
 				Hi, <span class="gradient-text">Lahcene</span> here
 			</h1>
