@@ -1,6 +1,9 @@
 import { supabase } from '$core/supabase';
+import { environment } from '$environment';
 
 export async function get() {
+	const env = environment;
+	console.log(env);
 	const { data, error } = await supabase
 		.from('community_wall')
 		.select('*')

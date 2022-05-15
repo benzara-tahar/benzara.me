@@ -12,8 +12,10 @@
 
 <script lang="ts">
 	import Metadata from '$components/Metadata.svelte';
+	import type { SafeAny } from '$lib/models/types/safeAny';
 
 	export let status: number;
+	export let error: SafeAny;
 </script>
 
 <svelte:head>

@@ -50,6 +50,7 @@
 	}
 </script>
 
+<!-- 
 <main class="container py-8 min-h-screen">
 	<h1 class="heading-1 max-w-7x">
 		A community wall for you to <span class="gradient-text"> xp</span>ress
@@ -155,4 +156,4 @@
 			{error.message}
 		</p>
 	{/if}
-</main>
+</main> -->
