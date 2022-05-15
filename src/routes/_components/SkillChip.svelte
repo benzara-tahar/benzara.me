@@ -4,7 +4,7 @@
 	import type { Skill } from '$lib/models/interfaces/skill';
 
 	export let skill: Skill;
-	export let isBlured: boolean = false;
+	export let isBlured = false;
 </script>
 
 <span

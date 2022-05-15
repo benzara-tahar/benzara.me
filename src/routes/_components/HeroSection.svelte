@@ -1,12 +1,21 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import AnimatedCounter from '$components/AnimatedCounter.svelte';
 	import Terminal from './Terminal.svelte';
+	let clientHeight = 1;
+	let scrollY = 0;
+	$: scrollProgress = Math.min(1, scrollY / clientHeight);
 </script>
 
+<svelte:window bind:scrollY />
+
 <!-- HERO -->
-<section class="relative z-10 snap-start">
+<section
+	bind:clientHeight
+	class="relative z-10 overflow-hidden"
+	style="opacity: {1 - scrollProgress}; padding-bottom: 150px"
+>
+	<div class="rainbow-background" />
 	<div
 		class="container flex flex-col items-center justify-start space-x-0 lg:flex-row lg:space-x-6  mx-auto"
 		style="min-height: calc(100vh - 72px);"
@@ -49,17 +58,6 @@
 
 		<div class="relative flex items-center md:justify-start justify-center  w-full lg:w-1/2 ">
 			<Terminal />
-			<!-- <Photo /> -->
-			<div class="absolute top-0 left-0 right-0 pointer-events-none">
-				<div class="absolute top-0 overflow-visible opacity-50 dark:opacity-30 left-16">
-					<div class="mix-blend-multiply absolute w-[500px] h-[500px] rounded-[40rem] circle-obj" />
-				</div>
-				<div class="absolute overflow-visible opacity-50 dark:opacity-30 top-28 left-52">
-					<div
-						class="mix-blend-multiply absolute w-[400px] h-[550px] rounded-[40rem] circle-obj2"
-					/>
-				</div>
-			</div>
 		</div>
 	</div>
 </section>
@@ -69,42 +67,61 @@
 		@apply rounded-md dark:text-white text-slate-700 px-2 py-1 bg-slate-300 dark:bg-slate-600;
 	}
 
-	.circle-obj2 {
-		background: radial-gradient(closest-side, #00fffb, rgba(233, 168, 2, 0));
-		animation: traverse-up-right 20s ease-in-out infinite alternate;
-		z-index: -1;
+	.rainbow-background {
+		position: absolute;
+		background: 800% 800% /* pos */
+			linear-gradient(
+				to bottom right,
+				hsl(133, 67%, 59%),
+				hsl(172, 100%, 42%),
+				hsl(202, 97%, 45%),
+				hsl(0, 0%, 50%)
+			);
+		animation: rainbow-background-hue-rotate 10s infinite linear,
+			scroll-gradient 15s infinite linear;
+		inset-inline-end: 0;
+		inset-block-end: 0;
+		inline-size: 40vw;
+		min-inline-size: 100vh;
+		block-size: 100%;
+
+		mask: url('/hero-mask.png') bottom / cover no-repeat;
+
+		@media (prefers-color-scheme: light) {
+			opacity: 0.5;
+		}
+
+		@media screen and (max-width: 1024px) {
+			inline-size: 100%;
+			transform: rotate(90deg) scale(1.5);
+		}
+
+		@media screen and (max-width: 648px) {
+			block-size: 80vh;
+			mask-size: 100% 100%;
+		}
 	}
-	.circle-obj {
-		background: radial-gradient(closest-side, #aceb00, rgba(233, 168, 2, 0));
-		animation: traverse-up-left 22s ease-in-out infinite alternate;
-		z-index: -1;
-	}
 
-	@keyframes traverse-up-left {
-		33% {
-			transform: translateY(10%) translateX(-40%) rotate(180deg);
+	@keyframes scroll-gradient {
+		from {
+			background-position: 50% 0;
 		}
-
-		66% {
-			transform: translateY(-40%) translateX(-30%) rotate(-60deg);
+		50% {
+			background-position: 50% 100%;
 		}
-
-		100% {
-			transform: translateY(0) translateX(0) rotate(0);
+		to {
+			background-position: 50% 0;
 		}
 	}
-
-	@keyframes traverse-up-right {
-		33% {
-			transform: translateY(-20%) translateX(80%) rotate(180deg);
+	@keyframes rainbow-background-hue-rotate {
+		0% {
+			filter: none;
 		}
-
-		66% {
-			transform: translateY(10%) translateX(30%) rotate(360deg);
+		50% {
+			filter: hue-rotate(180deg);
 		}
-
-		100% {
-			transform: translateY(0) translateX(0) rotate(0);
+		to {
+			filter: none;
 		}
 	}
 </style>

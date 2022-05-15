@@ -1,23 +1,9 @@
 <script lang="ts">
 	import { useInlineSvg } from '$actions/useInlineSvg.action';
-	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
-	import { settingsVisible } from '$store/app.store';
-	import type { Unsubscriber } from 'svelte/store';
+	import { createEventDispatcher } from 'svelte';
 
 	export let audio;
-	let height: string | number = '0';
 	const dispatch = createEventDispatcher();
-
-	let unsubscribe: Unsubscriber;
-	onMount(() => {
-		// unsubscribe = settingsVisible.subscribe((isVisible) => {
-		// 	height = isVisible ? '64px' : '0';
-		// });
-	});
-
-	onDestroy(() => {
-		// unsubscribe();
-	});
 </script>
 
 <button

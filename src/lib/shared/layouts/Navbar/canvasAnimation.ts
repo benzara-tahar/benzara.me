@@ -1,9 +1,11 @@
+import type { SafeAny } from '$lib/models/types/safeAny';
+
 export function initCanvasAnimation(canvas: HTMLCanvasElement, window: Window) {
 	if (!canvas) return;
 	let w = (canvas.width = window.innerWidth),
 		h = (canvas.height = window.innerHeight);
 	const ctx = canvas.getContext('2d'),
-		opts: any = {
+		opts: SafeAny = {
 			len: 20,
 			count: 50,
 			baseTime: 10,

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { each } from 'svelte/internal';
 	import placeholderImage from '$static/img/user.png';
 
 	let testimonials = [

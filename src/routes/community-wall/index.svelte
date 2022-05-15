@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { dev } from '$app/env';
 
-	import { supabase } from '$lib/supabase';
+	import { supabase } from '$core/supabase';
 	import { currentUser, isLoggedIn } from '$store/auth.store';
 	import type { PostgrestError } from '@supabase/supabase-js';
 	import { fly } from 'svelte/transition';
@@ -10,10 +10,10 @@
 	export let notes;
 	let submited = false;
 
-	let note: string = 'Tell me how awesome you are';
+	let note = 'Tell me how awesome you are';
 
 	async function signInWithGithub() {
-		const { user, session, error } = await supabase.auth.signIn(
+		const { error } = await supabase.auth.signIn(
 			{
 				provider: 'github'
 			},
@@ -24,15 +24,14 @@
 					: 'https://benzara.me/community-wall'
 			}
 		);
-		console.log({ user, session, error });
 		if (error) {
 			return;
 		}
 	}
 
-	async function signout() {
-		const { error } = await supabase.auth.signOut();
-	}
+	// async function signout() {
+	// 	const { error } = await supabase.auth.signOut();
+	// }
 
 	async function send() {
 		const result = await supabase.from('community_wall').insert({

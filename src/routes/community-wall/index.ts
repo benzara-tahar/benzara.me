@@ -1,6 +1,6 @@
-import { supabase } from '$lib/supabase';
+import { supabase } from '$core/supabase';
 
-export async function get({ reuqest, params }) {
+export async function get() {
 	const { data, error } = await supabase
 		.from('community_wall')
 		.select('*')

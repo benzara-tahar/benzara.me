@@ -1,4 +1,4 @@
-import path, { resolve } from 'path';
+import { resolve } from 'path';
 import adapter from '@sveltejs/adapter-vercel';
 import sveltePreprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';

@@ -17,13 +17,29 @@
 	let show = !browser;
 	let output = '';
 	let scrollY = 0;
+	let localTime = new Date().toLocaleTimeString('en-US', {
+		timeZone: 'Africa/Algiers'
+	});
+	const animationDuration = 5000;
 
 	$: progress = Math.min(scrollY / container?.clientHeight, 1);
 
 	onMount(() => {
+		let timerId;
+		setTimeout(() => {
+			timerId = setInterval(() => {
+				localTime = new Date().toLocaleTimeString('en-US', {
+					timeZone: 'Africa/Algiers'
+				});
+			}, 1000);
+		}, animationDuration);
+
 		setTimeout(() => {
 			show = true;
 		}, 500);
+		return () => {
+			clearInterval(timerId);
+		};
 	});
 
 	const focusTerminalInput = () => {
@@ -81,20 +97,20 @@
 	</div>
 	<!-- cli -->
 	{#if show}
-		<div class="flex flex-col  p-4 terminal relative ">
+		<div
+			in:typewriter={{ delay: 500, duration: animationDuration }}
+			class="flex flex-col  p-4 terminal relative"
+		>
 			<div class="entry">
 				<span class="prompt">{promptPrefix}</span>
 				<span class="current-dir"> ~{currentDir}</span>
 			</div>
 			<!-- whoami -->
-			<div in:typewriter={{ delay: 500, duration: 500 }} class="entry">
+			<div class="entry">
 				<span class="text-primary-500 ">$: </span>
 				whoami
 			</div>
-			<div
-				in:typewriter={{ delay: 1200, duration: 3000 }}
-				class=" leading-relaxed dark:text-slate-200 text-zinc-500"
-			>
+			<div class=" leading-relaxed dark:text-slate-200 text-zinc-500">
 				<p>[x] curiosity driven human</p>
 				<p>[x] challenging myself at a daily basis</p>
 				<p>[x] Also a chess player ♟</p>
@@ -107,20 +123,15 @@
 			</div>
 
 			<!-- curl ifconfig.me -->
-			<div in:typewriter={{ delay: 5000, duration: 600 }} class="entry">
+			<div class="entry">
 				<span class="text-primary-500 ">$: </span>
 				<a href="https://ifconfig.me" target="_blank"> curl ifconfig.me </a>
 			</div>
-			<div
-				in:typewriter={{ delay: 6000, duration: 3000 }}
-				class=" leading-relaxed dark:text-slate-200 text-zinc-500"
-			>
+			<div class=" leading-relaxed dark:text-slate-200 text-zinc-500">
 				<p>ip &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 127.0.0.1</p>
 				<p>location &nbsp;&nbsp;: Algiers, Algeria</p>
 				<p>
-					local time : {new Date().toLocaleTimeString('en-US', {
-						timeZone: 'Africa/Algiers'
-					})}
+					local time : {localTime}
 				</p>
 			</div>
 			<div class="entry" in:fade={{ delay: 9000, duration: 1 }}>
@@ -141,177 +152,18 @@
 		</div>
 
 		<!-- triangles -->
-
-		<div
-			class="absolute pointer-events-none z-[-1] transform  scale-150 "
-			style="transform: scale({(1.5 - progress) * 1.5}); ; "
-		>
-			<svg width="1000" height="1000" xmlns="http://www.w3.org/2000/svg"
-				><path
-					stroke="null"
-					transform="rotate(37.847 181.633 654.494)"
-					id="bg-triangles_svg__svg_12"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m168.227 666.483 13.406-23.977 13.407 23.977h-26.813z"
-				/><path
-					stroke="null"
-					transform="rotate(37.847 40.312 219.26)"
-					id="bg-triangles_svg__svg_36"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m32.384 226.348 7.928-14.177 7.927 14.177H32.384z"
-				/><path
-					stroke="null"
-					transform="rotate(37.847 94.978 44.593)"
-					id="bg-triangles_svg__svg_39"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m87.05 51.682 7.928-14.178 7.928 14.178H87.05z"
-				/><path
-					stroke="null"
-					transform="rotate(37.847 956.312 968.593)"
-					id="bg-triangles_svg__svg_16"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m948.384 975.682 7.928-14.178 7.927 14.178h-15.855z"
-				/><path
-					stroke="null"
-					transform="rotate(37.847 375.314 750.264)"
-					id="bg-triangles_svg__svg_34"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m367.387 757.353 7.928-14.177 7.927 14.177h-15.855z"
-				/><path
-					stroke="null"
-					transform="rotate(37.847 521.981 867.598)"
-					id="bg-triangles_svg__svg_2"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m514.054 874.687 7.927-14.178 7.928 14.178h-15.855z"
-				/><path
-					transform="rotate(-56.89 506.502 351.234)"
-					stroke="null"
-					id="bg-triangles_svg__svg_27"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m489.502 366.435 17-30.403 17 30.403h-34z"
-				/><path
-					transform="rotate(-56.89 774.502 749.9)"
-					stroke="null"
-					id="bg-triangles_svg__svg_22"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m757.502 765.102 17-30.403 17 30.403h-34z"
-				/><path
-					transform="rotate(-56.89 727.836 129.9)"
-					stroke="null"
-					id="bg-triangles_svg__svg_30"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m710.836 145.102 17-30.403 17 30.403h-34z"
-				/><path
-					transform="rotate(-56.89 491.502 642.236)"
-					stroke="null"
-					id="bg-triangles_svg__svg_23"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m474.502 657.438 17-30.403 17 30.403h-34z"
-				/><path
-					transform="rotate(-56.89 346.169 136.903)"
-					stroke="null"
-					id="bg-triangles_svg__svg_3"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m329.169 152.104 17-30.403 17 30.403h-34z"
-				/><path
-					transform="rotate(52.792 668.504 338.233)"
-					stroke="null"
-					id="bg-triangles_svg__svg_31"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m651.504 353.435 17-30.403 17 30.403h-34z"
-				/><path
-					transform="rotate(52.792 223.17 879.567)"
-					stroke="null"
-					id="bg-triangles_svg__svg_4"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m206.17 894.768 17-30.403 17 30.403h-34z"
-				/><path
-					transform="rotate(-19.723 397.501 471.235)"
-					stroke="null"
-					id="bg-triangles_svg__svg_28"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m380.501 486.436 17-30.403 17 30.403h-34z"
-				/><path
-					transform="rotate(26.252 811.503 413.267)"
-					stroke="null"
-					id="bg-triangles_svg__svg_37"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m788.503 433.834 23-41.134 23 41.134h-46z"
-				/><path
-					stroke="null"
-					id="bg-triangles_svg__svg_6"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m767.17 757.834 23-41.134 23 41.134h-46z"
-				/><path
-					stroke="null"
-					transform="rotate(128.225 791.932 625.073)"
-					id="bg-triangles_svg__svg_7"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m769.826 644.84 22.106-39.535 22.107 39.536h-44.213z"
-				/><path
-					stroke="null"
-					id="bg-triangles_svg__svg_24"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m468.502 628.072 14-25.038 14 25.038h-28z"
-				/><path
-					stroke="null"
-					id="bg-triangles_svg__svg_14"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m323.169 122.739 14-25.038 14 25.038h-28z"
-				/><path
-					stroke="null"
-					id="bg-triangles_svg__svg_25"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m496.839 883.069 10-17.884 10 17.884h-20z"
-				/><path
-					stroke="null"
-					id="bg-triangles_svg__svg_8"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m358.172 155.069 10-17.884 10 17.884h-20z"
-				/><path
-					stroke="null"
-					transform="rotate(45 148.002 374.231)"
-					id="bg-triangles_svg__svg_10"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m124.284 395.44 23.718-42.417 23.717 42.417h-47.435z"
-				/><path
-					stroke="null"
-					transform="rotate(-24.273 184.292 435.273)"
-					id="bg-triangles_svg__svg_18"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m172.145 446.136 12.147-21.725 12.147 21.725h-24.294z"
-				/><path
-					stroke="null"
-					transform="rotate(24.565 681.296 350.273)"
-					id="bg-triangles_svg__svg_33"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m669.149 361.135 12.147-21.724 12.147 21.724H669.15z"
-				/><path
-					stroke="null"
-					transform="rotate(24.565 235.963 891.606)"
-					id="bg-triangles_svg__svg_13"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m223.816 902.468 12.147-21.724 12.147 21.724h-24.294z"
-				/><path
-					stroke="null"
-					transform="rotate(-24.273 637.517 747.268)"
-					id="bg-triangles_svg__svg_19"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m629.455 754.478 8.062-14.42 8.063 14.42h-16.125z"
-				/><path
-					stroke="null"
-					transform="rotate(-24.273 405.515 466.266)"
-					id="bg-triangles_svg__svg_29"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m397.452 473.475 8.063-14.42 8.063 14.42h-16.126z"
-				/><path
-					stroke="null"
-					transform="rotate(-24.273 543.517 210.263)"
-					id="bg-triangles_svg__svg_1"
-					class="dark:fill-slate-700/30 fill-zinc-200/50"
-					d="m535.454 217.473 8.062-14.42 8.063 14.42h-16.125z"
-				/></svg
-			>
+		<div class="w-full bg-purples-900  z-0 absolute inset-1 -top-28   pointer-events-none">
+			{#each Array.from({ length: 50 }) as item}
+				<span
+					class="dark:bg-slate-300 bg-zinc-800 -z-[1]  hue-rotate-60 absolute "
+					style="top: {Math.random() * 100}%; left: {Math.random() * 100}%;
+					width: {Math.random() * 30}px; height: {Math.random() * 20}px;
+					border-radius: {Math.random() * 50}px;
+					opacity: {Math.min(0.2, Math.random() * 0.1)};
+					
+					"
+				/>
+			{/each}
 		</div>
 	{/if}
 </div>

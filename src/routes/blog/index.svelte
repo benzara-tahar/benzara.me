@@ -1,5 +1,5 @@
 <script>
-	export let posts;
+	// export let posts = [];
 </script>
 
 <main class="container py-8 min-h-screen">

@@ -1,6 +1,4 @@
 <script context="module" lang="ts">
-	import { dev } from '$app/env';
-
 	/** @type {import('@sveltejs/kit').Load} */
 	export const load = ({ error, status }) => {
 		return {
@@ -16,7 +14,6 @@
 	import Metadata from '$components/Metadata.svelte';
 
 	export let status: number;
-	// export let error: Error;
 </script>
 
 <svelte:head>
@@ -53,7 +50,3 @@
 		</a>
 	</div>
 </div>
-
-<!-- <style lang="postcss">
-	@use 'src/styles/pages/error';
-</style> -->

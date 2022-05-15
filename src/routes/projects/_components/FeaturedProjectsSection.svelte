@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Project from './FeaturedProjectCard.svelte';
 	import { featuredProjects } from '../_data/featured-projects-data';
 </script>

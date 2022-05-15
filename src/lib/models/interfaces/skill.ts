@@ -1,6 +1,8 @@
+import type { SafeAny } from '../types/safeAny';
+
 export interface Skill {
 	name: string;
-	image?: any;
+	image?: SafeAny;
 	/**
 	 * array of comma separated tags
 	 */

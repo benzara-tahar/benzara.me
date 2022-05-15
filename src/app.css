@@ -7,53 +7,49 @@
 @import '@fontsource/fira-code/500.css';
 @import '@fontsource/fira-code/700.css';
 
-
-
 /* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
---primary: #00d6d3;
---primary-50: #8ffffd;
---primary-100: #7afffd;
---primary-200: #51fffd;
---primary-300: #29fffc;
---primary-400: #00fffb;
---primary-500: #00d6d3;
---primary-600: #009e9c;
---primary-700: #006664;
---primary-800: #002e2d;
---primary-900: #001f1f;
+	--primary: #00d6d3;
+	--primary-50: #8ffffd;
+	--primary-100: #7afffd;
+	--primary-200: #51fffd;
+	--primary-300: #29fffc;
+	--primary-400: #00fffb;
+	--primary-500: #00d6d3;
+	--primary-600: #009e9c;
+	--primary-700: #006664;
+	--primary-800: #002e2d;
+	--primary-900: #001f1f;
 
---accent: #8ec200;
---accent-50: #dcff7b;
---accent-100: #d6ff66;
---accent-200: #cbff3d;
---accent-300: #c0ff15;
---accent-400: #aceb00;
---accent-500: #8ec200;
---accent-600: #658a00;
---accent-700: #3c5200;
---accent-800: #1d2700;
---accent-900: #131a00;
-
+	--accent: #8ec200;
+	--accent-50: #dcff7b;
+	--accent-100: #d6ff66;
+	--accent-200: #cbff3d;
+	--accent-300: #c0ff15;
+	--accent-400: #aceb00;
+	--accent-500: #8ec200;
+	--accent-600: #658a00;
+	--accent-700: #3c5200;
+	--accent-800: #1d2700;
+	--accent-900: #131a00;
 }
 
 html {
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 body {
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 	background-color: #111827;
 	font-family: 'Rubik', Arial, Helvetica, sans-serif;
 }
 
 ::selection {
-	background: (var(--primary-500));
-	color: white;
+	background: rgba(0, 0, 0, 0.39);
+	color: var(--primary);
 }
 
 h1.heading-1 {
@@ -88,19 +84,61 @@ h1.heading-1 {
 	box-decoration-break: clone;
 }
 
-/* ::-webkit-scrollbar {
-	width: 8px;
-	background-color: rgba(22, 22, 22, 0.274);
+/* Scrollers*/
+/* Utility class to create a styled scroller and scrollbar*/
+.scroller {
+	overflow: auto;
 }
-
-::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-	border-radius: 10px;
+.scroller::-webkit-scrollbar-track {
+	/* background-color: rgba(255, 255, 255, 0.11); */
 }
-
-::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-} */
+@supports (overflow: overlay) {
+	overflow: overlay;
+}
+.scroller::-webkit-scrollbar {
+	display: block;
+	inline-size: 14px;
+	border-radius: 14px;
+}
+@media (prefers-color-scheme: light) {
+	.scroller::-webkit-scrollbar:vertical {
+		--scrollbar-caret-top: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.10204 16.9814C5.0281 16.9814 4.45412 15.7165 5.16132 14.9083L10.6831 8.59765C11.3804 7.80083 12.6199 7.80083 13.3172 8.59765L18.839 14.9083C19.5462 15.7165 18.9722 16.9814 17.8983 16.9814H6.10204Z' fill='hsl(0, 0%, 0%, 0.447)'/%3E%3C/svg%3E");
+		--scrollbar-caret-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.10204 8C5.0281 8 4.45412 9.2649 5.16132 10.0731L10.6831 16.3838C11.3804 17.1806 12.6199 17.1806 13.3172 16.3838L18.839 10.0731C19.5462 9.2649 18.9722 8 17.8983 8H6.10204Z' fill='hsl(0, 0%, 0%, 0.447)'/%3E%3C/svg%3E");
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.scroller::-webkit-scrollbar:vertical {
+		--scrollbar-caret-top: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.10204 16.9814C5.0281 16.9814 4.45412 15.7165 5.16132 14.9083L10.6831 8.59765C11.3804 7.80083 12.6199 7.80083 13.3172 8.59765L18.839 14.9083C19.5462 15.7165 18.9722 16.9814 17.8983 16.9814H6.10204Z' fill='hsl(0, 0%, 100%, 0.545)'/%3E%3C/svg%3E");
+		--scrollbar-caret-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.10204 8C5.0281 8 4.45412 9.2649 5.16132 10.0731L10.6831 16.3838C11.3804 17.1806 12.6199 17.1806 13.3172 16.3838L18.839 10.0731C19.5462 9.2649 18.9722 8 17.8983 8H6.10204Z' fill='hsl(0, 0%, 100%, 0.545)'/%3E%3C/svg%3E");
+	}
+}
+@media (prefers-color-scheme: light) {
+	.scroller::-webkit-scrollbar:horizontal {
+		--scrollbar-caret-top: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 17.8983C9 18.9722 10.2649 19.5462 11.0731 18.839L17.3838 13.3172C18.1806 12.6199 18.1806 11.3804 17.3838 10.6831L11.0731 5.16132C10.2649 4.45412 9 5.02809 9 6.10204V17.8983Z' fill='hsl(0, 0%, 0%, 0.447)'/%3E%3C/svg%3E");
+		--scrollbar-caret-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15 17.8983C15 18.9722 13.7351 19.5462 12.9268 18.839L6.61617 13.3172C5.81935 12.6199 5.81935 11.3804 6.61617 10.6831L12.9268 5.16132C13.7351 4.45412 15 5.02809 15 6.10204L15 17.8983Z' fill='hsl(0, 0%, 100%, 0.545)'/%3E%3C/svg%3E");
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.scroller::-webkit-scrollbar:horizontal {
+		--scrollbar-caret-top: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 17.8983C9 18.9722 10.2649 19.5462 11.0731 18.839L17.3838 13.3172C18.1806 12.6199 18.1806 11.3804 17.3838 10.6831L11.0731 5.16132C10.2649 4.45412 9 5.02809 9 6.10204V17.8983Z' fill='hsl(0, 0%, 0%, 0.447)'/%3E%3C/svg%3E");
+		--scrollbar-caret-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15 17.8983C15 18.9722 13.7351 19.5462 12.9268 18.839L6.61617 13.3172C5.81935 12.6199 5.81935 11.3804 6.61617 10.6831L12.9268 5.16132C13.7351 4.45412 15 5.02809 15 6.10204L15 17.8983Z' fill='hsl(0, 0%, 100%, 0.545)'/%3E%3C/svg%3E");
+	}
+}
+.scroller::-webkit-scrollbar:hover {
+	background: var(--scrollbar-caret-bottom) bottom center/contain no-repeat,
+		var(--scrollbar-caret-top) top center/contain no-repeat, rgb(14, 14, 14);
+}
+.scroller::-webkit-scrollbar-thumb {
+	border: 6px solid transparent;
+	border-block: none;
+	border-radius: 14px;
+	background: rgb(0, 238, 255);
+	background-clip: padding-box;
+}
+.scroller::-webkit-scrollbar-thumb:hover {
+	border: 4px solid transparent;
+}
+.scroller::-webkit-scrollbar-button:single-button {
+	display: block;
+	block-size: 14px;
+}

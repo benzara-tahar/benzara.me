@@ -1,19 +1,21 @@
 <script lang="ts">
+	import type { SafeAny } from '$lib/models/types/safeAny';
+
 	import { theme } from '$store/app.store';
 	import { onMount } from 'svelte';
 	import { Particle } from './Particle';
 
 	let canvas: HTMLCanvasElement;
 	let ctx: CanvasRenderingContext2D;
-	let image: any;
+	let image: SafeAny;
 	let mappedImage = [];
 	const width = 400;
 	const height = 400;
 	const numberOfParticles = 500;
 
 	// mouse move
-	let rotateX: number = 0;
-	let rotateY: number = 0;
+	let rotateX = 0;
+	let rotateY = 0;
 
 	onMount(() => {
 		window.addEventListener('mousemove', onMouseMove);

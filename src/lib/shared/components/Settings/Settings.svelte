@@ -5,14 +5,10 @@
 	import rainSvg from '$static/svg/sounds/rain.svg';
 	import typingSvg from '$static/svg/sounds/typing.svg';
 	import shhhSvg from '$static/svg/sounds/shhh.svg';
-	import { createEventDispatcher, onDestroy, onMount } from 'svelte';
-	import { settingsVisible } from '$store/app.store';
-	import type { Unsubscriber } from 'svelte/store';
 	import AudioButton from './AudioButton.svelte';
+	import { settingsVisible } from '$store/app.store';
 	import { useClickOutside as clickOutside } from '$actions/useClickOutside';
-
-	// let height: string | number = '0';
-	// const dispatch = createEventDispatcher();
+	import type { SafeAny } from '$lib/models/types/safeAny';
 
 	let audios = [
 		{ name: 'nature', src: '/audio/nature.mp3', svg: natureSvg, paused: true },
@@ -24,7 +20,7 @@
 	];
 	let audioControls = new Array<HTMLAudioElement>();
 
-	const toggle = (audio: any) => {
+	const toggle = (audio: SafeAny) => {
 		let control = audioControls.find((c) => c.id === audio.name);
 		if (audio.name === 'shhh') {
 			audioControls.forEach((audio) => {
@@ -46,17 +42,6 @@
 		audio.paused = !audio.paused;
 		audios = audios;
 	};
-
-	let unsubscribe: Unsubscriber;
-	onMount(() => {
-		// unsubscribe = settingsVisible.subscribe((isVisible) => {
-		// 	height = isVisible ? '64px' : '0';
-		// });
-	});
-
-	onDestroy(() => {
-		// unsubscribe();
-	});
 </script>
 
 <!-- TODO fix typing! -->

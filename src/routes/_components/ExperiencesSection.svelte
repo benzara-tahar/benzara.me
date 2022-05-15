@@ -1,9 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { experiences } from './_data/experiences-data';
-	onMount(() => {
-		return () => {};
-	});
 </script>
 
 <div class="container">

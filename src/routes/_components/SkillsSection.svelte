@@ -1,17 +1,18 @@
 <script lang="ts">
 	import { skills as AllSkills } from './_data/skills-data';
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import { shuffleArray } from '$lib/utils/arrays';
 	import SkillChip from './SkillChip.svelte';
 
-	let screenY: number = 0;
-	let scrollY: number = 0;
-	let container: HTMLElement;
+	let clientHeight = 1;
+	let scrollY = 0;
+
 	let skills = shuffleArray(AllSkills);
 	let chips: SkillChip[] = [];
 	let currentTrigger = '';
 
-	$: scrollProgress = Math.min(1, scrollY / container?.clientHeight);
+	$: scrollProgress = Math.min(1, scrollY / clientHeight);
 
 	const triggerMap = {
 		frontend: 'Frontend Stack',
@@ -49,13 +50,10 @@
 
 <svelte:window bind:scrollY />
 
-<!-- class="w-full dark:bg-zinc-900 bg-zinc-200 relative" -->
-
 <section
-	class="  dark:bg-gray-900 snap-start z-10
- bg-zinc-200 relative "
-	bind:this={container}
-	style="transform: translateY({-scrollProgress * 50 + 25}vh)"
+	class="bg-gradient-to-b dark:from-gray-900 dark:via-gray-900 from-zinc-200 via-zinc-200 relative z-10"
+	bind:clientHeight
+	style="transform: translateY({-scrollProgress * 33}vh)"
 >
 	<!-- svg separator -->
 	<svg
@@ -76,6 +74,7 @@
 				<h1 class="heading-1 my-4 md:my-8 text-center ">
 					My <span class="gradient-text">Skills </span>
 				</h1>
+
 				<!-- in:typewriter={{ speed: 20, delay: 100 }} -->
 				<p
 					class="max-w-lg mt-4 text-base  md:text-xl text-center leading-loose md:leading-9 tracking-wide  text-slate-700 md:max-w-2xl dark:text-slate-300 "
@@ -126,9 +125,11 @@
 			<fieldset
 				class="flex items-center justify-center flex-wrap max-w-3xl   gap-4  rounded-md z-10"
 			>
-				<!-- <legend class="py-8 mx-auto font-mono text-slate-300 dark:text-slate-600"
+				{#key currentTrigger}
+					<legend in:fade class="pb-3 mx-auto font-mono text-slate-500 dark:text-slate-600"
 						>{triggerMap[currentTrigger] || 'Skills'}</legend
-					> -->
+					>
+				{/key}
 				{#each skills as skill, index}
 					<SkillChip bind:this={chips[index]} {skill} />
 				{/each}
@@ -148,14 +149,14 @@
 		&:hover,
 		&:global(.focus) {
 			transform: translateY(-2px);
-			color: #8ec200;
+			color: var(--primary-500);
 			&::after {
 				width: 100%;
 			}
 		}
 		&::after {
 			transition: all 0.5s cubic-bezier(0.17, 0.59, 0.27, 0.92);
-			background-color: #8ec200;
+			background-color: var(--primary-500);
 			position: absolute;
 			height: 2px;
 			width: 0;
