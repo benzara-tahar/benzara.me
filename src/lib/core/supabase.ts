@@ -1,15 +1,25 @@
-import { environment } from '$environment';
 import { createClient } from '@supabase/supabase-js';
-// const VITE_SB_ANON_KEY = import.meta.env.VITE_SB_ANON_KEY;
-// const VITE_SB_URL = import.meta.env.VITE_SB_URL;
+import { environment } from '$environment';
 
-const VITE_SB_URL = environment.supabaseConfig.SUPABASE_PROJECT_URL;
-const VITE_SB_ANON_KEY = environment.supabaseConfig.SUPABASE_VITE_SB_ANON_KEY;
+const { supabaseConfig } = environment;
 
-// Create a single supabase client for interacting with your database
-const supabase = createClient(VITE_SB_URL, VITE_SB_ANON_KEY);
-supabase.auth.onAuthStateChange((_event, session) => {
-	console.log('👌', session);
-});
+const options = {
+  /**
+   * By default the API server points to the `public` schema.
+   * https://supabase.com/docs/reference/javascript/initializing#api-schemas
+   */
+  schema: 'public',
+  headers: { 'x-my-custom-header': 'svelte-headlessui-starter' },
+  autoRefreshToken: true,
+  persistSession: true,
+  detectSessionInUrl: true,
+};
+
+const supabase = createClient(
+  supabaseConfig.SUPABASE_URL,
+  supabaseConfig.SUPABASE_ANON_KEY,
+  options
+);
+
 
 export { supabase };
