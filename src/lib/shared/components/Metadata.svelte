@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+  import { page } from '$app/stores';
 
-	export let title = '{benzara.me} Peotry in <code/>';
-	export let description = 'A place where I share my ideas';
-	export let keywords = 'web, html, css, javascript, angular, svelte, sveltekit';
-	// export let image = '';
-	$: imageFile = `https://${$page.url.host}/img/me-light.jpg`;
+  export let title = '{benzara.me} Peotry in <code/>';
+  export let description = 'A place where I share my ideas';
+  export let keywords = 'web, html, css, javascript, angular, svelte, sveltekit';
+  // export let image = '';
+  $: imageFile = `https://${$page.url.host}/img/me-light.jpg`;
 </script>
 
 <title>{title}</title>

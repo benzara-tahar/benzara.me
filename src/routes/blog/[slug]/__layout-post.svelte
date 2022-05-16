@@ -18,14 +18,14 @@
 	}
 </script> -->
 <script>
-	// export let post;
+  // export let post;
 </script>
 
 <main>
-	<h1>Post layout</h1>
-	<slot />
+  <h1>Post layout</h1>
+  <slot />
 
-	<!-- {JSON.stringify(post)} -->
+  <!-- {JSON.stringify(post)} -->
 </main>
 <!-- 
 <div class="blog-layout">

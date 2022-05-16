@@ -21,5 +21,8 @@ const supabase = createClient(
   options
 );
 
+// supabase.auth.onAuthStateChange((_event, session) => {
+// 	console.log('👌', session);
+// });
 
 export { supabase };

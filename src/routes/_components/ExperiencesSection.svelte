@@ -1,41 +1,41 @@
 <script lang="ts">
-	import { experiences } from './_data/experiences-data';
+  import { experiences } from './_data/experiences-data';
 </script>
 
 <div class="container">
-	<section class="flex flex-col my-12 ">
-		<h1 class="heading-1">My past <span class="gradient-text">experiences </span></h1>
-		<div
-			class="relative flex flex-col items-start my-10 justif-start before:bg-primary-500 before:w-[2px] before:absolute before:left-0 before:top-9 before:h-full "
-		>
-			{#each experiences as e}
-				<div
-					class="flex items-center justify-center p-2 ml-20 my-4 border-2 border-primary-500 text-primary-500 time min-w-[170px]"
-				>
-					<span class="text-sm"> {e.from} - {e.to}</span>
-				</div>
+  <section class="flex flex-col my-12 ">
+    <h1 class="heading-1">My past <span class="gradient-text">experiences </span></h1>
+    <div
+      class="relative flex flex-col items-start my-10 justif-start before:bg-primary-500 before:w-[2px] before:absolute before:left-0 before:top-9 before:h-full "
+    >
+      {#each experiences as e}
+        <div
+          class="flex items-center justify-center p-2 ml-20 my-4 border-2 border-primary-500 text-primary-500 time min-w-[170px]"
+        >
+          <span class="text-sm"> {e.from} - {e.to}</span>
+        </div>
 
-				<h1 class="my-2 ml-10 text-lg tracking-wide dark:text-white text-zinc-800">
-					{e.position} @ {e.company}
-				</h1>
-				{#each e.tasks as description}
-					<p class="max-w-3xl ml-10 leading-relaxed dark:text-slate-400 text-zinc-500">
-						● {description}
-					</p>
-				{/each}
-			{/each}
-		</div>
-	</section>
+        <h1 class="my-2 ml-10 text-lg tracking-wide dark:text-white text-zinc-800">
+          {e.position} @ {e.company}
+        </h1>
+        {#each e.tasks as description}
+          <p class="max-w-3xl ml-10 leading-relaxed dark:text-slate-400 text-zinc-500">
+            ● {description}
+          </p>
+        {/each}
+      {/each}
+    </div>
+  </section>
 </div>
 
 <style lang="postcss">
-	.time::before {
-		content: '';
-		width: 5rem;
-		background-color: #00d6d3;
-		height: 2px;
-		position: absolute;
-		left: 0;
-		transform: translateY(-50%);
-	}
+  .time::before {
+    content: '';
+    width: 5rem;
+    background-color: #00d6d3;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-50%);
+  }
 </style>

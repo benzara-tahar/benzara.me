@@ -1,24 +1,24 @@
 <a href="/" class=" flex items-center gap-2 text-sms">
-	<svg
-		version="1.0"
-		xmlns="http://www.w3.org/2000/svg"
-		width="24px"
-		height="24px"
-		class="-mt-1"
-		viewBox="0 0 512.000000 512.000000"
-		preserveAspectRatio="xMidYMid meet"
-	>
-		<g
-			transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-			fill="#00D6D3"
-			stroke="none"
-		>
-			<path
-				d="M987 5019 c-225 -55 -424 -219 -521 -429 -64 -140 -68 -167 -73 -472
+  <svg
+    version="1.0"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24px"
+    height="24px"
+    class="-mt-1"
+    viewBox="0 0 512.000000 512.000000"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <g
+      transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+      fill="#00D6D3"
+      stroke="none"
+    >
+      <path
+        d="M987 5019 c-225 -55 -424 -219 -521 -429 -64 -140 -68 -167 -73 -472
 	l-5 -278 601 0 601 0 0 600 0 600 -262 -1 c-224 0 -275 -3 -341 -20z"
-			/>
-			<path
-				d="M2230 4440 l0 -599 528 -3 527 -3 53 -28 c70 -37 128 -97 161 -166
+      />
+      <path
+        d="M2230 4440 l0 -599 528 -3 527 -3 53 -28 c70 -37 128 -97 161 -166
 	22 -47 26 -70 26 -141 0 -72 -4 -93 -28 -141 -32 -67 -109 -142 -175 -172
 	l-47 -22 -1442 -3 -1443 -2 0 -600 0 -600 1438 -2 1437 -3 57 -27 c76 -35 138
 	-95 173 -165 25 -50 29 -70 30 -143 0 -77 -3 -92 -33 -152 -36 -73 -87 -124
@@ -26,15 +26,17 @@
 	5 876 70 533 174 922 612 1041 1170 33 153 33 439 0 590 -45 210 -119 388
 	-230 557 l-61 92 65 100 c393 599 323 1384 -169 1898 -251 264 -575 430 -921
 	472 -55 7 -297 11 -622 11 l-533 0 0 -600z"
-			/>
-			<path
-				d="M393 1003 c5 -310 9 -337 77 -479 103 -214 294 -369 522 -424 72 -17
+      />
+      <path
+        d="M393 1003 c5 -310 9 -337 77 -479 103 -214 294 -369 522 -424 72 -17
 	118 -20 341 -20 l257 0 0 600 0 600 -601 0 -601 0 5 -277z"
-			/>
-		</g>
-	</svg>
+      />
+    </g>
+  </svg>
 
-	<span class=" text-primary-500  font-code font-bold"> {'{'} </span>
-	<span class="dark:text-slate-200 text-slate-800  font-code font-sbold"> {'benzara.me'} </span>
-	<span class=" text-primary-500  font-code font-bold"> {'}'} </span>
+  <span class=" text-primary-500  font-code font-bold"> {'{'} </span>
+  <span class="dark:text-slate-200 text-slate-800  font-code tracking-tighter ">
+    {'code as life'}
+  </span>
+  <span class=" text-primary-500  font-code font-bold"> {'}'} </span>
 </a>
