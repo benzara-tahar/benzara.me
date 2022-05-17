@@ -1,5 +1,3 @@
-import Prism from 'prismjs';
-import 'prism-svelte';
 import readingTime from 'reading-time';
 
 const imports = import.meta.globEager('./posts/*.md');
@@ -42,7 +40,7 @@ function getRelatedPosts(post) {
 		allRelatedPosts = allRelatedPosts.concat(categories[tag]);
 	}
 
-	let relatedPosts = [];
+	const relatedPosts = [];
 	// Sort by number of similar tags
 	for (const relPost of allRelatedPosts) {
 		if (relPost.slug === post.slug) {
